@@ -4,11 +4,9 @@ import About from "./pages/about/page";
 
 export default function App() {
   return (
-    <div className="dark:">
-      <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/about" element={<About />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }

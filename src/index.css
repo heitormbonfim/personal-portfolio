@@ -75,11 +75,32 @@
   }
 }
 
-.bg-desktop {
-  background-image: linear-gradient(to right, rgba(0, 0, 0), rgba(0, 0, 0, 0.5)),
-    url("./assets/IMG_8933.HEIC");
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: linear-gradient(to right, rgba(0, 0, 0), rgba(0, 0, 0, 0.2)),
+    url("./assets/IMG_2151-EDIT.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-clip: content-box;
+}
+
+@media (max-width: 720px) {
+  .bg-image {
+    background-image: linear-gradient(to top, rgba(0, 0, 0), rgba(0, 0, 0, 0.2)),
+      url("./assets/IMG_2152-EDIT.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-clip: content-box;
+  }
 }
