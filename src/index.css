@@ -98,6 +98,7 @@ body {
   background-size: cover;
   background-position: center;
   background-clip: content-box;
+  background-attachment: fixed;
 }
 
 @media (max-width: 720px) {

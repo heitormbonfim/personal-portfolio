@@ -99,7 +99,9 @@ export default function Navbar({
 function NavbarLogo() {
   return (
     <Link to="/">
-      <span className="text-lg font-bold mx-3">HMB</span>
+      <span className="text-2xl font-bold mx-3 border-transparent hover:text-zinc-50 hover:border-b-2 hover:border-green-400 duration-150">
+        Heitor M Bonfim
+      </span>
     </Link>
   );
 }
@@ -120,7 +122,7 @@ function MobileNavbar({
   return (
     <nav
       className={`fixed top-0 w-full z-30 transition-all ease-in duration-200 md:hidden ${
-        showMenu && "!bg-[#000a]"
+        showMenu && "!bg-[#000d]"
       }`}
       style={{
         background: transparentWhenTop
@@ -151,7 +153,7 @@ function MobileNavbar({
         onClick={(event) => handleToggleMenu(event)}
       >
         <div
-          className="w-[60%] h-full bg-[#000a] flex flex-col justify-start gap-2 p-5"
+          className="w-[60%] h-full bg-[#000d] flex flex-col justify-start gap-2 p-5"
           onClick={(event) => event.stopPropagation()}
         >
           {navButtons.map((button, idx) => {
@@ -187,7 +189,7 @@ function Desktop({
       style={{
         background: transparentWhenTop
           ? `rgba(0, 0, 0, ${backgroundTransparency})`
-          : "#000a",
+          : "#000d",
       }}
     >
       <div className="md:flex justify-between items-center w-full max-w-[1320px] mx-auto py-4 px-2 hidden">

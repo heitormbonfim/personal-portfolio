@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaLinkedin, FaSpotify } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaSpotify, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 export const content = {
@@ -10,20 +10,20 @@ export const content = {
   >writer</span>`,
   socials: [
     {
-      url: "https://www.instagram.com/heitor.m.bonfim",
-      icon: FaInstagram,
+      url: "https://api.whatsapp.com/send/?phone=5588993205605&text&type=phone_number&app_absent=0",
+      icon: FaWhatsapp,
     },
     {
-      url: "https://www.facebook.com/heitormbonfim",
-      icon: FaFacebook,
-    },
-    {
-      url: "https://x.com/HeitorMBonfim",
-      icon: FaXTwitter,
+      url: "https://github.com/heitormbonfim",
+      icon: FaGithub,
     },
     {
       url: "https://www.linkedin.com/in/heitormbonfim",
       icon: FaLinkedin,
+    },
+    {
+      url: "https://x.com/HeitorMBonfim",
+      icon: FaXTwitter,
     },
     {
       url: "https://open.spotify.com/user/315cxioc3ykggqrh6b7q2hvqwvnu",

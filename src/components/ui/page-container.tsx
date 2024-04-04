@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Navbar from "./navbar";
 
 interface PageContainerProps {
@@ -11,6 +12,7 @@ interface PageContainerProps {
 export function PageContainer({
   children,
   navMobileOnly,
+  className,
   navTransparentWhenTop,
   navbar,
 }: PageContainerProps) {
@@ -26,7 +28,14 @@ export function PageContainer({
           transparentWhenTop={navTransparentWhenTop}
         />
       )}
-      <div className="w-full h-full px-3 pt-16 pb-10">{children}</div>
+      <div
+        className={cn(
+          "w-full h-full px-3 pt-16 pb-10 overflow-auto",
+          className
+        )}
+      >
+        {children}
+      </div>
     </>
   );
 }

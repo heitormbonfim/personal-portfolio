@@ -41,7 +41,7 @@ export default function Home() {
               );
             })}
           </div>
-          <div className="flex justify-center md:justify-start items-center gap-3">
+          <div className="w-full flex-wrap flex justify-center md:justify-start items-center gap-3">
             {content.socials.map((item, idx) => {
               return (
                 <Social key={item.url + idx} href={item.url}>
