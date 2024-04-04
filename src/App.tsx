@@ -4,9 +4,11 @@ import About from "./pages/about/page";
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/about" element={<About />} />
-      <Route path="/" element={<Home />} />
-    </Routes>
+    <div className="bg-image h-screen w-full text-zinc-200">
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </div>
   );
 }
