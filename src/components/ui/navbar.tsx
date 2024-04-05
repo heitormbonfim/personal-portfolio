@@ -46,7 +46,7 @@ export default function Navbar({
       return setIsMobile(true);
     }
 
-    if (windowWidth && windowWidth < 768) {
+    if (windowWidth && windowWidth < 1024) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -121,13 +121,13 @@ function MobileNavbar({
 
   return (
     <nav
-      className={`fixed top-0 w-full z-30 transition-all ease-in duration-200 md:hidden ${
+      className={`fixed top-0 w-full z-30 transition-all ease-in duration-200 lg:hidden ${
         showMenu && "!bg-[#000d]"
       }`}
       style={{
         background: transparentWhenTop
           ? `rgba(0, 0, 0, ${backgroundTransparency})`
-          : "#000a",
+          : "#000d",
       }}
     >
       <div
@@ -192,7 +192,7 @@ function Desktop({
           : "#000d",
       }}
     >
-      <div className="md:flex justify-between items-center w-full max-w-[1320px] mx-auto py-4 px-2 hidden">
+      <div className="lg:flex justify-between items-center w-full max-w-[1320px] mx-auto py-4 px-2 hidden">
         <NavbarLogo />
 
         <div className="flex justify-center items-center gap-5">

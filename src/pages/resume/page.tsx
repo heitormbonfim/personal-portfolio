@@ -1,9 +1,13 @@
 import { PageContainer } from "@/components/ui/page-container";
+import { SectionContainer } from "@/components/ui/section-container";
+import { SectionTitles } from "@/components/ui/section-titles";
 
 export default function Resume() {
   return (
     <PageContainer navbar>
-      <h1>Resume</h1>
+      <SectionContainer>
+        <SectionTitles title="RESUME" subTitle="CHECK MY RESUME" />
+      </SectionContainer>
     </PageContainer>
   );
 }

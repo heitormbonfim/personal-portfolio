@@ -3,21 +3,22 @@ import { content } from "./content";
 import { Social } from "@/components/ui/social-button";
 import { navButtons } from "@/utils/navbar-buttons";
 import { PageContainer } from "@/components/ui/page-container";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <PageContainer navMobileOnly navTransparentWhenTop>
-      <main className="h-full w-full flex items-center p-3 pt-20 md:pt-3">
-        <div className="w-full md:pl-28">
-          <h1 className="text-4xl md:text-5xl text-center md:text-start font-bold mb-5 text-zinc-50">
+      <main className="h-full w-full flex items-center p-3 pt-20 lg:pt-3">
+        <div className="w-full lg:pl-28">
+          <h1 className="text-4xl lg:text-5xl text-center lg:text-start font-bold mb-5 text-zinc-50">
             {content.name}
           </h1>
           <p
-            className="text-lg text-center font-semibold md:font-normal md:text-2xl md:text-start md:max-w-xl mb-10"
+            className="text-lg text-center font-semibold lg:font-normal lg:text-2xl lg:text-start lg:max-w-xl mb-10"
             dangerouslySetInnerHTML={{ __html: content.description }}
           />
 
-          <div className="md:flex justify-start items-center gap-6 mb-10 hidden">
+          <div className="lg:flex justify-start items-center gap-6 mb-10 hidden">
             {navButtons.map((item, idx) => {
               if (item.title === "Home") {
                 return (
@@ -41,7 +42,8 @@ export default function Home() {
               );
             })}
           </div>
-          <div className="w-full flex-wrap flex justify-center md:justify-start items-center gap-3">
+
+          <div className="w-full flex-wrap flex justify-center lg:justify-start items-center gap-3">
             {content.socials.map((item, idx) => {
               return (
                 <Social key={item.url + idx} href={item.url}>
@@ -49,6 +51,15 @@ export default function Home() {
                 </Social>
               );
             })}
+          </div>
+
+          <div className="mt-6 text-center lg:hidden">
+            <Link
+              to="/about"
+              className="underline underline-offset-2 decoration-green-400 animate-pulse"
+            >
+              Explore
+            </Link>
           </div>
         </div>
       </main>

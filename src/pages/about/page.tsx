@@ -2,55 +2,137 @@ import { PageContainer } from "@/components/ui/page-container";
 import { content } from "./content";
 import { InfoArrow } from "@/components/about/info-arrows";
 import Img from "@/assets/img2.jpg";
+import { Divider } from "@/components/ui/divider";
+import { SectionTitles } from "@/components/ui/section-titles";
+import { SectionContainer } from "@/components/ui/section-container";
+import { SkillCard } from "@/components/about/skill-card";
+import { Spotify } from "@/components/about/spotify";
 
 export default function About() {
   return (
     <PageContainer navbar>
       <main>
-        <div className="px-20 pt-10">
-          <div className="bg-[#000d] backdrop-blur-sm w-full h-full p-5">
-            <div className="flex items-center gap-2">
-              <h2 className="text-zinc-400 mb-2 font-semibold tracking-widest">
-                ABOUT
-              </h2>
-              <div className="h-[1px] max-w-32 w-full bg-green-400 mb-1"></div>
+        <SectionContainer>
+          <SectionTitles title="ABOUT" subTitle="LEARN MORE ABOUT ME" />
+
+          <div className="flex flex-col lg:flex-row mb-10">
+            <div className="w-full lg:w-[30%] lg:pt-2">
+              <img src={Img} alt="Profile Picture" className="w-full" />
             </div>
 
-            <h2 className="text-4xl font-bold text-zinc-50 mb-10">
-              LEARN MORE ABOUT ME
-            </h2>
+            <Divider className="my-5 lg:hidden" />
 
-            <div className="flex">
-              <div className="w-[30%] px-5">
-                <img
-                  src={Img}
-                  alt="Profile Picture"
-                  className="w-full rounded-lg"
-                />
+            <div className="w-full lg:w-[70%] lg:px-5">
+              <h1 className="text-xl lg:text-3xl mb-2 text-green-400 font-semibold">
+                {content.title}
+              </h1>
+              <p className="italic mb-4 text-justify">{content.description}</p>
+
+              <div className="flex flex-wrap items-center gap-y-4 my-10">
+                {content.arrowInfos.map((item, idx) => {
+                  return (
+                    <InfoArrow
+                      key={item.title + idx}
+                      title={item.title}
+                      content={item.content}
+                    />
+                  );
+                })}
               </div>
-              <div className="w-[70%]">
-                <h1 className="text-3xl mb-2 text-green-400 font-semibold">
-                  {content.title}
-                </h1>
-                <p className="italic mb-4">{content.description}</p>
 
-                <div className="flex flex-wrap items-center gap-y-4 my-10">
-                  {content.arrowInfos.map((item, idx) => {
-                    return (
-                      <InfoArrow
-                        key={item.title + idx}
-                        title={item.title}
-                        content={item.content}
-                      />
-                    );
-                  })}
-                </div>
+              <p
+                className="text-justify"
+                dangerouslySetInnerHTML={{ __html: content.description2 }}
+              />
+            </div>
+          </div>
 
-                <p>{content.description2}</p>
+          <div></div>
+
+          <div>
+            <SectionTitles title="SKILLS" />
+
+            <div className="mb-5">
+              <div className="flex items-center gap-2">
+                <span className="block max-w-5 w-full h-[1px] bg-green-400"></span>
+                ~80%
+                <span className="font-semibold">Advanced</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="block max-w-5 w-full h-[1px] bg-yellow-400"></span>
+                ~50%
+                <span className="font-semibold">Intermediate</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="block max-w-5 w-full h-[1px] bg-red-400"></span>
+                ~20%
+                <span className="font-semibold">Basic</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap justify-between items-center gap-5 mb-10">
+              {content.skills.map((item, idx) => {
+                return (
+                  <SkillCard
+                    key={item.name + idx}
+                    name={item.name}
+                    icon={item.icon}
+                    level={item.level}
+                  />
+                );
+              })}
+            </div>
+
+            <SectionTitles title="Musical Taste" />
+
+            <div className="mt-10 flex flex-col lg:flex-row">
+              <Spotify
+                link={content.spotifyPlaylist}
+                className="w-full min-h-[520px] lg:min-h-[420px]"
+              />
+
+              <Divider className="my-10 lg:hidden" />
+
+              <div className="w-full lg:px-20">
+                <h2 className="text-lg font-bold text-green-400">
+                  Philosophical harmony
+                </h2>
+
+                <p className="mb-3">
+                  In melodies spun by ancient lore, Pythagoras' harmonies did
+                  soar. Numbers in rhythm, a divine decree, Philosophers
+                  pondered, music's mystery.
+                </p>
+
+                <p className="mb-3">
+                  Socrates, with his wisdom deep, Heard in melodies, truths to
+                  keep. Plato's cave, with its echoing sound, Music's essence,
+                  profound and profound.
+                </p>
+
+                <p className="mb-3">
+                  Aristotle danced to nature's beat, In music's cadence, he
+                  found a feat. From the cosmos' symphony to the earthly hum,
+                  Philosophers listened, their minds overcome.
+                </p>
+
+                <p className="mb-3">
+                  In music's embrace, they found a key, To unlock the secrets of
+                  eternity. From Pythagoras' strings to Plato's lyre,
+                  Philosophers danced, their souls on fire.
+                </p>
+
+                <p className="mb-3">
+                  So let the melodies weave their tale, In music's realm, truth
+                  shall prevail. For in the notes of each refrain, Philosophers'
+                  dreams forever remain.
+                </p>
               </div>
             </div>
           </div>
-        </div>
+        </SectionContainer>
       </main>
     </PageContainer>
   );

@@ -79,6 +79,22 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(74, 222, 128);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(73, 194, 118);
+}
+
 html,
 body {
   width: 100%;
@@ -94,6 +110,16 @@ body {
       rgba(0, 0, 0, 0.9)
     ),
     url("./assets/img1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+  background-attachment: fixed;
+}
+
+.bg-404 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/404.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
