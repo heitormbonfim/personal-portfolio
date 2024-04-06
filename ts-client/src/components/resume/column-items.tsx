@@ -5,7 +5,7 @@ interface ColumnItemsProps {
 
 export function ColumnItems({ children, title }: ColumnItemsProps) {
   return (
-    <div className="md:w-[50%] mb-14">
+    <div className="mb-5 w-full">
       <h2 className="text-2xl text-zinc-50 font-bold mb-5 uppercase tracking-widest">
         {title}
       </h2>

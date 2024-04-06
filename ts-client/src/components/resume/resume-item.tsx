@@ -15,7 +15,7 @@ export function ResumeItem({ children, title, className }: ResumeItemProps) {
       )}
     >
       <div className="absolute w-[16px] h-[16px] rounded-full bg-green-500 border-2 border-green-400 -left-[9px] top-0"></div>
-      <div className="px-6">
+      <div className="px-6 pb-10">
         <h2 className="text-green-400 uppercase font-semibold text-lg leading-5 mb-2 relative -top-[2px]">
           {title}
         </h2>
