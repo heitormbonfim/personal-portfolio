@@ -6,11 +6,11 @@ interface SectionTitlesProps {
 export function SectionTitles({ title, subTitle }: SectionTitlesProps) {
   return (
     <div>
-      <div className="flex items-center gap-2">
-        <h2 className="text-zinc-400 mb-2 font-semibold tracking-widest">
+      <div className="flex items-center gap-2 mb-2">
+        <h2 className="text-zinc-400 font-semibold tracking-widest">
           {title.toUpperCase()}
         </h2>
-        <div className="h-[1px] max-w-32 w-full bg-green-400 mb-1"></div>
+        <div className="h-[1px] max-w-32 w-full bg-green-400"></div>
       </div>
 
       {subTitle && (
