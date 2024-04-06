@@ -24,7 +24,7 @@ export default function Home() {
                 return (
                   <MenuButton
                     key={item.title + 1}
-                    className="border-b-[2px] border-green-400"
+                    className="border-b-[2px] border-green-500"
                   >
                     {item.title}
                   </MenuButton>
@@ -56,7 +56,7 @@ export default function Home() {
           <div className="mt-6 text-center lg:hidden">
             <Link
               to="/about"
-              className="underline underline-offset-2 decoration-green-400 animate-pulse"
+              className="underline underline-offset-2 decoration-green-500 animate-pulse"
             >
               Explore
             </Link>

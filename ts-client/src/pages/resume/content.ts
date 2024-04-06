@@ -41,7 +41,7 @@ export const content: ContentFormat[] = [
         <ul class="list-disc list-inside">
           <li>Fluent English</li>
           <li>
-            <a href="https://www.instagram.com/meumundohb/" target="_blank" class="underline underline-offset-4 decoration-green-400">
+            <a href="https://www.instagram.com/meumundohb/" target="_blank" class="underline underline-offset-4 decoration-green-500">
               Mundo HB
             </a>
           </li>
@@ -53,7 +53,7 @@ export const content: ContentFormat[] = [
         dates: "2020 - 2024",
         description: "Programador Br Web Full Stack",
         content: `
-          <ul class="list-disc list-inside underline underline-offset-4 decoration-green-400">
+          <ul class="list-disc list-inside underline underline-offset-4 decoration-green-500">
             <li>
               <a href="https://programadorbr.com/certificado/DVWBHMB20HT21473" target="_blank">
                 HTML, CSS and JavaScript
@@ -83,7 +83,7 @@ export const content: ContentFormat[] = [
         description:
           "FreeCodeCamp is an online platform offering free coding courses and tutorials founded in 2014.",
         content: `
-          <ul class="list-disc list-inside underline underline-offset-4 decoration-green-400">
+          <ul class="list-disc list-inside underline underline-offset-4 decoration-green-500">
             <li>
               <a href="https://www.freecodecamp.org/certification/heitorthewizard/javascript-algorithms-and-data-structures" target="_blank">
                 JavaScript Algoriths and Data Structures
@@ -104,7 +104,7 @@ export const content: ContentFormat[] = [
         description:
           "Rocketseat is a  brazilian company focused on teaching programming remotely.",
         content: `
-          <ul class="list-disc list-inside underline underline-offset-4 decoration-green-400">
+          <ul class="list-disc list-inside underline underline-offset-4 decoration-green-500">
             <li>
               <a href="https://app.rocketseat.com.br/certificates/c35b5da5-ef24-4011-b9bd-cad9f7b9bab8" target="_blank">
                 Conectar
@@ -128,7 +128,7 @@ export const content: ContentFormat[] = [
         <ul class="list-disc list-inside">
           <li>English Teacher</li>
           <li>
-            <a href="https://www.instagram.com/meumundohb/" target="_blank" class="underline underline-offset-4 decoration-green-400">
+            <a href="https://www.instagram.com/meumundohb/" target="_blank" class="underline underline-offset-4 decoration-green-500">
               Mundo HB
             </a>
           </li>
@@ -159,12 +159,12 @@ export const content: ContentFormat[] = [
         <ul class="list-disc list-inside">
           <li>Software Developer</li>
           <li>
-            <a href="https://llbots.com.br" target="_blank" class="underline underline-offset-4 decoration-green-400">
+            <a href="https://llbots.com.br" target="_blank" class="underline underline-offset-4 decoration-green-500">
               LLBots
             </a>
           </li>
           <li>
-            <a href="https://cnpj.biz/45437131000179" target="_blank" class="underline underline-offset-4 decoration-green-400">
+            <a href="https://cnpj.biz/45437131000179" target="_blank" class="underline underline-offset-4 decoration-green-500">
               LL Software
             </a>
           </li>
@@ -182,7 +182,7 @@ export const content: ContentFormat[] = [
           <li>Software Developer</li>
         </ul>  
 
-        <h3 class="text-lg text-green-400 font-semibold mt-5">Tech Stack:</h3>
+        <h3 class="text-lg text-green-500 font-semibold mt-5">Tech Stack:</h3>
 
         <ul class="list-inside list-disc">
           <li>ReactJS</li>

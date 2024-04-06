@@ -17,7 +17,7 @@ export function SkillCard({
   return (
     <div
       className={cn(
-        "w-full max-w-72 min-h-16 flex flex-wrap items-center gap-5 bg-[#222b] hover:bg-[#333b] py-4 px-8 cursor-default duration-300",
+        "w-full lg:max-w-72 min-h-16 flex flex-wrap items-center gap-5 bg-[#222b] hover:bg-[#333b] py-4 px-8 cursor-default duration-300",
         renderLevel(level)
       )}
     >
@@ -33,7 +33,7 @@ function renderLevel(level: string) {
   } else if (level == "intermediate") {
     return "border border-yellow-400";
   } else if (level == "advanced") {
-    return "border border-green-400";
+    return "border border-green-500";
   } else {
     ("border border-zinc-100");
   }

@@ -10,7 +10,7 @@ export function SectionTitles({ title, subTitle }: SectionTitlesProps) {
         <h2 className="text-zinc-400 font-semibold tracking-widest">
           {title.toUpperCase()}
         </h2>
-        <div className="h-[1px] max-w-32 w-full bg-green-400"></div>
+        <div className="h-[1px] max-w-32 w-full bg-green-500"></div>
       </div>
 
       {subTitle && (

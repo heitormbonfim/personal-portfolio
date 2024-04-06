@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "engines": {
     "node": ">=18.x.x <=20.x.x"
   },
   "scripts": {
     "dev": "tsx watch ./ts-server/index.ts",
+    "build:client": "cd ts-client && npm run build",
     "build": "tsc -p .",
     "start": "node index.js"
   },

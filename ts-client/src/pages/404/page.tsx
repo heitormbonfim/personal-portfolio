@@ -8,7 +8,7 @@ export default function Page404() {
       </h1>
       <Link
         to="/"
-        className="underline text-center lg:text-lg font-semibold text-green-400"
+        className="underline text-center lg:text-lg font-semibold text-green-500"
       >
         Go back
       </Link>

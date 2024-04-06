@@ -99,7 +99,7 @@ export default function Navbar({
 function NavbarLogo() {
   return (
     <Link to="/">
-      <span className="text-2xl font-bold mx-3 border-transparent hover:text-zinc-50 hover:border-b-2 hover:border-green-400 duration-150">
+      <span className="text-2xl font-bold mx-3 border-transparent hover:text-zinc-50 hover:border-b-2 hover:border-green-500 duration-150">
         Heitor M Bonfim
       </span>
     </Link>

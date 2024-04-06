@@ -46,7 +46,7 @@ export default function Resume() {
         <SectionTitles title="RESUME" subTitle="CHECK MY RESUME" />
 
         <div className="flex flex-wrap">
-          <div className="md:w-[50%]">
+          <div className="lg:w-[50%]">
             {content.map((section, idx) => {
               if (idx % 2 !== 0) return;
 
@@ -54,7 +54,7 @@ export default function Resume() {
             })}
           </div>
 
-          <div className="md:w-[50%]">
+          <div className="lg:w-[50%]">
             {content.map((section, idx) => {
               if (idx % 2 === 0) return;
 

@@ -20,10 +20,15 @@ app.use("/v1/hello", function (_, res: Response) {
 
 // Static file serving
 const publicDir = isDevelopment ? "../public" : "public";
+
 app.use(express.static(join(__dirname, publicDir)));
-app.get("*", (_, res) =>
-  res.sendFile(join(__dirname, publicDir, "index.html"))
-);
+
+app.get("*", (_, res) => {
+  res.header("Cache-Control", "private, no-cache, no-store, must-revalidate");
+  res.header("Expires", "-1");
+  res.header("Pragma", "no-cache");
+  res.sendFile(join(__dirname, publicDir, "index.html"));
+});
 
 // Start server
 app.listen(port, () => {

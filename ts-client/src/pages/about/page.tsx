@@ -23,7 +23,7 @@ export default function About() {
             <Divider className="my-5 lg:hidden" />
 
             <div className="w-full lg:w-[70%] lg:px-5">
-              <h1 className="text-xl lg:text-3xl mb-2 text-green-400 font-semibold">
+              <h1 className="text-xl lg:text-3xl mb-2 text-green-500 font-semibold">
                 {content.title}
               </h1>
               <p className="italic mb-4 text-justify">{content.description}</p>
@@ -54,7 +54,7 @@ export default function About() {
 
             <div className="mb-5">
               <div className="flex items-center gap-2">
-                <span className="block max-w-5 w-full h-[1px] bg-green-400"></span>
+                <span className="block max-w-5 w-full h-[1px] bg-green-500"></span>
                 ~80%
                 <span className="font-semibold">Advanced</span>
               </div>
@@ -72,7 +72,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-between items-center gap-5 mb-10">
+            <div className="flex flex-wrap justify-center lg:justify-between items-center gap-5 mb-10">
               {content.skills.map((item, idx) => {
                 return (
                   <SkillCard
@@ -96,7 +96,7 @@ export default function About() {
               <Divider className="my-10 lg:hidden" />
 
               <div className="w-full lg:px-20">
-                <h2 className="text-lg font-bold text-green-400">
+                <h2 className="text-lg font-bold text-green-500">
                   Philosophical harmony
                 </h2>
 

@@ -23,7 +23,7 @@ export function MenuButton({
         <button
           onClick={onClick}
           className={cn(
-            "text-lg border-b-[2px] border-transparent hover:border-green-400 hover:text-zinc-50 transition-all duration-300",
+            "text-lg border-b-[2px] border-transparent hover:border-green-500 hover:text-zinc-50 transition-all duration-300",
             className
           )}
         >
@@ -49,8 +49,9 @@ export function MenuButton({
           onClick={onClick}
           className={cn(
             `text-lg border-b-[2px] border-transparent ${
-              isCurrentWindow && "border-green-400"
-            } hover:border-green-400 hover:text-zinc-50 transition-all duration-300`,
+              isCurrentWindow &&
+              "border-green-500 text-green-500 lg:text-zinc-50"
+            } hover:border-green-500 hover:text-zinc-50 transition-all duration-300`,
             className
           )}
         >
@@ -63,7 +64,7 @@ export function MenuButton({
       <button
         onClick={onClick}
         className={cn(
-          "text-lg border-b-[2px] border-transparent hover:border-green-400 hover:text-zinc-50 transition-all duration-300",
+          "text-lg border-b-[2px] border-transparent hover:border-green-500 hover:text-zinc-50 transition-all duration-300",
           className
         )}
       >

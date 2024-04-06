@@ -43,7 +43,12 @@ app.use("/v1/hello", function (_, res) {
 });
 const publicDir = isDevelopment ? "../public" : "public";
 app.use(express_1.default.static((0, path_1.join)(__dirname, publicDir)));
-app.get("*", (_, res) => res.sendFile((0, path_1.join)(__dirname, publicDir, "index.html")));
+app.get("*", (_, res) => {
+    res.header("Cache-Control", "private, no-cache, no-store, must-revalidate");
+    res.header("Expires", "-1");
+    res.header("Pragma", "no-cache");
+    res.sendFile((0, path_1.join)(__dirname, publicDir, "index.html"));
+});
 app.listen(port, () => {
     console.info(`✔ server is running on port ${port} - ${isDevelopment ? "DEVELOPMENT MODE\n\n" : "PRODUCTION MODE\n\n"}`);
 });

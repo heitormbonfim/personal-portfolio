@@ -63,7 +63,7 @@ export const content = {
     },
   ],
 
-  description2: `<strong class="text-green-400 text-lg">Who is Heitor?</strong> He's a former English teacher and now a modern wizard, weaving spells with zeros and ones! In 2020, captivated by the endless possibilities of computer programming, he embarked on a journey into the world of software development. During the pandemic, Heitor discovered the magic of coding—a realm where creativity meets science. He's a proactive and ambitious individual who follows the Stoic philosophy, believing in the power of self-improvement to make the world better. He views computers as magical tools, enabling us to create, connect, and transform lives. In the digital realm, Heitor sees himself as one of the wizards, crafting innovative solutions and shaping new worlds.`,
+  description2: `<strong class="text-green-500 text-lg">Who is Heitor?</strong> He's a former English teacher and now a modern wizard, weaving spells with zeros and ones! In 2020, captivated by the endless possibilities of computer programming, he embarked on a journey into the world of software development. During the pandemic, Heitor discovered the magic of coding—a realm where creativity meets science. He's a proactive and ambitious individual who follows the Stoic philosophy, believing in the power of self-improvement to make the world better. He views computers as magical tools, enabling us to create, connect, and transform lives. In the digital realm, Heitor sees himself as one of the wizards, crafting innovative solutions and shaping new worlds.`,
 
   skills: [
     {
