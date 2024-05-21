@@ -17,14 +17,21 @@ import {
   SiTypescript,
   SiWordpress,
 } from "react-icons/si";
+import Img from "@/assets/about.jpg";
 
 export const content = {
   title: "Software Developer & Ethical Hacker",
+
+  img: Img,
 
   description:
     "I live and breathe software development, where every line of code is a brushstroke of innovation. When not coding, I'm an ethical hacker, safeguarding digital realms. And in moments of calm, I'm a writer, spinning tales that inspire and captivate. Each pursuit fuels my passion for creativity and exploration.",
 
   arrowInfos: [
+    {
+      title: "Full Name",
+      content: "Heitor Macedo Bonfim",
+    },
     {
       title: "Age",
       content: calculateDate("2000-01-27").toString(),
@@ -148,8 +155,7 @@ export const content = {
     },
   ] as SkillCardProps[],
 
-  spotifyPlaylist:
-    "https://open.spotify.com/playlist/7ANHh0Q9wCpwnA06pkUj4J?si=21481610592a4036",
+  spotifyPlaylist: "https://open.spotify.com/playlist/7ANHh0Q9wCpwnA06pkUj4J?si=21481610592a4036",
 };
 
 function calculateDate(year: string): number {

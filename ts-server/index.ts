@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
-const isDevelopment = process.env.NODE_ENV === "development"; // false by default
+const isDevelopment = process.env.NODE_ENV === "development";
 
 app.use(json());
 app.use(logs);
@@ -18,17 +18,11 @@ app.use("/v1/hello", function (_, res: Response) {
     .json({ error: false, message: "Hello, this API Version 1 is working" });
 });
 
-// Static file serving
+// Serve static files
 const publicDir = isDevelopment ? "../public" : "public";
-
-app.use(express.static(join(__dirname, publicDir)));
-
-app.get("*", (_, res) => {
-  res.header("Cache-Control", "private, no-cache, no-store, must-revalidate");
-  res.header("Expires", "-1");
-  res.header("Pragma", "no-cache");
-  res.sendFile(join(__dirname, publicDir, "index.html"));
-});
+app.use(express.static(join(__dirname, publicDir, "assets")));
+app.use("/", express.static(join(__dirname, publicDir)));
+app.use("/:any", express.static(join(__dirname, publicDir)));
 
 // Start server
 app.listen(port, () => {

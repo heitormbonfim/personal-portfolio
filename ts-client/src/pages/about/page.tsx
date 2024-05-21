@@ -1,7 +1,6 @@
 import { PageContainer } from "@/components/ui/page-container";
 import { content } from "./content";
 import { InfoArrow } from "@/components/about/info-arrows";
-import Img from "@/assets/img2.jpg";
 import { Divider } from "@/components/ui/divider";
 import { SectionTitles } from "@/components/ui/section-titles";
 import { SectionContainer } from "@/components/ui/section-container";
@@ -17,7 +16,7 @@ export default function About() {
 
           <div className="flex flex-col lg:flex-row mb-10">
             <div className="w-full lg:w-[30%] lg:pt-2">
-              <img src={Img} alt="Profile Picture" className="w-full" />
+              <img src={content.img} alt="Profile Picture" className="w-full" />
             </div>
 
             <Divider className="my-5 lg:hidden" />
@@ -31,11 +30,7 @@ export default function About() {
               <div className="flex flex-wrap items-center gap-y-4 my-10">
                 {content.arrowInfos.map((item, idx) => {
                   return (
-                    <InfoArrow
-                      key={item.title + idx}
-                      title={item.title}
-                      content={item.content}
-                    />
+                    <InfoArrow key={item.title + idx} title={item.title} content={item.content} />
                   );
                 })}
               </div>
@@ -96,38 +91,31 @@ export default function About() {
               <Divider className="my-10 lg:hidden" />
 
               <div className="w-full lg:px-20">
-                <h2 className="text-lg font-bold text-green-500">
-                  Philosophical harmony
-                </h2>
+                <h2 className="text-lg font-bold text-green-500">Philosophical harmony</h2>
 
                 <p className="mb-3">
-                  In melodies spun by ancient lore, Pythagoras' harmonies did
-                  soar. Numbers in rhythm, a divine decree, Philosophers
-                  pondered, music's mystery.
+                  In melodies spun by ancient lore, Pythagoras' harmonies did soar. Numbers in
+                  rhythm, a divine decree, Philosophers pondered, music's mystery.
                 </p>
 
                 <p className="mb-3">
-                  Socrates, with his wisdom deep, Heard in melodies, truths to
-                  keep. Plato's cave, with its echoing sound, Music's essence,
-                  profound and profound.
+                  Socrates, with his wisdom deep, Heard in melodies, truths to keep. Plato's cave,
+                  with its echoing sound, Music's essence, profound and profound.
                 </p>
 
                 <p className="mb-3">
-                  Aristotle danced to nature's beat, In music's cadence, he
-                  found a feat. From the cosmos' symphony to the earthly hum,
-                  Philosophers listened, their minds overcome.
+                  Aristotle danced to nature's beat, In music's cadence, he found a feat. From the
+                  cosmos' symphony to the earthly hum, Philosophers listened, their minds overcome.
                 </p>
 
                 <p className="mb-3">
-                  In music's embrace, they found a key, To unlock the secrets of
-                  eternity. From Pythagoras' strings to Plato's lyre,
-                  Philosophers danced, their souls on fire.
+                  In music's embrace, they found a key, To unlock the secrets of eternity. From
+                  Pythagoras' strings to Plato's lyre, Philosophers danced, their souls on fire.
                 </p>
 
                 <p className="mb-3">
-                  So let the melodies weave their tale, In music's realm, truth
-                  shall prevail. For in the notes of each refrain, Philosophers'
-                  dreams forever remain.
+                  So let the melodies weave their tale, In music's realm, truth shall prevail. For
+                  in the notes of each refrain, Philosophers' dreams forever remain.
                 </p>
               </div>
             </div>

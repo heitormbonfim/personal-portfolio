@@ -8,20 +8,17 @@ export const content = {
   services: [
     {
       title: "Restful API Development",
-      description:
-        "Crafting efficient RESTful APIs using ExpressJS and Python.",
+      description: "Crafting efficient RESTful APIs using ExpressJS and Python.",
       icon: SiTryhackme,
     },
     {
       title: "Landing Pages",
-      description:
-        "Creating captivating landing pages leveraging NextJS, ReactJS, and Wordpress.",
+      description: "Creating captivating landing pages leveraging NextJS, ReactJS, and Wordpress.",
       icon: RiPagesLine,
     },
     {
       title: "Automations",
-      description:
-        "Streamlining repetitive tasks through automation with NodeJS and Python.",
+      description: "Streamlining repetitive tasks through automation with NodeJS and Python.",
       icon: BsRobot,
     },
     {
@@ -37,7 +34,7 @@ export const content = {
       icon: FaCode,
     },
     {
-      title: "Translation",
+      title: "Translations",
       description:
         "Providing real-time translation services between English and Portuguese, including document translation and website localization.",
       icon: FaLanguage,

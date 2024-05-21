@@ -34,7 +34,7 @@ export const navButtons: NavButtons[] = [
   },
   {
     title: "Contact",
-    href: "https://mailto:heitormbonfim@gmail.com",
+    href: "mailto:heitormbonfim@gmail.com?subject=I%20checked%20your%20website&body=Hello,%20Heitor",
     _blank: true,
   },
 ];

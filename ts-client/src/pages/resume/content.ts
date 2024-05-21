@@ -13,7 +13,7 @@ export const content: ContentFormat[] = [
     title: "SUMMARY",
     items: [
       {
-        title: "Heitor M Bonfim",
+        title: "Heitor Macedo Bonfim",
         description: `
             I transitioned from teaching English in 2019 to web development in 2022, specializing in ReactJS, NodeJS, ExpressJS, and MongoDB. 
             I've since been involved in various projects, expanding my skills. Currently, I'm delving into NextJS and cybersecurity, 
@@ -35,8 +35,7 @@ export const content: ContentFormat[] = [
       {
         title: "English Language",
         dates: "2016 - 2018",
-        description:
-          "I attained fluency in English through dedicated study and practice.",
+        description: "I attained fluency in English through dedicated study and practice.",
         content: `
         <ul class="list-disc list-inside">
           <li>Fluent English</li>
@@ -101,8 +100,7 @@ export const content: ContentFormat[] = [
       {
         title: "Rocketseat",
         dates: "2021 - 2022",
-        description:
-          "Rocketseat is a  brazilian company focused on teaching programming remotely.",
+        description: "Rocketseat is a  brazilian company focused on teaching programming remotely.",
         content: `
           <ul class="list-disc list-inside underline underline-offset-4 decoration-green-500">
             <li>

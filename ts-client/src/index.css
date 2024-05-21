@@ -75,10 +75,6 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -102,14 +98,15 @@ body {
 }
 
 .bg-image {
+  background-color: #333;
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.9),
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.9)
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 1)
     ),
-    url("./assets/img1.jpg");
+    url("./assets/desktop-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -118,8 +115,7 @@ body {
 }
 
 .bg-404 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("./assets/404.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/404.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -137,7 +133,7 @@ body {
         rgba(0, 0, 0, 0.8),
         rgba(0, 0, 0, 1)
       ),
-      url("./assets/IMG_2152-EDIT.jpg");
+      url("./assets/mobile-bg.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
