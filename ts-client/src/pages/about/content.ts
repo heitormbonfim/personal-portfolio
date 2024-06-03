@@ -18,6 +18,7 @@ import {
   SiWordpress,
 } from "react-icons/si";
 import Img from "@/assets/about.jpg";
+import { TbBrandReactNative } from "react-icons/tb";
 
 export const content = {
   title: "Software Developer & Ethical Hacker",
@@ -50,7 +51,7 @@ export const content = {
     },
     {
       title: "Education",
-      content: "FreeCodeCamp.org",
+      content: "FreeCodeCamp, ProgBr",
     },
     {
       title: "Years of Experience",
@@ -66,7 +67,7 @@ export const content = {
     },
     {
       title: "Languages",
-      content: "Portuguese and English",
+      content: "Portuguese, English",
     },
   ],
 
@@ -114,6 +115,11 @@ export const content = {
       level: "intermediate",
     },
     {
+      name: "React Native",
+      icon: TbBrandReactNative,
+      level: "intermediate",
+    },
+    {
       name: "Prisma",
       icon: SiPrisma,
       level: "intermediate",
@@ -151,7 +157,7 @@ export const content = {
     {
       name: "Docker",
       icon: SiDocker,
-      level: "noob",
+      level: "intermediate",
     },
   ] as SkillCardProps[],
 

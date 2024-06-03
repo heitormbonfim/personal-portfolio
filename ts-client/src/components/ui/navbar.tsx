@@ -18,10 +18,7 @@ interface NavbarProps {
   mobileOnly?: boolean;
 }
 
-export default function Navbar({
-  transparentWhenTop,
-  mobileOnly,
-}: NavbarProps) {
+export default function Navbar({ transparentWhenTop, mobileOnly }: NavbarProps) {
   const [clientWindowHeight, setClientWindowHeight] = useState(0);
   const [backgroundTransparency, setBackgroundTransparency] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -30,15 +27,10 @@ export default function Navbar({
   useEffect(() => {
     if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth);
-      window.addEventListener("resize", () =>
-        setWindowWidth(window.innerWidth)
-      );
+      window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
     }
 
-    return () =>
-      window.removeEventListener("resize", () =>
-        setWindowWidth(window.innerWidth)
-      );
+    return () => window.removeEventListener("resize", () => setWindowWidth(window.innerWidth));
   }, []);
 
   useEffect(() => {
@@ -106,11 +98,7 @@ function NavbarLogo() {
   );
 }
 
-function MobileNavbar({
-  transparentWhenTop,
-  backgroundTransparency,
-  navButtons,
-}: Navbar) {
+function MobileNavbar({ transparentWhenTop, backgroundTransparency, navButtons }: Navbar) {
   const [showMenu, setShowMenu] = useState(false);
 
   function handleToggleMenu(event: React.MouseEvent<any>) {
@@ -125,9 +113,7 @@ function MobileNavbar({
         showMenu && "!bg-[#000d]"
       }`}
       style={{
-        background: transparentWhenTop
-          ? `rgba(0, 0, 0, ${backgroundTransparency})`
-          : "#000d",
+        background: transparentWhenTop ? `rgba(0, 0, 0, ${backgroundTransparency})` : "#000d",
       }}
     >
       <div
@@ -176,26 +162,18 @@ function MobileNavbar({
   );
 }
 
-function Desktop({
-  transparentWhenTop,
-  backgroundTransparency,
-  navButtons,
-}: Navbar) {
+function Desktop({ transparentWhenTop, backgroundTransparency, navButtons }: Navbar) {
   return (
     <nav
-      className={`fixed top-0 w-full z-30 ${
-        !transparentWhenTop && "backdrop-blur-sm"
-      }`}
+      className={`fixed top-0 w-full z-30 ${!transparentWhenTop && "backdrop-blur-sm"}`}
       style={{
-        background: transparentWhenTop
-          ? `rgba(0, 0, 0, ${backgroundTransparency})`
-          : "#000d",
+        background: transparentWhenTop ? `rgba(0, 0, 0, ${backgroundTransparency})` : "#000d",
       }}
     >
       <div className="lg:flex justify-between items-center w-full max-w-[1320px] mx-auto py-4 px-2 hidden">
         <NavbarLogo />
 
-        <div className="flex justify-center items-center gap-5">
+        <div className="flex justify-center items-center gap-5 mr-3">
           {navButtons.map((button, idx) => {
             return (
               <React.Fragment key={button.title + idx}>

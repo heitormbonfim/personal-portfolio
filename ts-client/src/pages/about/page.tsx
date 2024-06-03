@@ -67,7 +67,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-center lg:justify-between items-center gap-5 mb-10">
+            <div className="flex flex-wrap items-center gap-5 mb-10">
               {content.skills.map((item, idx) => {
                 return (
                   <SkillCard

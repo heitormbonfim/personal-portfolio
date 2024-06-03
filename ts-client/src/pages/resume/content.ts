@@ -126,7 +126,7 @@ export const content: ContentFormat[] = [
         <ul class="list-disc list-inside">
           <li>English Teacher</li>
           <li>
-            <a href="https://www.instagram.com/meumundohb/" target="_blank" class="underline underline-offset-4 decoration-green-500">
+            <a href="https://www.instagram.com/p/ByijOGRHdM8/" target="_blank" class="underline underline-offset-4 decoration-green-500">
               Mundo HB
             </a>
           </li>

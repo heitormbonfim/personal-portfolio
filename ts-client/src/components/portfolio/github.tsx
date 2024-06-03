@@ -17,28 +17,27 @@ export default function GitHubRepos({ username }: GitHubReposProps) {
     fetch(`https://api.github.com/users/${username}/repos`)
       .then((response) => response.json())
       .then((data) => {
-        const sortedRepos = data.sort((a: Repo, b: Repo) =>
-          a.name.localeCompare(b.name)
-        );
+        const sortedRepos = data.sort((a: Repo, b: Repo) => a.name.localeCompare(b.name));
         setRepos(sortedRepos);
       })
       .catch((error) => console.error("Error fetching repos:", error));
   }, [username]);
 
   return (
-    <div className="grid lg:grid-cols-3 gap-4">
-      {repos.map((repo) => (
-        <a
-          key={repo.id}
-          href={`https://github.com/${username}/${repo.name}`}
-          target="_blank"
-        >
-          <div className="p-4 border-2 border-zinc-400 hover:border-green-500 duration-300">
-            <h3 className="text-xl font-bold">{repo.name}</h3>
-            {repo.description && <p className="mt-2">{repo.description}</p>}
-          </div>
-        </a>
-      ))}
+    <div>
+      <p className="w-fit text-lg font-semibold border-b-2 border-zinc-500 py-2 mb-10">
+        Total Amount : <span className="text-green-500">{repos.length}</span>
+      </p>
+      <div className="flex flex-col gap-3">
+        {repos.map((repo) => (
+          <a key={repo.id} href={`https://github.com/${username}/${repo.name}`} target="_blank">
+            <div className="py-2 border-b-2 border-zinc-600 hover:border-green-500 hover:text-green-500 duration-300">
+              <h3 className="text-lg font-semibold">{repo.name}</h3>
+              {repo.description && <p className="mt-1 text-xs">{repo.description}</p>}
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
