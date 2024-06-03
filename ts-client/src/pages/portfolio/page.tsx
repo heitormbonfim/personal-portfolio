@@ -2,7 +2,7 @@ import { PageContainer } from "@/components/ui/page-container";
 import { SectionContainer } from "@/components/ui/section-container";
 import { SectionTitles } from "@/components/ui/section-titles";
 import { content } from "./content";
-import GitHubRepos from "@/components/portfolio/github";
+// import GitHubRepos from "@/components/portfolio/github";
 import { ProjectCard } from "@/components/portfolio/project-card";
 import { FaGithub } from "react-icons/fa";
 
