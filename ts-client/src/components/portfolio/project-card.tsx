@@ -23,19 +23,21 @@ function Content({ content, title, img, url }: ProjectCardProps) {
       onClick={() => {
         if (!url) alert("This project is not online anymore");
       }}
-      className="w-full max-w-md flex flex-col gap-2 bg-black p-1 border-2 border-zinc-700 hover:border-green-500 duration-300 cursor-pointer"
+      className="w-full max-w-md h-fit flex flex-col gap-1 bg-black p-1 border-2 border-zinc-800 hover:border-green-500 duration-300 cursor-pointer hover:scale-105"
     >
       <figure>
         {img ? (
-          <img src={img} className="w-full min-h-52" />
+          <img src={img} className="w-full" />
         ) : (
           <div className="w-full min-h-52 bg-zinc-500" />
         )}
 
-        <figcaption className="text-lg font-bold pt-2">{title}</figcaption>
+        <figcaption className="text-lg font-bold p-2 border-t-2 border-green-500">
+          {title}
+        </figcaption>
       </figure>
 
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <div className="px-2 pb-5" dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
 }

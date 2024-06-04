@@ -4,9 +4,9 @@ import { FaXTwitter } from "react-icons/fa6";
 export const content = {
   name: "Heitor M Bonfim",
   description: `I'm a passionate <span 
-  class="text-zinc-50 underline underline-offset-8 decoration-green-500">software developer</span>,
-  a hobbyist <span class="text-zinc-50 underline underline-offset-8 decoration-green-500"
-  >ethical hacker</span> and <span class="text-zinc-50 underline underline-offset-8 decoration-green-500"
+  class="text-zinc-50 underline underline-offset-4 decoration-green-500">software developer</span>,
+  a hobbyist <span class="text-zinc-50 underline underline-offset-4 decoration-green-500"
+  >ethical hacker</span> and <span class="text-zinc-50 underline underline-offset-4 decoration-green-500"
   >writer</span>`,
   socials: [
     {
