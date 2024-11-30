@@ -14,16 +14,56 @@ import IMGHackerTanos from "./cover-images/hacker-tanos.webp";
 import IMGHackerDoGreen from "./cover-images/hacker-do-green.webp";
 import IMGAutoDouble from "./cover-images/auto-double-bet.webp";
 import IMGCustomerManagement from "./cover-images/customer-management.webp";
+import IMGAnalistasStike from "./cover-images/analistas-strike.webp";
+import IMGPrizeSystem from "./cover-images/prize-system.webp";
+import IMGHackerBet from "./cover-images/hacker-bet.webp";
+import IMGAntiLossBets from "./cover-images/antiloss.webp";
+import IMGAviatorCalculator from "./cover-images/aviator-calculator.webp";
 
 export const content = {
   githubUsername: "heitormbonfim",
   projects: [
     {
+      title: "Strike Bet Analistas",
+      url: "https://www.appstrikebet.com/",
+      content:
+        "A full stack application made with ReactJS + TypeScript that gives the best tips according to the influencer's strategy",
+      img: IMGAnalistasStike,
+    },
+    {
+      title: "Antiloss Bets",
+      url: "https://antilose-casino-app.vercel.app",
+      content:
+        "A full stack application that helps the player to get more wins than losses in igaming games",
+      img: IMGAntiLossBets,
+    },
+    {
+      title: "Sistema de Premiação",
+      url: "#",
+      content:
+        "A prizing system based on the amount of score a player has as wins in igaming games. A complete applicaiton with customer management, screenshot analysis, prizing management and prizing reports. A full stack application made with ReactJS + TypeScript, express and mongoDB that gives the best tips according to the influencer's strategy",
+      img: IMGPrizeSystem,
+    },
+    {
+      title: "Hacker Bet",
+      url: "https://www.apphackerbet.com/",
+      content:
+        "A full stack <strong>web app</strong> application integrated with a casino to give the best tips according to the user strategy",
+      img: IMGHackerBet,
+    },
+    {
       title: "Customer Management System",
-      url: "",
+      url: "#",
       content:
         "A full stack application made with ReactJS + TypeScript, daisyui, express, mongodb and more. Ideal to integrate with other systems where customers management are necessary, and an api to control which user will have access according to their plans, etc",
       img: IMGCustomerManagement,
+    },
+    {
+      title: "Torre de Controle",
+      url: "https://www.rodolfoaviator.com/",
+      content:
+        "An application that helps the user to manage their balance strategically to make consistent profits in igaming games",
+      img: IMGAviatorCalculator,
     },
     {
       title: "Auto Double",

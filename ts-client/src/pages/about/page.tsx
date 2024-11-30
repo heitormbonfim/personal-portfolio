@@ -16,7 +16,7 @@ export default function About() {
 
           <div className="flex flex-col lg:flex-row mb-10">
             <div className="w-full lg:w-[30%] lg:pt-2">
-              <img src={content.img} alt="Profile Picture" className="w-full" />
+              <img loading="lazy" src={content.img} alt="Profile Picture" className="w-full" />
             </div>
 
             <Divider className="my-5 lg:hidden" />

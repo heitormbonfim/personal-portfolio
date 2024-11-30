@@ -26,7 +26,7 @@ export default function Portfolio() {
           })}
         </div>
 
-        <h2 className="w-full text-3xl font-semibold mb-5 flex justify-center items-center gap-3">
+        <h2 className="w-full text-3xl font-semibold mb-5 flex flex-wrap justify-center items-center gap-3">
           <FaGithub /> GitHub <span className="text-green-500 font-bold">public</span> repositories
         </h2>
 
