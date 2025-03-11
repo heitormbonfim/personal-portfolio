@@ -5,9 +5,23 @@ import dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
 
 dotenv.config();
+const portFlag = process.argv[2];
+const portArg = process.argv[3];
+let PORT: number | string = 5000;
+
+if (portFlag == "--port" && portArg) {
+  const portNum = Number(portArg);
+  if (isNaN(portNum)) {
+    throw new Error("Port must be a number");
+  }
+  PORT = portArg;
+} else if (process.env.PORT) {
+  if (isNaN(Number(process.env.PORT))) throw new Error("Environment PORT must be a number");
+  PORT = process.env.PORT;
+}
 
 const server = express();
-const PORT = process.env.PORT || 5000;
+
 const DEVELOPMENT = process.env.NODE_ENV === "development";
 
 const limiter = rateLimit({
