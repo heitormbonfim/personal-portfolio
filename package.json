@@ -11,6 +11,7 @@
     "dev": "tsx watch index.ts",
     "dev:client": "cd ts-client && pnpm run dev",
     "build:client": "cd ts-client && pnpm run build",
+    "build": "tsc -p .",
     "start": "tsx index.ts"
   },
   "keywords": [],
