@@ -12,6 +12,7 @@
     "dev:client": "cd ts-client && pnpm run dev",
     "build:client": "cd ts-client && pnpm run build",
     "build": "tsc -p .",
+    "run:deploy": "cd ts-client && pnpm run:deploy --port $PORT",
     "start": "node ./dist/index.js"
   },
   "keywords": [
