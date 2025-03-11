@@ -7,18 +7,22 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <PageContainer navMobileOnly navTransparentWhenTop>
-      <main className="h-full w-full flex items-center p-3 pt-20 lg:pt-3">
+    <PageContainer
+      navMobileOnly
+      navTransparentWhenTop
+      className="flex items-center"
+    >
+      <main className="flex w-full items-center p-3 pt-20 lg:pt-3">
         <div className="w-full lg:pl-28">
-          <h1 className="text-4xl lg:text-5xl text-center lg:text-start font-bold mb-5 text-zinc-50">
+          <h1 className="mb-5 text-center text-4xl font-bold text-zinc-50 lg:text-start lg:text-5xl">
             {content.name}
           </h1>
           <p
-            className="text-lg text-center font-semibold lg:font-normal lg:text-2xl lg:text-start lg:max-w-xl mb-10"
+            className="mb-10 text-center text-lg font-semibold lg:max-w-xl lg:text-start lg:text-2xl lg:font-normal"
             dangerouslySetInnerHTML={{ __html: content.description }}
           />
 
-          <div className="lg:flex justify-start items-center gap-6 mb-10 hidden">
+          <div className="mb-10 hidden items-center justify-start gap-6 lg:flex">
             {navButtons.map((item, idx) => {
               if (item.title === "Home") {
                 return (
@@ -43,7 +47,7 @@ export default function Home() {
             })}
           </div>
 
-          <div className="w-full flex-wrap flex justify-center lg:justify-start items-center gap-3">
+          <div className="flex w-full flex-wrap items-center justify-center gap-3 lg:justify-start">
             {content.socials.map((item, idx) => {
               return (
                 <Social key={item.url + idx} href={item.url}>
@@ -56,7 +60,7 @@ export default function Home() {
           <div className="mt-6 text-center lg:hidden">
             <Link
               to="/about"
-              className="underline underline-offset-2 decoration-green-500 animate-pulse"
+              className="animate-pulse underline decoration-green-500 underline-offset-2"
             >
               Explore
             </Link>

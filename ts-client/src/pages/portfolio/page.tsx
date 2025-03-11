@@ -12,7 +12,7 @@ export default function Portfolio() {
       <SectionContainer>
         <SectionTitles title="PORTFOLIO" subTitle="MY WORKS" />
 
-        <div className="flex flex-wrap justify-center gap-5 mb-20">
+        <div className="mb-20 flex flex-wrap justify-center gap-5">
           {content.projects.map((project, idx) => {
             return (
               <ProjectCard
@@ -26,8 +26,9 @@ export default function Portfolio() {
           })}
         </div>
 
-        <h2 className="w-full text-3xl font-semibold mb-5 flex flex-wrap justify-center items-center gap-3">
-          <FaGithub /> GitHub <span className="text-green-500 font-bold">public</span> repositories
+        <h2 className="mb-5 flex w-full items-center justify-center gap-2 text-xl font-semibold lg:gap-3 lg:text-3xl">
+          <FaGithub /> GitHub{" "}
+          <span className="font-bold text-green-500">public</span> repositories
         </h2>
 
         <GitHubRepos username={content.githubUsername} />

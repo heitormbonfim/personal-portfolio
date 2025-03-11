@@ -18,7 +18,7 @@ export default function Resume() {
             >
               {item.dates && (
                 <div
-                  className="mb-5 h-8 w-36 bg-zinc-800 font-bold tracking-wider flex justify-center items-center"
+                  className="mb-5 flex h-8 w-36 items-center justify-center bg-zinc-800 font-bold tracking-wider"
                   dangerouslySetInnerHTML={{ __html: item.dates }}
                 />
               )}

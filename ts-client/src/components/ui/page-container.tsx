@@ -28,12 +28,7 @@ export function PageContainer({
           transparentWhenTop={navTransparentWhenTop}
         />
       )}
-      <div
-        className={cn(
-          "w-full h-full px-3 pt-16 pb-10 overflow-auto",
-          className
-        )}
-      >
+      <div className={cn("min-h-dvh w-full px-3 pb-10 pt-16", className)}>
         {children}
       </div>
     </>

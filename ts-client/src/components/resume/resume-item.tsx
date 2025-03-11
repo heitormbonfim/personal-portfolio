@@ -11,12 +11,12 @@ export function ResumeItem({ children, title, className }: ResumeItemProps) {
     <div
       className={cn(
         "relative flex flex-wrap items-start border-l-2 border-s-zinc-500",
-        className
+        className,
       )}
     >
-      <div className="absolute w-[16px] h-[16px] rounded-full bg-green-500 border-2 border-green-500 -left-[9px] top-0"></div>
+      <div className="absolute -left-[9px] top-0 h-[16px] w-[16px] rounded-full border-2 border-green-500 bg-green-500"></div>
       <div className="px-6 pb-10">
-        <h2 className="text-green-500 uppercase font-semibold text-lg leading-5 mb-2 relative -top-[2px]">
+        <h2 className="relative -top-[2px] mb-2 text-lg font-semibold uppercase leading-5 text-green-500">
           {title}
         </h2>
         <div>{children}</div>

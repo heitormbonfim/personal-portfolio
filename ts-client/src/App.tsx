@@ -1,22 +1,38 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/home/page";
-import About from "./pages/about/page";
-import Resume from "./pages/resume/page";
-import Page404 from "./pages/404/page";
-import Services from "./pages/services/page";
-import Portfolio from "./pages/portfolio/page";
+import { lazy, Suspense, useState } from "react";
+import { FirstLoading } from "./components/first-load";
+
+import Loading from "./components/loading";
+
+const Home = lazy(() => import("@/pages/home/page"));
+const About = lazy(() => import("@/pages/about/page"));
+const Resume = lazy(() => import("@/pages/resume/page"));
+const Page404 = lazy(() => import("@/pages/404/page"));
+const Services = lazy(() => import("@/pages/services/page"));
+const Portfolio = lazy(() => import("@/pages/portfolio/page"));
 
 export default function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
-    <div className="bg-image h-screen w-full text-zinc-200">
-      <Routes>
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Page404 />} />
-      </Routes>
-    </div>
+    <>
+      {!isLoaded && <FirstLoading onComplete={() => setIsLoaded(true)} />}
+      <div
+        className={`bg-image min-h-screen transition-opacity duration-700 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        } bg-zinc-900 text-zinc-200`}
+      >
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<Page404 />} />
+          </Routes>
+        </Suspense>
+      </div>
+    </>
   );
 }

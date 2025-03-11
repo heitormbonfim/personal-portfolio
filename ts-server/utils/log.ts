@@ -1,19 +1,32 @@
 import { NextFunction, Request, Response } from "express";
 
-export default function logs(req: Request, _: Response, next: NextFunction) {
-  const method = req.method;
-  const query = req.query;
-  const body = req.body;
-  const headers = req.headers;
-  const path = req.path;
-  const date = `${new Date().getHours()}h ${new Date().getMinutes()}m - ${new Date().toLocaleDateString(
-    "pt-br"
-  )}`;
+export default function logger(req: Request, res: Response, next: NextFunction) {
+  const start = process.hrtime();
+  const { method, originalUrl, headers, body } = req;
 
-  console.log(`\n\n${date} - ${method} ${path}`);
-  console.log("headers:", headers);
-  console.log("query:", query);
-  console.log("body:", body);
+  res.on("finish", () => {
+    const [seconds, nanoseconds] = process.hrtime(start);
+    const responseTime = (seconds * 1000 + nanoseconds / 1e6).toFixed(2);
+
+    const logEntry = {
+      timestamp: new Date().toLocaleString("en", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+      method,
+      url: originalUrl,
+      // headers,
+      body,
+      status: res.statusCode,
+      responseTime: `${responseTime}ms`,
+    };
+
+    console.log(logEntry);
+  });
 
   next();
 }

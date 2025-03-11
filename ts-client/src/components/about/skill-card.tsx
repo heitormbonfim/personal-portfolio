@@ -12,7 +12,7 @@ export function SkillCard({ name, icon: Icon, iconStyle, level }: SkillCardProps
   return (
     <div
       className={cn(
-        "w-full lg:max-w-xs min-h-16 flex flex-wrap items-center gap-5 bg-[#222b] hover:bg-[#333b] py-4 pl-4 cursor-default duration-300",
+        "w-full lg:min-w-fit lg:max-w-[300px] min-h-16 flex flex-wrap items-center gap-5 bg-[#222b] hover:bg-[#333b] py-4 px-4 cursor-default duration-300",
         renderLevel(level)
       )}
     >

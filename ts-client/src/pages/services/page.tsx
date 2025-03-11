@@ -10,7 +10,7 @@ export default function Services() {
       <SectionContainer>
         <SectionTitles title="SERVICES" subTitle="MY SERVICES" />
 
-        <div className="grid lg:grid-cols-3 gap-5 w-full">
+        <div className="grid w-full gap-5 lg:grid-cols-3">
           {content.services.map((service, idx) => {
             return (
               <ServiceCard

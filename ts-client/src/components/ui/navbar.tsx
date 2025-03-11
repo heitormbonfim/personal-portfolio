@@ -18,7 +18,10 @@ interface NavbarProps {
   mobileOnly?: boolean;
 }
 
-export default function Navbar({ transparentWhenTop, mobileOnly }: NavbarProps) {
+export default function Navbar({
+  transparentWhenTop,
+  mobileOnly,
+}: NavbarProps) {
   const [clientWindowHeight, setClientWindowHeight] = useState(0);
   const [backgroundTransparency, setBackgroundTransparency] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -27,10 +30,15 @@ export default function Navbar({ transparentWhenTop, mobileOnly }: NavbarProps) 
   useEffect(() => {
     if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth);
-      window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
+      window.addEventListener("resize", () =>
+        setWindowWidth(window.innerWidth),
+      );
     }
 
-    return () => window.removeEventListener("resize", () => setWindowWidth(window.innerWidth));
+    return () =>
+      window.removeEventListener("resize", () =>
+        setWindowWidth(window.innerWidth),
+      );
   }, []);
 
   useEffect(() => {
@@ -91,14 +99,18 @@ export default function Navbar({ transparentWhenTop, mobileOnly }: NavbarProps) 
 function NavbarLogo() {
   return (
     <Link to="/">
-      <span className="text-2xl font-bold mx-3 border-transparent hover:text-zinc-50 hover:border-b-2 hover:border-green-500 duration-150">
+      <span className="mx-3 border-transparent text-2xl font-bold duration-150 hover:border-b-2 hover:border-green-500 hover:text-zinc-50">
         Heitor M Bonfim
       </span>
     </Link>
   );
 }
 
-function MobileNavbar({ transparentWhenTop, backgroundTransparency, navButtons }: Navbar) {
+function MobileNavbar({
+  transparentWhenTop,
+  backgroundTransparency,
+  navButtons,
+}: Navbar) {
   const [showMenu, setShowMenu] = useState(false);
 
   function handleToggleMenu(event: React.MouseEvent<any>) {
@@ -109,15 +121,17 @@ function MobileNavbar({ transparentWhenTop, backgroundTransparency, navButtons }
 
   return (
     <nav
-      className={`fixed top-0 w-full z-30 transition-all ease-in duration-200 lg:hidden ${
+      className={`fixed inset-x-0 top-0 z-30 w-full transition-all duration-200 ease-in lg:hidden ${
         showMenu && "!bg-[#000d]"
       }`}
       style={{
-        background: transparentWhenTop ? `rgba(0, 0, 0, ${backgroundTransparency})` : "#000d",
+        background: transparentWhenTop
+          ? `rgba(0, 0, 0, ${backgroundTransparency})`
+          : "#000d",
       }}
     >
       <div
-        className={`flex justify-between items-center w-full mx-auto py-4 px-2 relative ${
+        className={`relative mx-auto flex w-full items-center justify-between px-2 py-4 ${
           showMenu && "backdrop-blur-sm"
         }`}
       >
@@ -125,7 +139,7 @@ function MobileNavbar({ transparentWhenTop, backgroundTransparency, navButtons }
 
         <MdOutlineMenuOpen
           size={35}
-          className={`text-zinc-100 mx-3 transition-all ease-in duration-200 ${
+          className={`mx-3 text-zinc-100 transition-all duration-200 ease-in ${
             showMenu && "rotate-180"
           }`}
           onClick={(event) => handleToggleMenu(event)}
@@ -133,20 +147,20 @@ function MobileNavbar({ transparentWhenTop, backgroundTransparency, navButtons }
       </div>
 
       <div
-        className={`backdrop-blur-sm fixed w-full h-full z-30 transition-transform ease-in duration-200 ${
+        className={`fixed z-30 h-full w-full backdrop-blur-sm transition-transform duration-200 ease-in ${
           !showMenu && "translate-x-full"
         } flex justify-end`}
         onClick={(event) => handleToggleMenu(event)}
       >
         <div
-          className="w-[60%] h-full bg-[#000d] flex flex-col justify-start gap-2 p-5"
+          className="flex h-full w-[60%] flex-col justify-start gap-2 bg-[#000d] p-5"
           onClick={(event) => event.stopPropagation()}
         >
           {navButtons.map((button, idx) => {
             return (
               <React.Fragment key={button.title + idx}>
                 <MenuButton
-                  className="w-full text-center font-bold text-2xl border-b-0"
+                  className="w-full border-b-0 text-center text-2xl font-bold"
                   href={button.href}
                   _blank={button._blank}
                 >
@@ -162,18 +176,24 @@ function MobileNavbar({ transparentWhenTop, backgroundTransparency, navButtons }
   );
 }
 
-function Desktop({ transparentWhenTop, backgroundTransparency, navButtons }: Navbar) {
+function Desktop({
+  transparentWhenTop,
+  backgroundTransparency,
+  navButtons,
+}: Navbar) {
   return (
     <nav
-      className={`fixed top-0 w-full z-30 ${!transparentWhenTop && "backdrop-blur-sm"}`}
+      className={`fixed top-0 z-30 w-full ${!transparentWhenTop && "backdrop-blur-sm"}`}
       style={{
-        background: transparentWhenTop ? `rgba(0, 0, 0, ${backgroundTransparency})` : "#000d",
+        background: transparentWhenTop
+          ? `rgba(0, 0, 0, ${backgroundTransparency})`
+          : "#000d",
       }}
     >
-      <div className="lg:flex justify-between items-center w-full max-w-[1320px] mx-auto py-4 px-2 hidden">
+      <div className="mx-auto hidden w-full max-w-[1320px] items-center justify-between px-2 py-4 lg:flex">
         <NavbarLogo />
 
-        <div className="flex justify-center items-center gap-5 mr-3">
+        <div className="mr-3 flex items-center justify-center gap-5">
           {navButtons.map((button, idx) => {
             return (
               <React.Fragment key={button.title + idx}>

@@ -161,7 +161,8 @@ export const content = {
     },
   ] as SkillCardProps[],
 
-  spotifyPlaylist: "https://open.spotify.com/playlist/7ANHh0Q9wCpwnA06pkUj4J?si=21481610592a4036",
+  spotifyPlaylist:
+    "https://open.spotify.com/playlist/7ANHh0Q9wCpwnA06pkUj4J?si=21481610592a4036",
 };
 
 function calculateDate(year: string): number {
