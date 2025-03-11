@@ -1,17 +1,67 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "sourceMap": false,
-    "rootDir": "ts-server",
-    "outDir": ".",
-    "removeComments": true
+    /* Language and Environment */
+    "target": "ES2022" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "lib": [
+      "ES2022",
+      "DOM"
+    ] /* Specify a set of bundled library declaration files that describe the target runtime environment. DOM is included for browser-like environments if needed, remove if purely backend. */,
+    "experimentalDecorators": true /* Enable experimental support for legacy decorators. */,
+    "emitDecoratorMetadata": true /* Emit design-type metadata for decorated declarations in emitted JavaScript. */,
+
+    /* Modules */
+    "module": "NodeNext" /* Specify module code generation to 'ESNext' for modern JavaScript modules (ESM), aligning with package.json "type": "module". */,
+    "moduleResolution": "NodeNext" /* 'NodeNext' is the most modern and recommended for Node.js ESM/CommonJS interoperability. */,
+    "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
+    "paths": {
+      /* Specify path re-mapping for module names. Useful for monorepos or aliasing. */ "*": ["./*"]
+    },
+    "resolveJsonModule": true /* Enable importing .json files as modules. */,
+
+    /* JavaScript Support */
+    "allowJs": true /* Allow JavaScript files to be a part of your project. Useful for gradual migration or mixed projects. */,
+    "checkJs": false /* Report errors in .js files. Consider enabling for stricter checking of JS too if `allowJs` is true. */,
+
+    /* Emit */
+    "outDir": "./dist" /* Specify an output folder for all emitted files. Good practice even if running with tsx for potential future builds or type checking output. */,
+    "noEmit": false /* Do not emit outputs. Set to true if you *only* want type checking and no JS output (e.g., if you're sure you'll only use tsx and no separate build). Set to `false` to allow emitting for potential builds. */,
+    "sourceMap": true /* Create source map files for emitted JavaScript code. Essential for debugging, even when running with tsx. */,
+    "declaration": false /* Generate .d.ts files from TypeScript and JavaScript files in your project. Usually not needed for backend applications, but can be useful for libraries. */,
+    "declarationMap": false /* Create sourcemaps for d.ts files. */,
+
+    /* Type Checking */
+    "strict": true /* Enable all strict type-checking options. Highly recommended for modern TypeScript projects. */,
+    "noImplicitAny": true /* Enable error reporting for expressions and declarations with an implied 'any' type. Part of 'strict'. */,
+    "strictNullChecks": true /* Enable strict null checks. Part of 'strict'. */,
+    "strictFunctionTypes": true /* Enable strict checking of function types. Part of 'strict'. */,
+    "strictBindCallApply": true /* Enable strict 'bind', 'call', and 'apply' methods on functions. Part of 'strict'. */,
+    "strictPropertyInitialization": true /* Enable strict checking of property initialization in classes. Part of 'strict'. */,
+    "noImplicitThis": true /* Raise error on 'this' expressions with an implied 'any' type. Part of 'strict'. */,
+    "alwaysStrict": true /* Ensure 'use strict' is always emitted. Part of 'strict'. */,
+    "noUnusedLocals": true /* Report errors on unused locals. Good practice for clean code. */,
+    "noUnusedParameters": true /* Report errors on unused parameters. Good practice for clean code. */,
+    "exactOptionalPropertyTypes": true /* Interpret optional property types as written, rather than adding 'undefined'. Part of 'strict'. */,
+    "noImplicitReturns": true /* Report error when not all code paths in function return a value. Good for catching logic errors. */,
+    "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statements. Prevents unintended fallthrough. */,
+    "noUncheckedIndexedAccess": true /* Add 'undefined' to a type when accessed using an index. Part of 'strictNullChecks'. */,
+    "noImplicitOverride": true /* Ensure overriding members in derived classes are marked with an override modifier. Part of 'strict'. */,
+    "noPropertyAccessFromIndexSignature": true /* Enforces using defined keys when accessing index signatures. Part of 'strict'. */,
+    "allowUnreachableCode": false /* Do not report errors on unreachable code. Set to `false` for stricter code quality. */,
+    "allowUnusedLabels": false /* Do not report errors on unused labels. Set to `false` for stricter code quality. */,
+
+    /* Completeness */
+    "skipLibCheck": false /* Skip type checking all .d.ts files. Set to `true` to speed up compilation if needed, but consider potential type definition issues in dependencies. `false` is recommended for stricter checking. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. Helps with cross-platform consistency, especially for case-sensitive file systems. */
   },
-  "include": ["ts-server/**/*.ts"],
-  "exclude": ["node_modules", "ts-client", "public"]
+  "include": [
+    "./*.ts" /* Include all TypeScript files in the root directory. Assuming your server files are now in the project root. */
+  ],
+  "exclude": [
+    "node_modules" /* Exclude the 'node_modules' directory. */,
+    "dist" /* Exclude the output directory. */,
+    "public" /* Exclude the output directory. */,
+    "**/*.spec.ts" /* Exclude test files (adjust pattern as needed). */,
+    "**/*.test.ts" /* Exclude test files (adjust pattern as needed). */
+    // Add other directories or file patterns to exclude, e.g., build scripts, temporary files, etc.
+  ]
 }
