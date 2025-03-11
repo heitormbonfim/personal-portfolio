@@ -1,17 +1,14 @@
-import dotenv from "dotenv";
-dotenv.config();
-
 import express, { Response, json } from "express";
 import { join } from "path";
-import logs from "./utils/log.js"; // IMPORTANT: Add .js extension here (see point 2 below)
+import logs from "./utils/log";
+import dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
-import { fileURLToPath } from "url";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = join(__filename, "..");
+
+dotenv.config();
 
 const server = express();
-const PORT = process.env["PORT"] || 5000;
-const DEVELOPMENT = process.env["NODE_ENV"] === "development";
+const PORT = process.env.PORT || 5000;
+const DEVELOPMENT = process.env.NODE_ENV === "development";
 
 const limiter = rateLimit({
   windowMs: 5 * 60 * 1000, // 5 minutes
@@ -29,7 +26,6 @@ server.use("/api/hello", function (_, res: Response) {
 });
 
 // Serve static files
-
 export const staticFilesPath = join(__dirname, "public", "index.html");
 server.use(express.static(join(__dirname, "public")));
 server.get("*", (_, res) => res.sendFile(staticFilesPath));
