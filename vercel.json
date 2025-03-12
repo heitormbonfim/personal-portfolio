@@ -19,7 +19,7 @@
       "handle": "filesystem"
     },
     {
-      "src": "/(.*)",
+      "src": "/(?!api)(?!.*\\.[^/]+$)(.*)",
       "dest": "/dist/public/index.html"
     }
   ]
