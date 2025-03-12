@@ -1,4 +1,4 @@
-import express, { Request, Response, json } from "express";
+import express, { Response, json } from "express";
 import { join } from "path";
 import logs from "./utils/log";
 import dotenv from "dotenv";
@@ -9,7 +9,7 @@ const portFlag = process.argv[2];
 const portArg = process.argv[3];
 let PORT: number | string = 5000;
 
-if (portFlag === "--port" && portArg) {
+if (portFlag == "--port" && portArg) {
   const portNum = Number(portArg);
   if (isNaN(portNum)) {
     throw new Error("Port must be a number");
@@ -29,13 +29,13 @@ const limiter = rateLimit({
   max: 200, // max requests
 });
 
-// Configs
+// configs
 server.use(limiter);
 server.use(json());
 server.use(logs);
 
-// API routes
-server.use("/api/hello", (_, res: Response) => {
+// Api routes
+server.use("/api/hello", function (_, res: Response) {
   res.status(200).json({ error: false, message: "Hello, this API Version 1 is working" });
 });
 
@@ -44,26 +44,21 @@ export const staticFilesPath = join(__dirname, "public", "index.html");
 server.use(express.static(join(__dirname, "public")));
 server.get("*", (_, res) => res.sendFile(staticFilesPath));
 
-// When running locally, start the server.
-if (!process.env.VERCEL) {
-  server.listen(PORT, () => {
-    const env = DEVELOPMENT ? "DEVELOPMENT" : "PRODUCTION";
-    const logData = {
-      timestamp: new Date().toLocaleString("en", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-      message: "Server is running",
-      port: PORT,
-      mode: env,
-    };
-    console.info(logData);
-  });
-}
-
-// Export a handler for Vercel
-export default (req: Request, res: Response) => server(req, res);
+// Start server
+server.listen(PORT, () => {
+  const env = DEVELOPMENT ? "DEVELOPMENT" : "PRODUCTION";
+  const logData = {
+    timestamp: new Date().toLocaleString("en", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    }),
+    message: "Server is running",
+    port: PORT,
+    mode: env,
+  };
+  console.info(logData);
+});
