@@ -27,12 +27,6 @@ export default function GitHubRepos({ username }: GitHubReposProps) {
 
   return (
     <div>
-      <p className="mb-10 flex w-full justify-center py-2 text-xs font-semibold lg:justify-end">
-        <div className="border-b-2 border-zinc-500">
-          Amount of Public Repos:
-          <span className="text-green-500">{repos.length}</span>
-        </div>
-      </p>
       <div className="flex flex-col gap-3">
         {repos.map((repo) => (
           <a

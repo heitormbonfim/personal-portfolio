@@ -17,6 +17,9 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
+      gsap:
+        specifier: ^3.12.7
+        version: 3.12.7
       lucide-react:
         specifier: ^0.364.0
         version: 0.364.0(react@18.2.0)
@@ -49,19 +52,19 @@ importers:
         specifier: ^20.12.4
         version: 20.12.4
       '@types/react':
-        specifier: ^18.2.66
+        specifier: ^18.2.74
         version: 18.2.74
       '@types/react-dom':
-        specifier: ^18.2.22
+        specifier: ^18.2.23
         version: 18.2.23
       '@typescript-eslint/eslint-plugin':
-        specifier: ^7.2.0
+        specifier: ^7.5.0
         version: 7.5.0(@typescript-eslint/parser@7.5.0(eslint@8.57.0)(typescript@5.4.3))(eslint@8.57.0)(typescript@5.4.3)
       '@typescript-eslint/parser':
-        specifier: ^7.2.0
+        specifier: ^7.5.0
         version: 7.5.0(eslint@8.57.0)(typescript@5.4.3)
       '@vitejs/plugin-react-swc':
-        specifier: ^3.5.0
+        specifier: ^3.6.0
         version: 3.6.0(vite@5.2.7(@types/node@20.12.4))
       autoprefixer:
         specifier: ^10.4.19
@@ -82,10 +85,10 @@ importers:
         specifier: ^3.4.3
         version: 3.4.3
       typescript:
-        specifier: ^5.2.2
+        specifier: ^5.4.3
         version: 5.4.3
       vite:
-        specifier: ^5.2.0
+        specifier: ^5.2.7
         version: 5.2.7(@types/node@20.12.4)
 
 packages:
@@ -649,8 +652,8 @@ packages:
     resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
     engines: {node: '>= 6'}
 
-  caniuse-lite@1.0.30001605:
-    resolution: {integrity: sha512-nXwGlFWo34uliI9z3n6Qc0wZaf7zaZWA1CPZ169La5mV3I/gem7bst0vr5XQH5TJXZIMfDeZyOrZnSlVzKxxHQ==}
+  caniuse-lite@1.0.30001703:
+    resolution: {integrity: sha512-kRlAGTRWgPsOj7oARC9m1okJEXdL/8fekFVcxA8Hl7GH4r/sN4OJn/i6Flde373T50KS7Y37oFbMwlE8+F42kQ==}
 
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -872,6 +875,9 @@ packages:
 
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
+
+  gsap@3.12.7:
+    resolution: {integrity: sha512-V4GsyVamhmKefvcAKaoy0h6si0xX7ogwBoBSs2CTJwt7luW0oZzC0LhdkyuKV8PJAXr7Yaj8pMjCKD4GJ+eEMg==}
 
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
@@ -1884,7 +1890,7 @@ snapshots:
   autoprefixer@10.4.19(postcss@8.4.38):
     dependencies:
       browserslist: 4.23.0
-      caniuse-lite: 1.0.30001605
+      caniuse-lite: 1.0.30001703
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1910,7 +1916,7 @@ snapshots:
 
   browserslist@4.23.0:
     dependencies:
-      caniuse-lite: 1.0.30001605
+      caniuse-lite: 1.0.30001703
       electron-to-chromium: 1.4.723
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
@@ -1919,7 +1925,7 @@ snapshots:
 
   camelcase-css@2.0.1: {}
 
-  caniuse-lite@1.0.30001605: {}
+  caniuse-lite@1.0.30001703: {}
 
   chalk@4.1.2:
     dependencies:
@@ -2190,6 +2196,8 @@ snapshots:
       slash: 3.0.0
 
   graphemer@1.4.0: {}
+
+  gsap@3.12.7: {}
 
   has-flag@4.0.0: {}
 

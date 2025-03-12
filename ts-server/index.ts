@@ -42,7 +42,7 @@ server.use("/api/hello", function (_, res: Response) {
 // Serve static files
 export const staticFilesPath = join(__dirname, "public", "index.html");
 server.use(express.static(join(__dirname, "public")));
-server.get("*", (_, res) => res.sendFile(staticFilesPath));
+server.use("/:any", express.static(join(__dirname, "public")));
 
 // Start server
 server.listen(PORT, () => {
