@@ -31,11 +31,13 @@ const path_1 = require("path");
 const log_1 = __importDefault(require("./utils/log"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const express_rate_limit_1 = __importDefault(require("express-rate-limit"));
+const helmet_1 = __importDefault(require("helmet"));
+const compression_1 = __importDefault(require("compression"));
 dotenv_1.default.config();
 const portFlag = process.argv[2];
 const portArg = process.argv[3];
 let PORT = 5000;
-if (portFlag == "--port" && portArg) {
+if (portFlag === "--port" && portArg) {
     const portNum = Number(portArg);
     if (isNaN(portNum)) {
         throw new Error("Port must be a number");
@@ -56,11 +58,25 @@ const limiter = (0, express_rate_limit_1.default)({
 server.use(limiter);
 server.use((0, express_1.json)());
 server.use(log_1.default);
-server.use("/api/hello", function (_, res) {
+server.use((0, helmet_1.default)());
+server.use((0, compression_1.default)());
+server.use("/api/hello", (_, res) => {
     res.status(200).json({ error: false, message: "Hello, this API Version 1 is working" });
 });
-server.use(express_1.default.static((0, path_1.join)(__dirname, "public")));
-server.use("*", express_1.default.static((0, path_1.join)(__dirname, "public", "index.html")));
+const publicPath = (0, path_1.join)(__dirname, "public");
+server.use(express_1.default.static(publicPath, { maxAge: "30d" }));
+server.get("*", (req, res) => {
+    res.sendFile((0, path_1.join)(publicPath, "index.html"), (err) => {
+        if (err) {
+            console.error("Error serving index.html:", err);
+            res.status(500).send(err);
+        }
+    });
+});
+server.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send("Something broke!");
+});
 server.listen(PORT, () => {
     const env = DEVELOPMENT ? "DEVELOPMENT" : "PRODUCTION";
     const logData = {

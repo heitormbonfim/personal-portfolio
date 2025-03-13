@@ -83,6 +83,10 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({
   }, [speed, scrollThreshold]);
 
   useEffect(() => {
+    resetScrollValuesWhenChangingPages();
+  }, [reactLocation.pathname]);
+
+  function resetScrollValuesWhenChangingPages() {
     if (animationFrameId.current) {
       cancelAnimationFrame(animationFrameId.current);
       animationFrameId.current = undefined;
@@ -93,7 +97,7 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({
     lastDeltaY.current = 0;
 
     window.scroll({ top: 0, left: 0, behavior: "instant" });
-  }, [reactLocation.pathname]);
+  }
 
   return <>{children}</>;
 };
