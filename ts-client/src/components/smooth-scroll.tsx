@@ -1,16 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 interface SmoothScrollProps {
   children: React.ReactNode;
   speed?: number;
   scrollThreshold?: number;
+  scrollProgressBar?: boolean;
 }
 
 const SmoothScroll: React.FC<SmoothScrollProps> = ({
   children,
   speed = 0.8,
   scrollThreshold = 100,
+  scrollProgressBar = false,
 }) => {
   const targetScrollY = useRef(window.scrollY);
   const animationFrameId = useRef<number>();
@@ -18,6 +20,19 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({
   const timeStamp = useRef(0);
   const accumulatedDelta = useRef(0);
   const reactLocation = useLocation();
+  const progressBarRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const updateProgressBar = () => {
+    const scrollHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / scrollHeight) * 100;
+    setScrollProgress(progress);
+
+    if (progressBarRef.current) {
+      progressBarRef.current.style.transform = `scaleX(${progress / 100})`;
+    }
+  };
 
   const animateScroll = () => {
     const currentScrollY = window.scrollY;
@@ -25,10 +40,12 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({
 
     if (Math.abs(difference) > 1) {
       window.scrollTo(0, currentScrollY + difference * 0.1);
+      updateProgressBar();
       animationFrameId.current = requestAnimationFrame(animateScroll);
     } else {
       window.scrollTo(0, targetScrollY.current);
       animationFrameId.current = undefined;
+      updateProgressBar();
     }
   };
 
@@ -95,11 +112,26 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({
     targetScrollY.current = 0;
     accumulatedDelta.current = 0;
     lastDeltaY.current = 0;
+    setScrollProgress(0);
 
     window.scroll({ top: 0, left: 0, behavior: "instant" });
   }
 
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      {scrollProgressBar && (
+        <div
+          ref={progressBarRef}
+          className="pointer-events-none fixed bottom-0 left-0 h-1 origin-left bg-green-500 transition-transform duration-300"
+          style={{
+            transform: `scaleX(${scrollProgress / 100})`,
+            width: "100%",
+          }}
+        />
+      )}
+    </>
+  );
 };
 
 export default SmoothScroll;

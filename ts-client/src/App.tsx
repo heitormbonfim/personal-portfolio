@@ -16,7 +16,7 @@ export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <SmoothScroll speed={1} scrollThreshold={120}>
+    <SmoothScroll speed={1} scrollThreshold={120} scrollProgressBar>
       {!isLoaded && <FirstLoading onComplete={() => setIsLoaded(true)} />}
       <div
         className={`bg-image min-h-screen transition-opacity duration-700 ${
