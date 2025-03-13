@@ -36,22 +36,19 @@ const limiter = rateLimit({
 server.use(limiter);
 server.use(json());
 server.use(logs);
+server.use(helmet()); // security
+server.use(compression()); // performance
 
-// Security and performance enhancements
-server.use(helmet());
-server.use(compression());
-
-// API route example
+// API routes
 server.use("/api/hello", (_: Request, res: Response) => {
   res.status(200).json({ error: false, message: "Hello, this API Version 1 is working" });
 });
 
 // Serve static assets with caching (adjust maxAge as needed)
 const publicPath = join(__dirname, "public");
-server.use(express.static(publicPath, { maxAge: "30d" }));
+server.use(express.static(publicPath, { maxAge: "1d" }));
 
-// Catch-all route for React's index.html (only GET requests)
-server.get("*", (req: Request, res: Response) => {
+server.get("*", (_: Request, res: Response) => {
   res.sendFile(join(publicPath, "index.html"), (err) => {
     if (err) {
       console.error("Error serving index.html:", err);
@@ -61,7 +58,7 @@ server.get("*", (req: Request, res: Response) => {
 });
 
 // Global error handling middleware
-server.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+server.use((err: Error, _: Request, res: Response) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
 });

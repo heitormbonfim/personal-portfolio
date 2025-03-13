@@ -64,8 +64,8 @@ server.use("/api/hello", (_, res) => {
     res.status(200).json({ error: false, message: "Hello, this API Version 1 is working" });
 });
 const publicPath = (0, path_1.join)(__dirname, "public");
-server.use(express_1.default.static(publicPath, { maxAge: "30d" }));
-server.get("*", (req, res) => {
+server.use(express_1.default.static(publicPath, { maxAge: "1d" }));
+server.get("*", (_, res) => {
     res.sendFile((0, path_1.join)(publicPath, "index.html"), (err) => {
         if (err) {
             console.error("Error serving index.html:", err);
@@ -73,7 +73,7 @@ server.get("*", (req, res) => {
         }
     });
 });
-server.use((err, req, res, next) => {
+server.use((err, _, res) => {
     console.error(err.stack);
     res.status(500).send("Something broke!");
 });
