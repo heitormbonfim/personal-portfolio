@@ -10,7 +10,7 @@ export const content = {
   >writer</span>`,
   socials: [
     {
-      url: "https://api.whatsapp.com/send/?phone=5588993205605&text&type=phone_number&app_absent=0",
+      url: "https://api.whatsapp.com/send/?phone=5588999978427&text&type=phone_number&app_absent=0",
       icon: FaWhatsapp,
     },
     {
