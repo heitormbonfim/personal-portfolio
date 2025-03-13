@@ -12,7 +12,7 @@ export default function Portfolio() {
       <SectionContainer>
         <SectionTitles title="PORTFOLIO" subTitle="MY WORKS" />
 
-        <div className="mb-20 flex flex-wrap justify-center gap-5">
+        <div className="mb-20 inline-grid w-full grid-cols-1 justify-items-center gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           {content.projects.map((project, idx) => {
             return (
               <ProjectCard

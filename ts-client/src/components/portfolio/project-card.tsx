@@ -13,7 +13,7 @@ export function ProjectCard({ url, title, content, img }: ProjectCardProps) {
   );
 
   return (
-    <div className="block w-full max-w-md transform transition duration-300 hover:scale-[101%]">
+    <div className="block w-full max-w-sm transform transition duration-300 hover:scale-[101%]">
       {cardContent}
     </div>
   );
