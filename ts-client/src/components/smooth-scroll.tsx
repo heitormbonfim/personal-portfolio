@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 interface SmoothScrollProps {
   children: React.ReactNode;
@@ -16,6 +17,7 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({
   const lastDeltaY = useRef(0);
   const timeStamp = useRef(0);
   const accumulatedDelta = useRef(0);
+  const reactLocation = useLocation();
 
   const animateScroll = () => {
     const currentScrollY = window.scrollY;
@@ -79,6 +81,19 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [speed, scrollThreshold]);
+
+  useEffect(() => {
+    if (animationFrameId.current) {
+      cancelAnimationFrame(animationFrameId.current);
+      animationFrameId.current = undefined;
+    }
+
+    targetScrollY.current = 0;
+    accumulatedDelta.current = 0;
+    lastDeltaY.current = 0;
+
+    window.scroll({ top: 0, left: 0, behavior: "instant" });
+  }, [reactLocation.pathname]);
 
   return <>{children}</>;
 };

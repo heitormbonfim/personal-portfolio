@@ -40,9 +40,8 @@ server.use("/api/hello", function (_, res: Response) {
 });
 
 // Serve static files
-export const staticFilesPath = join(__dirname, "public", "index.html");
 server.use(express.static(join(__dirname, "public")));
-server.use("/:any", express.static(join(__dirname, "public")));
+server.use("*", express.static(join(__dirname, "public", "index.html")));
 
 // Start server
 server.listen(PORT, () => {

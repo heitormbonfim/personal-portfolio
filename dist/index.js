@@ -26,7 +26,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.staticFilesPath = void 0;
 const express_1 = __importStar(require("express"));
 const path_1 = require("path");
 const log_1 = __importDefault(require("./utils/log"));
@@ -60,9 +59,8 @@ server.use(log_1.default);
 server.use("/api/hello", function (_, res) {
     res.status(200).json({ error: false, message: "Hello, this API Version 1 is working" });
 });
-exports.staticFilesPath = (0, path_1.join)(__dirname, "public", "index.html");
 server.use(express_1.default.static((0, path_1.join)(__dirname, "public")));
-server.use("/:any", express_1.default.static((0, path_1.join)(__dirname, "public")));
+server.use("*", express_1.default.static((0, path_1.join)(__dirname, "public", "index.html")));
 server.listen(PORT, () => {
     const env = DEVELOPMENT ? "DEVELOPMENT" : "PRODUCTION";
     const logData = {
