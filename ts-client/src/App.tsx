@@ -3,7 +3,7 @@ import { lazy, Suspense, useState } from "react";
 import { FirstLoading } from "./components/first-load";
 
 import Loading from "./components/loading";
-import SmoothScroll from "./components/smooth-scroll";
+// import SmoothScroll from "./components/smooth-scroll";
 
 const Home = lazy(() => import("@/pages/home/page"));
 const About = lazy(() => import("@/pages/about/page"));
@@ -16,7 +16,8 @@ export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <SmoothScroll speed={1} scrollThreshold={120} scrollProgressBar>
+    <>
+      {/* <SmoothScroll speed={1} scrollThreshold={120} scrollProgressBar> */}
       {!isLoaded && <FirstLoading onComplete={() => setIsLoaded(true)} />}
       <div
         className={`bg-image min-h-screen transition-opacity duration-700 ${
@@ -34,6 +35,7 @@ export default function App() {
           </Routes>
         </Suspense>
       </div>
-    </SmoothScroll>
+      {/* </SmoothScroll> */}
+    </>
   );
 }
