@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 
 interface Repo {
   id: number;
@@ -28,20 +29,29 @@ export default function GitHubRepos({ username }: GitHubReposProps) {
   return (
     <div>
       <div className="flex flex-col gap-3">
-        {repos.map((repo) => (
-          <a
-            key={repo.id}
-            href={`https://github.com/${username}/${repo.name}`}
-            target="_blank"
-          >
-            <div className="border-b-2 border-zinc-600 py-2 duration-300 hover:border-green-500 hover:text-green-500">
-              <h3 className="text-lg font-semibold">{repo.name}</h3>
-              {repo.description && (
-                <p className="mt-1 text-xs">{repo.description}</p>
-              )}
-            </div>
-          </a>
-        ))}
+        <AnimatePresence>
+          {repos.map((repo) => (
+            <motion.a
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.4,
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+              key={repo.id}
+              href={`https://github.com/${username}/${repo.name}`}
+              target="_blank"
+            >
+              <div className="border-b-2 border-zinc-600 py-2 duration-300 hover:border-green-500 hover:text-green-500">
+                <h3 className="text-lg font-semibold">{repo.name}</h3>
+                {repo.description && (
+                  <p className="mt-1 text-xs">{repo.description}</p>
+                )}
+              </div>
+            </motion.a>
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   );

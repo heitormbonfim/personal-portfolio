@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useContext, useState } from "react";
 import { FirstLoading } from "./components/first-load";
-
 import Loading from "./components/loading";
-// import SmoothScroll from "./components/smooth-scroll";
+import ScrollProgress from "./components/scroll-progress";
+import { GlobalContext } from "./contexts/Global";
 
 const Home = lazy(() => import("@/pages/home/page"));
 const About = lazy(() => import("@/pages/about/page"));
@@ -14,11 +14,18 @@ const Portfolio = lazy(() => import("@/pages/portfolio/page"));
 
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const { setLoading } = useContext(GlobalContext);
 
   return (
     <>
-      {/* <SmoothScroll speed={1} scrollThreshold={120} scrollProgressBar> */}
-      {!isLoaded && <FirstLoading onComplete={() => setIsLoaded(true)} />}
+      {!isLoaded && (
+        <FirstLoading
+          onComplete={() => {
+            setIsLoaded(true);
+            setLoading(false);
+          }}
+        />
+      )}
       <div
         className={`bg-image min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
@@ -34,8 +41,8 @@ export default function App() {
             <Route path="*" element={<Page404 />} />
           </Routes>
         </Suspense>
+        <ScrollProgress />
       </div>
-      {/* </SmoothScroll> */}
     </>
   );
 }

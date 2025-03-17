@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -69,7 +70,7 @@ export default function Navbar({
 
   useEffect(() => {
     if (transparentWhenTop) {
-      let backgroundTransparencyVar = clientWindowHeight / 600;
+      const backgroundTransparencyVar = clientWindowHeight / 600;
 
       if (backgroundTransparencyVar < 1) {
         setBackgroundTransparency(backgroundTransparencyVar);

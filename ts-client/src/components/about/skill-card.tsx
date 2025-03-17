@@ -8,12 +8,17 @@ export interface SkillCardProps {
   level: "noob" | "intermediate" | "advanced";
 }
 
-export function SkillCard({ name, icon: Icon, iconStyle, level }: SkillCardProps) {
+export function SkillCard({
+  name,
+  icon: Icon,
+  iconStyle,
+  level,
+}: SkillCardProps) {
   return (
     <div
       className={cn(
-        "w-full lg:min-w-fit lg:max-w-[300px] min-h-16 flex flex-wrap items-center gap-5 bg-[#222b] hover:bg-[#333b] py-4 px-4 cursor-default duration-300",
-        renderLevel(level)
+        "flex min-h-16 w-full cursor-default flex-wrap items-center gap-5 bg-[#222b] px-4 py-4 duration-300 hover:bg-[#333b]",
+        renderLevel(level),
       )}
     >
       <Icon size={30} className={iconStyle} />
