@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { lazy, Suspense, useContext, useEffect, useState } from "react";
+import { lazy, Suspense, useContext, useState } from "react";
 import { FirstLoading } from "./components/first-load";
 import Loading from "./components/loading";
 import ScrollProgress from "./components/scroll-progress";
@@ -15,10 +15,6 @@ const Portfolio = lazy(() => import("@/pages/portfolio/page"));
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(true);
   const { setLoading } = useContext(GlobalContext);
-
-  useEffect(() => {
-    setLoading(false);
-  }, []);
 
   return (
     <>
