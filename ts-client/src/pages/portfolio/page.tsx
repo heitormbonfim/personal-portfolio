@@ -11,7 +11,7 @@ import Loading from "../../components/loading";
 import { AnimatePresence, motion } from "motion/react";
 
 export default function Portfolio() {
-  const { loading } = useContext(GlobalContext);
+  const { loading, isMobile } = useContext(GlobalContext);
 
   if (loading) {
     return <Loading />;
@@ -31,8 +31,8 @@ export default function Portfolio() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 0.6,
-                    delay: idx * 0.2,
+                    duration: 0.2,
+                    delay: isMobile ? 0.2 : idx * 0.2,
                   }}
                 >
                   <ProjectCard
@@ -51,10 +51,10 @@ export default function Portfolio() {
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
-            duration: 0.6,
+            duration: 0.2,
             delay: 0.4,
           }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.05 }}
           className="mb-5 flex w-full items-center justify-center gap-2 text-xl font-semibold lg:gap-3 lg:text-3xl"
         >
           <FaGithub /> GitHub{" "}

@@ -35,10 +35,10 @@ export default function GitHubRepos({ username }: GitHubReposProps) {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
-                duration: 0.6,
-                delay: 0.4,
+                duration: 0.2,
+                delay: 0.2,
               }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.05 }}
               key={repo.id}
               href={`https://github.com/${username}/${repo.name}`}
               target="_blank"

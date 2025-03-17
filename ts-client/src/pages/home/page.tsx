@@ -29,7 +29,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.6,
+                duration: 0.2,
                 delay: 0.2,
               }}
               className="mb-5 text-center text-4xl font-bold text-zinc-50 lg:text-start lg:text-5xl"
@@ -40,7 +40,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.6,
+                duration: 0.2,
                 delay: 0.4,
               }}
               className="mb-10 text-center text-lg font-semibold lg:max-w-xl lg:text-start lg:text-2xl lg:font-normal"
@@ -56,7 +56,7 @@ export default function Home() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{
-                        duration: 0.6,
+                        duration: 0.2,
                         delay: 0.2,
                       }}
                     >
@@ -73,7 +73,7 @@ export default function Home() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{
-                      duration: 0.6,
+                      duration: 0.2,
                       delay: (idx + 1) * 0.2,
                     }}
                   >
@@ -92,7 +92,7 @@ export default function Home() {
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
-                      duration: 0.6,
+                      duration: 0.2,
                       delay: (idx + 1) * 0.2,
                     }}
                     key={item.url + idx}
@@ -109,7 +109,7 @@ export default function Home() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.6,
+                duration: 0.2,
                 delay: 0.6,
               }}
               className="mt-6 text-center lg:hidden"

@@ -12,7 +12,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { RevealOnScroll } from "../../components/reveal-on-scroll";
 
 export default function About() {
-  const { loading } = useContext(GlobalContext);
+  const { loading, isMobile } = useContext(GlobalContext);
 
   if (loading) {
     return <Loading />;
@@ -29,7 +29,7 @@ export default function About() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
-                duration: 0.6,
+                duration: 0.2,
                 delay: 0.2,
               }}
               className="w-full lg:w-[30%] lg:pt-2"
@@ -49,7 +49,7 @@ export default function About() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
-                  duration: 0.6,
+                  duration: 0.2,
                   delay: 0.2,
                 }}
                 className="mb-2 text-xl font-semibold text-green-500 lg:text-3xl"
@@ -61,7 +61,7 @@ export default function About() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
-                  duration: 0.6,
+                  duration: 0.2,
                   delay: 0.4,
                 }}
                 className="mb-4 text-justify italic"
@@ -73,7 +73,7 @@ export default function About() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
-                  duration: 0.6,
+                  duration: 0.2,
                   delay: 0.6,
                 }}
                 className="my-10 flex flex-wrap items-center justify-center gap-y-4"
@@ -84,11 +84,12 @@ export default function About() {
                       <motion.div
                         key={`${item.title}-${idx}`}
                         initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         transition={{
-                          duration: 0.6,
-                          delay: idx * 0.2,
+                          duration: 0.2,
+                          delay: isMobile ? 0.2 : idx * 0.2,
                         }}
+                        viewport={{ once: true, amount: 0.05 }}
                         className="w-full max-w-xs"
                       >
                         <InfoArrow title={item.title} content={item.content} />
@@ -102,7 +103,7 @@ export default function About() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.6,
+                  duration: 0.2,
                   delay: 0.4,
                 }}
                 className="text-justify"
@@ -146,10 +147,10 @@ export default function About() {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{
-                          duration: 0.6,
-                          delay: idx * 0.2,
+                          duration: 0.2,
+                          delay: isMobile ? 0.2 : idx * 0.2,
                         }}
-                        viewport={{ once: true, amount: 0 }}
+                        viewport={{ once: true, amount: 0.05 }}
                         className="w-full md:max-w-fit"
                       >
                         <SkillCard
