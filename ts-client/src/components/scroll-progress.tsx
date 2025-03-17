@@ -10,6 +10,8 @@ const ScrollProgress: React.FC = () => {
       const scrollHeight =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
+
+      console.log({ scrollHeight, scrollTop });
       setProgress((scrollTop / scrollHeight) * 100);
     };
 
