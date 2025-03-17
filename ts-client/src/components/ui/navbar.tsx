@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { MenuButton } from "./menu-button";
 import { NavButtons, navButtons } from "@/utils/navbar-buttons";
-import { GlobalContext } from "../../contexts/Global";
 
 interface Navbar extends NavbarTransparency {
   navButtons: NavButtons[];
@@ -24,15 +23,38 @@ export default function Navbar({
   transparentWhenTop,
   mobileOnly,
 }: NavbarProps) {
-  const { isMobile, setIsMobile } = useContext(GlobalContext);
   const [clientWindowHeight, setClientWindowHeight] = useState(0);
   const [backgroundTransparency, setBackgroundTransparency] = useState(0);
+
+  const [isMobile, setIsMobile] = useState(false);
+  const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", () =>
+        setWindowWidth(window.innerWidth),
+      );
+    }
+
+    return () =>
+      window.removeEventListener("resize", () =>
+        setWindowWidth(window.innerWidth),
+      );
+  }, []);
 
   useEffect(() => {
     if (mobileOnly) {
       return setIsMobile(true);
     }
-  }, []);
+
+    if (windowWidth && windowWidth < 1024) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [windowWidth]);
 
   useEffect(() => {
     if (transparentWhenTop) {
