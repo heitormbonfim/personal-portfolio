@@ -13,7 +13,7 @@ const Services = lazy(() => import("@/pages/services/page"));
 const Portfolio = lazy(() => import("@/pages/portfolio/page"));
 
 export default function App() {
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const { setLoading } = useContext(GlobalContext);
 
   return (
