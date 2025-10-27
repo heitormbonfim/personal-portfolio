@@ -1,52 +1,26 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./dist/index.js",
-  "type": "commonjs",
-  "engines": {
-    "node": ">=18.x.x <=22.x.x"
-  },
+  "name": "personal-portfolio",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "tsx watch ./ts-server/index.ts",
-    "client:dev": "cd ts-client; pnpm run dev",
-    "client:deploy": "cd ts-client; pnpm run:deploy --port $PORT",
-    "client:build": "cd ts-client; pnpm run build",
-    "server:build": "tsc -p .",
-    "build": "pnpm client:build; pnpm server:build",
-    "start": "node ./dist/index.js"
-  },
-  "keywords": [
-    "portfolio",
-    "nodejs",
-    "reactjs",
-    "typescript",
-    "javascript",
-    "express",
-    "tailwindcss",
-    "shadcn",
-    "fullstack"
-  ],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/compression": "^1.7.5",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.12.5",
-    "tsx": "^4.7.2",
-    "typescript": "^5.4.4"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
   "dependencies": {
-    "compression": "^1.8.0",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "express-rate-limit": "^7.5.0",
-    "helmet": "^8.0.0"
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "next": "16.0.0"
   },
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "esbuild"
-    ]
-  },
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.0"
+  }
 }
