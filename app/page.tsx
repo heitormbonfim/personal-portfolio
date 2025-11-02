@@ -52,7 +52,7 @@ export default function Home() {
               {navButtons.map((item, idx) => {
                 return (
                   <motion.div
-                    key={item.title + idx}
+                    key={item.href || item.title}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{
@@ -78,7 +78,7 @@ export default function Home() {
                       duration: 0.2,
                       delay: (idx + 1) * 0.2,
                     }}
-                    key={item.url + idx}
+                    key={item.url}
                   >
                     <Social href={item.url}>
                       <item.icon size={20} />

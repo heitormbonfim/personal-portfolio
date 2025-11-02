@@ -15,21 +15,33 @@ interface GitHubReposProps {
 
 export default function GitHubRepos({ username }: GitHubReposProps) {
   const [repos, setRepos] = useState<Repo[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${username}/repos`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch repositories");
+        }
+        return response.json();
+      })
       .then((data) => {
         const sortedRepos = data.sort((a: Repo, b: Repo) =>
           a.name.localeCompare(b.name),
         );
         setRepos(sortedRepos);
+        setError(null);
       })
-      .catch((error) => console.error("Error fetching repos:", error));
+      .catch(() => {
+        setError("Failed to load repositories");
+      });
   }, [username]);
 
   return (
     <div>
+      {error && (
+        <p className="text-center text-red-400">{error}</p>
+      )}
       <div className="flex flex-col gap-3">
         <AnimatePresence>
           {repos.map((repo) => (
@@ -44,6 +56,7 @@ export default function GitHubRepos({ username }: GitHubReposProps) {
               key={repo.id}
               href={`https://github.com/${username}/${repo.name}`}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="border-b-2 border-zinc-600 py-2 duration-300 hover:border-green-500 hover:text-green-500">
                 <h3 className="text-lg font-semibold">{repo.name}</h3>

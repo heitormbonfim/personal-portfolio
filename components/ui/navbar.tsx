@@ -1,6 +1,5 @@
 "use client";
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import Link from "next/link";
@@ -34,15 +33,10 @@ export default function Navbar({
   useEffect(() => {
     if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth);
-      window.addEventListener("resize", () =>
-        setWindowWidth(window.innerWidth),
-      );
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
     }
-
-    return () =>
-      window.removeEventListener("resize", () =>
-        setWindowWidth(window.innerWidth),
-      );
   }, []);
 
   useEffect(() => {
@@ -55,8 +49,7 @@ export default function Navbar({
     } else {
       setIsMobile(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [windowWidth]);
+  }, [windowWidth, mobileOnly]);
 
   useEffect(() => {
     if (transparentWhenTop) {
@@ -118,7 +111,7 @@ function MobileNavbar({
 }: Navbar) {
   const [showMenu, setShowMenu] = useState(false);
 
-  function handleToggleMenu(event: React.MouseEvent<any>) {
+  function handleToggleMenu(event: React.MouseEvent<HTMLElement | SVGElement>) {
     event.stopPropagation();
 
     setShowMenu((prev) => !prev);

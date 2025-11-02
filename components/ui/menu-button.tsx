@@ -31,11 +31,11 @@ export function MenuButton({
         currentPathname.toLowerCase() === currentPage.toLowerCase()
       );
     }
-  }, [href, pathname]); // Update when either href or pathname changes
+  }, [href, pathname]);
 
   if (href && _blank) {
     return (
-      <a href={href} target="_blank">
+      <a href={href} target="_blank" rel="noopener noreferrer">
         <button
           onClick={onClick}
           className={cn(

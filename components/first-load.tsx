@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -9,6 +9,11 @@ interface LoadingScreenProps {
 export const FirstLoading: React.FC<LoadingScreenProps> = ({ onComplete }) => {
   const [text, setText] = useState<string>("");
   const fullText: string = "<Heitor M Bonfim />";
+  const onCompleteRef = useRef(onComplete);
+
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   useEffect(() => {
     let index = 0;
@@ -19,13 +24,13 @@ export const FirstLoading: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       if (index > fullText.length) {
         clearInterval(interval);
         setTimeout(() => {
-          onComplete();
-        }, 300);
+          onCompleteRef.current();
+        }, 1000);
       }
-    }, 30);
+    }, 50);
 
     return () => clearInterval(interval);
-  }, [onComplete]);
+  }, []);
 
   return (
     <div
