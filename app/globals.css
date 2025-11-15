@@ -152,11 +152,11 @@ body {
     linear-gradient(
       to right,
       rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 1)
     ),
-    url("/assets/desktop-bg.webp");
+    url("/assets/desktop-bg.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
