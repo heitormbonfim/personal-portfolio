@@ -24,9 +24,20 @@ export default function GlobalProvider({
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const handleResize = () => setWindowWidth(window.innerWidth);
+      let timeoutId: NodeJS.Timeout;
+
+      const handleResize = () => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          setWindowWidth(window.innerWidth);
+        }, 150);
+      };
+
       window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
+      return () => {
+        clearTimeout(timeoutId);
+        window.removeEventListener("resize", handleResize);
+      };
     }
   }, []);
 

@@ -30,12 +30,11 @@ export default function Portfolio() {
               <motion.div
                 key={project.title + idx}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.2,
-                  delay: isMobile ? 0.2 : Math.min(idx * 0.15, 0.6),
+                  delay: 0.2 + (isMobile ? 0.05 : Math.min(idx * 0.08, 0.5)),
                 }}
-                viewport={{ once: true, amount: 0.2 }}
               >
                 <ProjectCard
                   title={project.title}
@@ -50,12 +49,11 @@ export default function Portfolio() {
 
         <motion.h2
           initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{
             duration: 0.2,
-            delay: 0.2,
+            delay: 0.8,
           }}
-          viewport={{ once: true, amount: 0.3 }}
           className="mb-5 flex w-full items-center justify-center gap-2 text-xl font-semibold lg:gap-3 lg:text-3xl"
         >
           <FaGithub /> GitHub{" "}

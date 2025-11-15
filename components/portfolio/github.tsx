@@ -44,12 +44,11 @@ export default function GitHubRepos({ username }: GitHubReposProps) {
         {repos.map((repo, idx) => (
           <motion.a
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{
               duration: 0.2,
-              delay: Math.min(idx * 0.05, 0.4),
+              delay: 1.0 + Math.min(idx * 0.03, 0.5),
             }}
-            viewport={{ once: true, amount: 0.3 }}
             key={repo.id}
             href={`https://github.com/${username}/${repo.name}`}
             target="_blank"

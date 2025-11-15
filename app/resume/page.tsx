@@ -32,12 +32,11 @@ export default function Resume() {
                 {item.dates && (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{
                       duration: 0.2,
-                      delay: 0.2,
+                      delay: 0.4,
                     }}
-                    viewport={{ once: true, amount: 0.01 }}
                     className="mb-5 flex h-8 w-fit items-center justify-center bg-zinc-800 px-3 font-bold tracking-wider"
                     dangerouslySetInnerHTML={{ __html: item.dates }}
                   />
@@ -46,12 +45,11 @@ export default function Resume() {
                 {item.description && (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{
                       duration: 0.2,
-                      delay: 0.4,
+                      delay: 0.5,
                     }}
-                    viewport={{ once: true, amount: 0.01 }}
                     className="mb-5"
                     dangerouslySetInnerHTML={{ __html: item.description }}
                   />
@@ -60,12 +58,11 @@ export default function Resume() {
                 {item.content && (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{
                       duration: 0.2,
                       delay: 0.6,
                     }}
-                    viewport={{ once: true, amount: 0.01 }}
                     dangerouslySetInnerHTML={{ __html: item.content }}
                   />
                 )}

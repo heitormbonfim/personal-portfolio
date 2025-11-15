@@ -4,7 +4,6 @@ import { GlobalContext } from "@/app/contexts/global-provider";
 import { InfoArrow } from "@/components/about/info-arrows";
 import { SkillCard } from "@/components/about/skill-card";
 import Loading from "@/components/loading";
-import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { Divider } from "@/components/ui/divider";
 import { PageContainer } from "@/components/ui/page-container";
 import { SectionContainer } from "@/components/ui/section-container";
@@ -88,12 +87,11 @@ export default function About() {
                     <motion.div
                       key={`${item.title}-${idx}`}
                       initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      animate={{ opacity: 1, x: 0 }}
                       transition={{
                         duration: 0.2,
-                        delay: isMobile ? 0.2 : Math.min(idx * 0.15, 0.6),
+                        delay: 0.6 + (isMobile ? 0.1 : Math.min(idx * 0.1, 0.4)),
                       }}
-                      viewport={{ once: true, amount: 0.2 }}
                       className="w-full max-w-xs"
                     >
                       <InfoArrow title={item.title} content={item.content} />
@@ -140,31 +138,28 @@ export default function About() {
               </div>
             </div>
 
-            <RevealOnScroll>
-              <div className="mb-10 flex flex-wrap items-center gap-5">
-                {content.skills.map((item, idx) => {
-                  return (
-                    <motion.div
-                      key={`${item.name}-${idx}`}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.2,
-                        delay: isMobile ? 0.2 : Math.min(idx * 0.1, 0.6),
-                      }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      className="w-full md:max-w-fit"
-                    >
-                      <SkillCard
-                        name={item.name}
-                        icon={item.icon}
-                        level={item.level}
-                      />
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </RevealOnScroll>
+            <div className="mb-10 flex flex-wrap items-center gap-5">
+              {content.skills.map((item, idx) => {
+                return (
+                  <motion.div
+                    key={`${item.name}-${idx}`}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: 0.2,
+                      delay: 1.2 + (isMobile ? 0.05 : Math.min(idx * 0.05, 0.5)),
+                    }}
+                    className="w-full md:max-w-fit"
+                  >
+                    <SkillCard
+                      name={item.name}
+                      icon={item.icon}
+                      level={item.level}
+                    />
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </SectionContainer>
       </main>
