@@ -1,24 +1,29 @@
 import { SkillCardProps } from "@/components/about/skill-card";
-import { FaNodeJs } from "react-icons/fa";
+import { FaBeer, FaJava, FaNodeJs } from "react-icons/fa";
 import {
-  SiDjango,
+  SiAnsible,
+  SiCyberdefenders,
   SiDocker,
   SiElectron,
   SiExpress,
-  SiGnubash,
-  SiJavascript,
+  SiGo,
   SiKalilinux,
   SiLinux,
   SiMongodb,
+  SiNestjs,
   SiNextdotjs,
-  SiPrisma,
+  SiNuxtdotjs,
+  SiPostgresql,
   SiPython,
   SiReact,
+  SiSpringboot,
+  SiTauri,
   SiTypescript,
+  SiVuedotjs,
   SiWordpress,
 } from "react-icons/si";
-const Img = "/assets/about.jpg";
 import { TbBrandReactNative } from "react-icons/tb";
+const Img = "/assets/about.webp";
 
 export const content = {
   title: "Software Developer & Ethical Hacker",
@@ -39,27 +44,19 @@ export const content = {
     },
     {
       title: "Phone",
-      content: "+5588993205605",
+      content: "+5511919934876",
     },
     {
       title: "Location",
       content: "Brazil, CE",
     },
     {
-      title: "Degrees",
-      content: "High School",
-    },
-    {
       title: "Education",
-      content: "FreeCodeCamp, ProgBr",
+      content: "FreeCodeCamp, ProgBr, Java10x, Cisco, Rocketseat",
     },
     {
       title: "Years of Experience",
       content: calculateDate("2022-01-01").toString(),
-    },
-    {
-      title: "Freelance",
-      content: "Available",
     },
     {
       title: "Email",
@@ -71,14 +68,31 @@ export const content = {
     },
   ],
 
-  description2: `<strong class="text-green-500 text-lg">Who is Heitor?</strong> He's a former English teacher and now a modern wizard, weaving spells with zeros and ones! In 2020, captivated by the endless possibilities of computer programming, he embarked on a journey into the world of software development. During the pandemic, Heitor discovered the magic of coding—a realm where creativity meets science. He's a proactive and ambitious individual who follows the Stoic philosophy, believing in the power of self-improvement to make the world better. He views computers as magical tools, enabling us to create, connect, and transform lives. In the digital realm, Heitor sees himself as one of the wizards, crafting innovative solutions and shaping new worlds.`,
+  description2: `<strong class="text-green-500 text-lg">About Me</strong> A former English teacher who transitioned to software development in 2020. I work with technologies like TypeScript, Node.js, React, and Go, building web applications and exploring cybersecurity. I'm passionate about learning new technologies and improving my craft through hands-on projects. Guided by Stoic principles, I focus on continuous growth, writing clean code, and solving real problems. I enjoy collaborating with others and contributing to projects that make a difference.`,
 
   skills: [
+    // Programming Languages
     {
-      name: "React",
-      icon: SiReact,
+      name: "TypeScript",
+      icon: SiTypescript,
       level: "advanced",
     },
+    {
+      name: "Golang",
+      icon: SiGo,
+      level: "intermediate",
+    },
+    {
+      name: "Java",
+      icon: FaJava,
+      level: "intermediate",
+    },
+    {
+      name: "Python",
+      icon: SiPython,
+      level: "intermediate",
+    },
+    // Backend & Frameworks
     {
       name: "NodeJS",
       icon: FaNodeJs,
@@ -90,18 +104,35 @@ export const content = {
       level: "advanced",
     },
     {
+      name: "NestJS",
+      icon: SiNestjs,
+      level: "noob",
+    },
+    {
+      name: "Gin gonic",
+      icon: FaBeer,
+      level: "intermediate",
+    },
+    {
+      name: "Springboot",
+      icon: SiSpringboot,
+      level: "noob",
+    },
+    // Databases
+    {
       name: "MongoDB",
       icon: SiMongodb,
       level: "advanced",
     },
     {
-      name: "JavaScript",
-      icon: SiJavascript,
+      name: "Postgres",
+      icon: SiPostgresql,
       level: "advanced",
     },
+    // Frontend Frameworks
     {
-      name: "TypeScript",
-      icon: SiTypescript,
+      name: "React",
+      icon: SiReact,
       level: "advanced",
     },
     {
@@ -110,54 +141,63 @@ export const content = {
       level: "intermediate",
     },
     {
+      name: "VueJS",
+      icon: SiVuedotjs,
+      level: "intermediate",
+    },
+    {
+      name: "Nuxt",
+      icon: SiNuxtdotjs,
+      level: "intermediate",
+    },
+    // Desktop & Mobile
+    {
       name: "Electron",
       icon: SiElectron,
       level: "intermediate",
     },
     {
-      name: "React Native",
-      icon: TbBrandReactNative,
-      level: "intermediate",
-    },
-    {
-      name: "Prisma",
-      icon: SiPrisma,
-      level: "intermediate",
-    },
-    {
-      name: "Python",
-      icon: SiPython,
-      level: "advanced",
-    },
-    {
-      name: "Django",
-      icon: SiDjango,
+      name: "Tauri",
+      icon: SiTauri,
       level: "noob",
     },
+    {
+      name: "React Native",
+      icon: TbBrandReactNative,
+      level: "noob",
+    },
+    // CMS
     {
       name: "Wordpress",
       icon: SiWordpress,
       level: "noob",
+    },
+    // DevOps & Infrastructure
+    {
+      name: "Docker",
+      icon: SiDocker,
+      level: "intermediate",
+    },
+    {
+      name: "Ansible",
+      icon: SiAnsible,
+      level: "advanced",
     },
     {
       name: "Linux",
       icon: SiLinux,
       level: "advanced",
     },
-    {
-      name: "Bash",
-      icon: SiGnubash,
-      level: "intermediate",
-    },
+    // Security
     {
       name: "Kali Linux",
       icon: SiKalilinux,
       level: "intermediate",
     },
     {
-      name: "Docker",
-      icon: SiDocker,
-      level: "intermediate",
+      name: "Cybersecurity",
+      icon: SiCyberdefenders,
+      level: "noob",
     },
   ] as SkillCardProps[],
 

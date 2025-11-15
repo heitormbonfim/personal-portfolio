@@ -6,6 +6,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Portfolio | Heitor M Bonfim",
   description: "Full-stack developer portfolio",
+  icons: {
+    icon: "/file.svg",
+  },
 };
 
 export default function RootLayout({

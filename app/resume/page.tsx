@@ -1,15 +1,15 @@
 "use client";
 
+import { GlobalContext } from "@/app/contexts/global-provider";
+import Loading from "@/components/loading";
 import { ColumnItems } from "@/components/resume/column-items";
 import { ResumeItem } from "@/components/resume/resume-item";
 import { PageContainer } from "@/components/ui/page-container";
 import { SectionContainer } from "@/components/ui/section-container";
 import { SectionTitles } from "@/components/ui/section-titles";
-import { ContentFormat, content } from "./content";
-import { useContext } from "react";
-import { GlobalContext } from "@/app/contexts/global-provider";
-import Loading from "@/components/loading";
 import { AnimatePresence, motion } from "framer-motion";
+import { useContext } from "react";
+import { ContentFormat, content } from "./content";
 
 export default function Resume() {
   const { loading } = useContext(GlobalContext);
@@ -37,8 +37,8 @@ export default function Resume() {
                       duration: 0.2,
                       delay: 0.2,
                     }}
-                    viewport={{ once: true, amount: 0.05 }}
-                    className="mb-5 flex h-8 w-36 items-center justify-center bg-zinc-800 font-bold tracking-wider"
+                    viewport={{ once: true, amount: 0.01 }}
+                    className="mb-5 flex h-8 w-fit items-center justify-center bg-zinc-800 px-3 font-bold tracking-wider"
                     dangerouslySetInnerHTML={{ __html: item.dates }}
                   />
                 )}
@@ -51,7 +51,7 @@ export default function Resume() {
                       duration: 0.2,
                       delay: 0.4,
                     }}
-                    viewport={{ once: true, amount: 0.05 }}
+                    viewport={{ once: true, amount: 0.01 }}
                     className="mb-5"
                     dangerouslySetInnerHTML={{ __html: item.description }}
                   />
@@ -65,7 +65,7 @@ export default function Resume() {
                       duration: 0.2,
                       delay: 0.6,
                     }}
-                    viewport={{ once: true, amount: 0.05 }}
+                    viewport={{ once: true, amount: 0.01 }}
                     dangerouslySetInnerHTML={{ __html: item.content }}
                   />
                 )}

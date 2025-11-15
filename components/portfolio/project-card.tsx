@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 interface ProjectCardProps {
@@ -36,10 +38,12 @@ function Content({ content, title, img, url }: ProjectCardProps) {
     <div className="group w-full max-w-md overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900 shadow-lg transition-all hover:border-green-500">
       <figure className="relative overflow-hidden">
         {img ? (
-          <img
+          <Image
             loading="lazy"
             src={img}
             alt={title}
+            width={400}
+            height={240}
             className="h-60 w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
           />
         ) : (
@@ -49,11 +53,11 @@ function Content({ content, title, img, url }: ProjectCardProps) {
         )}
         <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
           {url ? (
-            <a href={url} target="_blank">
+            <Link href={url} target="_blank" rel="noopener noreferrer">
               <h3 className="cursor-pointer text-xl font-bold text-white duration-300 hover:text-green-500">
                 {title}
               </h3>
-            </a>
+            </Link>
           ) : (
             <h3
               onClick={() => {

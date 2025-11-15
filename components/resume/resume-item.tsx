@@ -18,10 +18,10 @@ export function ResumeItem({ children, title, className }: ResumeItemProps) {
         duration: 0.2,
         delay: 0.2,
       }}
-      viewport={{ once: true, amount: 0.05 }}
+      viewport={{ once: true, amount: 0.01 }}
       className={cn(
         "relative flex flex-wrap items-start border-l-2 border-s-zinc-500",
-        className,
+        className
       )}
     >
       <motion.div
@@ -31,11 +31,11 @@ export function ResumeItem({ children, title, className }: ResumeItemProps) {
           duration: 0.2,
           delay: 0.2,
         }}
-        viewport={{ once: true, amount: 0.05 }}
-        className="absolute -left-[9px] top-0 h-[16px] w-[16px] rounded-full border-2 border-green-500 bg-green-500"
+        viewport={{ once: true, amount: 0.01 }}
+        className="absolute top-0 -left-[9px] h-[16px] w-[16px] rounded-full border-2 border-green-500 bg-green-500"
       ></motion.div>
       <div className="px-6 pb-10">
-        <h2 className="relative -top-[2px] mb-2 text-lg font-semibold uppercase leading-5 text-green-500">
+        <h2 className="relative -top-[2px] mb-2 text-lg leading-5 font-semibold text-green-500 uppercase">
           {title}
         </h2>
         <div>{children}</div>

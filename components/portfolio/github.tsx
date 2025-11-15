@@ -1,7 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 
 interface Repo {
   id: number;
@@ -27,7 +27,7 @@ export default function GitHubRepos({ username }: GitHubReposProps) {
       })
       .then((data) => {
         const sortedRepos = data.sort((a: Repo, b: Repo) =>
-          a.name.localeCompare(b.name),
+          a.name.localeCompare(b.name)
         );
         setRepos(sortedRepos);
         setError(null);
@@ -39,34 +39,30 @@ export default function GitHubRepos({ username }: GitHubReposProps) {
 
   return (
     <div>
-      {error && (
-        <p className="text-center text-red-400">{error}</p>
-      )}
+      {error && <p className="text-center text-red-400">{error}</p>}
       <div className="flex flex-col gap-3">
-        <AnimatePresence>
-          {repos.map((repo) => (
-            <motion.a
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.2,
-                delay: 0.2,
-              }}
-              viewport={{ once: true, amount: 0.05 }}
-              key={repo.id}
-              href={`https://github.com/${username}/${repo.name}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="border-b-2 border-zinc-600 py-2 duration-300 hover:border-green-500 hover:text-green-500">
-                <h3 className="text-lg font-semibold">{repo.name}</h3>
-                {repo.description && (
-                  <p className="mt-1 text-xs">{repo.description}</p>
-                )}
-              </div>
-            </motion.a>
-          ))}
-        </AnimatePresence>
+        {repos.map((repo, idx) => (
+          <motion.a
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.2,
+              delay: Math.min(idx * 0.05, 0.4),
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+            key={repo.id}
+            href={`https://github.com/${username}/${repo.name}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="border-b-2 border-zinc-600 py-2 duration-300 hover:border-green-500 hover:text-green-500">
+              <h3 className="text-lg font-semibold">{repo.name}</h3>
+              {repo.description && (
+                <p className="mt-1 text-xs">{repo.description}</p>
+              )}
+            </div>
+          </motion.a>
+        ))}
       </div>
     </div>
   );

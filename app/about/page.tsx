@@ -1,17 +1,18 @@
 "use client";
 
-import { PageContainer } from "@/components/ui/page-container";
-import { content } from "./content";
-import { InfoArrow } from "@/components/about/info-arrows";
-import { Divider } from "@/components/ui/divider";
-import { SectionTitles } from "@/components/ui/section-titles";
-import { SectionContainer } from "@/components/ui/section-container";
-import { SkillCard } from "@/components/about/skill-card";
-import { useContext } from "react";
 import { GlobalContext } from "@/app/contexts/global-provider";
+import { InfoArrow } from "@/components/about/info-arrows";
+import { SkillCard } from "@/components/about/skill-card";
 import Loading from "@/components/loading";
-import { AnimatePresence, motion } from "framer-motion";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
+import { Divider } from "@/components/ui/divider";
+import { PageContainer } from "@/components/ui/page-container";
+import { SectionContainer } from "@/components/ui/section-container";
+import { SectionTitles } from "@/components/ui/section-titles";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useContext } from "react";
+import { content } from "./content";
 
 export default function About() {
   const { loading, isMobile } = useContext(GlobalContext);
@@ -36,11 +37,13 @@ export default function About() {
               }}
               className="w-full lg:w-[30%] lg:pt-2"
             >
-              <img
+              <Image
                 loading="lazy"
                 src={content.img}
                 alt="Profile Picture"
-                className="w-full"
+                width={500}
+                height={500}
+                className="h-auto w-full"
               />
             </motion.div>
 
@@ -80,25 +83,23 @@ export default function About() {
                 }}
                 className="my-10 flex flex-wrap items-center justify-center gap-y-4"
               >
-                <AnimatePresence>
-                  {content.arrowInfos.map((item, idx) => {
-                    return (
-                      <motion.div
-                        key={`${item.title}-${idx}`}
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.2,
-                          delay: isMobile ? 0.2 : idx * 0.2,
-                        }}
-                        viewport={{ once: true, amount: 0.05 }}
-                        className="w-full max-w-xs"
-                      >
-                        <InfoArrow title={item.title} content={item.content} />
-                      </motion.div>
-                    );
-                  })}
-                </AnimatePresence>
+                {content.arrowInfos.map((item, idx) => {
+                  return (
+                    <motion.div
+                      key={`${item.title}-${idx}`}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.2,
+                        delay: isMobile ? 0.2 : Math.min(idx * 0.15, 0.6),
+                      }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      className="w-full max-w-xs"
+                    >
+                      <InfoArrow title={item.title} content={item.content} />
+                    </motion.div>
+                  );
+                })}
               </motion.div>
 
               <motion.p
@@ -141,29 +142,27 @@ export default function About() {
 
             <RevealOnScroll>
               <div className="mb-10 flex flex-wrap items-center gap-5">
-                <AnimatePresence>
-                  {content.skills.map((item, idx) => {
-                    return (
-                      <motion.div
-                        key={`${item.name}-${idx}`}
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.2,
-                          delay: isMobile ? 0.2 : idx * 0.2,
-                        }}
-                        viewport={{ once: true, amount: 0.05 }}
-                        className="w-full md:max-w-fit"
-                      >
-                        <SkillCard
-                          name={item.name}
-                          icon={item.icon}
-                          level={item.level}
-                        />
-                      </motion.div>
-                    );
-                  })}
-                </AnimatePresence>
+                {content.skills.map((item, idx) => {
+                  return (
+                    <motion.div
+                      key={`${item.name}-${idx}`}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.2,
+                        delay: isMobile ? 0.2 : Math.min(idx * 0.1, 0.6),
+                      }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      className="w-full md:max-w-fit"
+                    >
+                      <SkillCard
+                        name={item.name}
+                        icon={item.icon}
+                        level={item.level}
+                      />
+                    </motion.div>
+                  );
+                })}
               </div>
             </RevealOnScroll>
           </div>
