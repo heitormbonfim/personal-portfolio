@@ -37,7 +37,7 @@ export default function Resume() {
                       duration: 0.2,
                       delay: 0.4,
                     }}
-                    className="mb-5 flex h-8 w-fit items-center justify-center bg-zinc-800 px-3 font-bold tracking-wider"
+                    className="lg:text-md mb-5 h-fit w-fit bg-zinc-800 px-3 py-2 text-center text-xs font-bold tracking-wider sm:text-sm"
                     dangerouslySetInnerHTML={{ __html: item.dates }}
                   />
                 )}
