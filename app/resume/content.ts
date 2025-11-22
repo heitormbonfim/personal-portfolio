@@ -170,7 +170,6 @@ export const content: ContentFormat[] = [
           <li>Portainer</li>
           <li>GitHub Actions</li>
           <li>Ansible</li>
-          <li>Go-Ansible</li>
           <li>Proxmox</li>
           <li>Networking</li>
           <li>Google Ads</li>
