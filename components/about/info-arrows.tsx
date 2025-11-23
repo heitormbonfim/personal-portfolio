@@ -14,7 +14,7 @@ export function InfoArrow({ title, content }: InfoArrowProps) {
           href={`mailto:${content}?subject=I%20checked%20your%20website&body=Hello,%20Heitor`}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-4 decoration-green-500 hover:text-green-500 transition-colors"
+          className="underline decoration-green-500 underline-offset-4 transition-colors hover:text-green-500"
         >
           {content}
         </a>
@@ -26,10 +26,10 @@ export function InfoArrow({ title, content }: InfoArrowProps) {
       const phoneNumber = content.replace(/\s/g, "");
       return (
         <a
-          href={`https://api.whatsapp.com/send/?phone=${phoneNumber}&text&type=phone_number&app_absent=0`}
+          href={`https://wa.me/${phoneNumber}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-4 decoration-green-500 hover:text-green-500 transition-colors"
+          className="underline decoration-green-500 underline-offset-4 transition-colors hover:text-green-500"
         >
           {content}
         </a>
