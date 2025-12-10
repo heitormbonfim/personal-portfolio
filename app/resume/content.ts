@@ -55,6 +55,21 @@ export const content: ContentFormat[] = [
           `,
       },
       {
+        title: "Introduction to Cybersecurity",
+        dates: "April 2025 - May 2025",
+        description:
+          "Introduction to Cybersecurity is a foundational course covering core security fundamentals including the CIA Triad (Confidentiality, Integrity, Availability) and the modern threat landscape. Key topics include recognizing various malware types, social engineering, and phishing. The course details essential digital hygiene practices, Multi-Factor Authentication (MFA), strong password creation, and device hardening. It introduces basic network security components like firewalls and encryption, outlines risk management, and provides an overview of security incident response and the career roles of cybersecurity professionals.",
+        content: `
+          <ul class="list-disc list-inside underline underline-offset-4 decoration-green-500">
+            <li>
+              <a href="https://github.com/heitormbonfim/certifications/blob/main/I2CSUpdate20250506-27-whwjig.pdf" target="_blank">
+                Introduction to Cybersecurity
+              </a>
+            </li>
+          </ul>
+          `,
+      },
+      {
         title: "Rocketseat",
         dates: "June 2022",
         description:
