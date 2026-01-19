@@ -1,21 +1,114 @@
 "use client";
 
 import { ColumnItems } from "@/components/resume/column-items";
+import { DownloadResumeButton } from "@/components/resume/download-resume-button";
 import { ResumeItem } from "@/components/resume/resume-item";
 import { PageContainer } from "@/components/ui/page-container";
 import { SectionContainer } from "@/components/ui/section-container";
 import { SectionTitles } from "@/components/ui/section-titles";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { resumeData } from "./data";
 
 export default function Resume() {
   const t = useTranslations("resume");
+  const tAbout = useTranslations("about");
+  const locale = useLocale();
+
+  const pdfTranslations = {
+    summary: {
+      title: t("summary.title"),
+      name: t("summary.name"),
+      description: t("summary.description"),
+      location: t("summary.location"),
+    },
+    education: {
+      title: t("education.title"),
+      java10x: {
+        title: t("education.java10x.title"),
+        dates: t("education.java10x.dates"),
+        description: t("education.java10x.description"),
+      },
+      cybersecurity: {
+        title: t("education.cybersecurity.title"),
+        dates: t("education.cybersecurity.dates"),
+        description: t("education.cybersecurity.description"),
+      },
+      rocketseat: {
+        title: t("education.rocketseat.title"),
+        dates: t("education.rocketseat.dates"),
+        description: t("education.rocketseat.description"),
+      },
+      freecodecamp: {
+        title: t("education.freecodecamp.title"),
+        dates: t("education.freecodecamp.dates"),
+        description: t("education.freecodecamp.description"),
+      },
+      webFullStack: {
+        title: t("education.webFullStack.title"),
+        dates: t("education.webFullStack.dates"),
+        description: t("education.webFullStack.description"),
+      },
+      english: {
+        title: t("education.english.title"),
+        dates: t("education.english.dates"),
+        description: t("education.english.description"),
+      },
+    },
+    experience: {
+      title: t("experience.title"),
+      onePanel: {
+        title: t("experience.onePanel.title"),
+        dates: t("experience.onePanel.dates"),
+        description: t("experience.onePanel.description"),
+        role: t("experience.onePanel.role"),
+      },
+      freelance: {
+        title: t("experience.freelance.title"),
+        dates: t("experience.freelance.dates"),
+        description: t("experience.freelance.description"),
+        role: t("experience.freelance.role"),
+      },
+      llSoftware: {
+        title: t("experience.llSoftware.title"),
+        dates: t("experience.llSoftware.dates"),
+        description: t("experience.llSoftware.description"),
+        role: t("experience.llSoftware.role"),
+      },
+      freelanceTeacher: {
+        title: t("experience.freelanceTeacher.title"),
+        dates: t("experience.freelanceTeacher.dates"),
+        description: t("experience.freelanceTeacher.description"),
+        role: t("experience.freelanceTeacher.role"),
+      },
+      mundoHb: {
+        title: t("experience.mundoHb.title"),
+        dates: t("experience.mundoHb.dates"),
+        description: t("experience.mundoHb.description"),
+        role: t("experience.mundoHb.role"),
+      },
+    },
+  };
 
   return (
     <PageContainer navbar>
       <SectionContainer>
-        <SectionTitles title={t("sectionTitle")} subTitle={t("sectionSubtitle")} />
+        <div className="mb-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <SectionTitles title={t("sectionTitle")} subTitle={t("sectionSubtitle")} />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2, delay: 0.3 }}
+          >
+            <DownloadResumeButton
+              locale={locale}
+              translations={pdfTranslations}
+              skillsTitle={tAbout("skillsTitle")}
+              buttonText={t("downloadButton")}
+              loadingText={t("downloadLoading")}
+            />
+          </motion.div>
+        </div>
 
         <div className="flex flex-wrap">
           <div className="lg:w-[50%]">

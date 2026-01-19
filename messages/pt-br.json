@@ -168,6 +168,8 @@
   "resume": {
     "sectionTitle": "CURRÍCULO",
     "sectionSubtitle": "CONFIRA MEU CURRÍCULO",
+    "downloadButton": "Baixar CV",
+    "downloadLoading": "Gerando...",
     "summary": {
       "title": "RESUMO",
       "name": "Heitor Macedo Bonfim",
