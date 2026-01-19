@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "title": "Portfólio | Heitor M Bonfim",
+    "description": "Portfólio de desenvolvedor full-stack"
+  },
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre",
+    "resume": "Currículo",
+    "portfolio": "Portfólio",
+    "services": "Serviços",
+    "contact": "Contato"
+  },
+  "home": {
+    "name": "Heitor M Bonfim",
+    "description": "Sou um desenvolvedor de software apaixonado, um hacker ético amador e escritor",
+    "explore": "Explorar"
+  },
+  "about": {
+    "sectionTitle": "SOBRE",
+    "sectionSubtitle": "SAIBA MAIS SOBRE MIM",
+    "title": "Desenvolvedor de Software & Hacker Ético",
+    "description": "Eu vivo e respiro desenvolvimento de software, onde cada linha de código é uma pincelada de inovação. Quando não estou programando, sou um hacker ético, protegendo domínios digitais. E em momentos de calma, sou escritor, criando histórias que inspiram e cativam. Cada atividade alimenta minha paixão por criatividade e exploração.",
+    "description2Title": "Sobre Mim",
+    "description2": "Um ex-professor de inglês que fez a transição para desenvolvimento de software em 2020. Trabalho com tecnologias como TypeScript, Node.js, React e Go, construindo aplicações web e explorando cibersegurança. Sou apaixonado por aprender novas tecnologias e aprimorar minhas habilidades através de projetos práticos. Guiado por princípios estóicos, foco em crescimento contínuo, escrevendo código limpo e resolvendo problemas reais. Gosto de colaborar com outros e contribuir para projetos que fazem a diferença.",
+    "skillsTitle": "HABILIDADES",
+    "infoLabels": {
+      "fullName": "Nome Completo",
+      "age": "Idade",
+      "phone": "Telefone",
+      "location": "Localização",
+      "education": "Formação",
+      "yearsOfExperience": "Anos de Experiência",
+      "email": "E-mail",
+      "languages": "Idiomas"
+    },
+    "infoValues": {
+      "fullName": "Heitor Macedo Bonfim",
+      "location": "Brasil, CE",
+      "education": "FreeCodeCamp, ProgBr, Java10x, Cisco, Rocketseat",
+      "languages": "Português, Inglês"
+    },
+    "skillLevels": {
+      "advanced": "Avançado",
+      "intermediate": "Intermediário",
+      "basic": "Básico"
+    }
+  },
+  "services": {
+    "sectionTitle": "SERVIÇOS",
+    "sectionSubtitle": "MEUS SERVIÇOS",
+    "items": {
+      "restfulApi": {
+        "title": "Desenvolvimento de API Restful",
+        "description": "Criação de APIs RESTful eficientes usando ExpressJS e Python."
+      },
+      "landingPages": {
+        "title": "Landing Pages",
+        "description": "Criação de landing pages cativantes utilizando NextJS, ReactJS e Wordpress."
+      },
+      "automations": {
+        "title": "Automações",
+        "description": "Otimização de tarefas repetitivas através de automação com NodeJS e Python."
+      },
+      "mobileApps": {
+        "title": "Aplicativos Móveis",
+        "description": "Desenvolvimento de aplicativos móveis multiplataforma para Android e iOS com React Native ou Ionic."
+      },
+      "desktopApps": {
+        "title": "Aplicativos Desktop",
+        "description": "Desenvolvimento de aplicativos desktop multiplataforma para Windows e Linux usando ElectronJS."
+      },
+      "fullStack": {
+        "title": "Aplicações Full Stack",
+        "description": "Desenvolvimento de aplicações full stack sob medida com ReactJS, MongoDB e ExpressJS."
+      },
+      "dataAnalysis": {
+        "title": "Análise de Dados",
+        "description": "Serviço de análise de dados que utiliza o poderoso ecossistema de bibliotecas do Python para entregar soluções de análise de dados abrangentes, eficientes e perspicazes."
+      },
+      "webScraping": {
+        "title": "Web Scraping",
+        "description": "Serviço de web scraping que utiliza as robustas bibliotecas de Python e JavaScript para extrair dados valiosos de sites de forma eficiente e precisa."
+      },
+      "pentest": {
+        "title": "Pentest",
+        "description": "Realização de testes de penetração para identificar vulnerabilidades em sistemas e revisões de código."
+      },
+      "translations": {
+        "title": "Traduções",
+        "description": "Serviços de tradução em tempo real entre inglês e português, incluindo tradução de documentos e localização de sites."
+      }
+    }
+  },
+  "portfolio": {
+    "sectionTitle": "PORTFÓLIO",
+    "sectionSubtitle": "MEUS TRABALHOS",
+    "githubTitlePart1": "Repositórios ",
+    "githubTitleHighlight": "públicos",
+    "githubTitlePart2": " do GitHub",
+    "projects": {
+      "customerManagement": {
+        "title": "Sistema de Gestão de Clientes",
+        "content": "Uma aplicação full stack feita com ReactJS + TypeScript, daisyui, express, mongodb e mais. Ideal para integrar com outros sistemas onde a gestão de clientes é necessária, e uma API para controlar qual usuário terá acesso de acordo com seus planos, etc."
+      },
+      "autoDouble": {
+        "title": "Auto Double",
+        "content": "Uma aplicação web app full stack integrada com um cassino para jogar automaticamente com o usuário logado 24/7 usando seus padrões de estratégias."
+      },
+      "hackerDoGreen": {
+        "title": "Hacker Do Green",
+        "content": "Uma aplicação web app full stack integrada com um cassino para dar as melhores dicas de acordo com a estratégia do usuário."
+      },
+      "hackerTanos": {
+        "title": "Hacker Tanos",
+        "content": "Uma aplicação full stack integrada com um cassino para dar as melhores dicas de acordo com a estratégia do usuário."
+      },
+      "productTemplate": {
+        "title": "Template de Página de Produto",
+        "content": "Um template ReactJS + TypeScript, Tailwind, Daisyui para meus projetos."
+      },
+      "accountingLanding": {
+        "title": "Landing Page de Contabilidade NextJS",
+        "content": "Uma landing page template para negócios de contabilidade usando NextJS, TypeScript, Shadcn, Tailwindcss e mais."
+      },
+      "affiliatePanel": {
+        "title": "Painel de Gestão de Afiliados",
+        "content": "Uma aplicação Full Stack [MERN] para gerenciar URLs de afiliados e suas estatísticas."
+      },
+      "agroibi": {
+        "title": "Marketplace Agroibi",
+        "content": "Um projeto MVP de marketplace para encontrar produtos agrícolas e fornecedores."
+      },
+      "xprimeLife": {
+        "title": "Xprime Life",
+        "content": "Uma loja simples de dropshipping para produtos afiliados de beleza feminina."
+      },
+      "broadFarma": {
+        "title": "Broad Farma",
+        "content": "Uma landing page para uma Farmácia contendo horário de funcionamento, contatos e seus produtos."
+      },
+      "hackerTodoList": {
+        "title": "Hacker To Do List",
+        "content": "Uma lista de tarefas feita com React JS."
+      },
+      "marioGame": {
+        "title": "Jogo Simples de Pulo do Mario",
+        "content": "Um jogo simples de pulo do mario em HTML, CSS e JavaScript com um servidor express simples."
+      },
+      "paintingGame": {
+        "title": "Jogo de Pintura",
+        "content": "Um jogo simples de pintura em HTML, CSS e JavaScript usando Canvas."
+      },
+      "snakeGame": {
+        "title": "Jogo da Cobrinha",
+        "content": "Um jogo simples da cobrinha feito com HTML, CSS e JavaScript."
+      },
+      "memoryGame": {
+        "title": "Jogo da Memória",
+        "content": "Um jogo simples de memória feito com HTML, CSS e JavaScript."
+      },
+      "ticTacToe": {
+        "title": "Jogo da Velha",
+        "content": "Um jogo simples da velha feito com HTML, CSS e JavaScript."
+      }
+    }
+  },
+  "resume": {
+    "sectionTitle": "CURRÍCULO",
+    "sectionSubtitle": "CONFIRA MEU CURRÍCULO",
+    "downloadButton": "Baixar CV",
+    "downloadLoading": "Gerando...",
+    "summary": {
+      "title": "RESUMO",
+      "name": "Heitor Macedo Bonfim",
+      "description": "Fiz a transição de professor de inglês em 2019 para desenvolvimento de software em 2022, especializando-me em desenvolvimento full-stack com TypeScript, React, Node.js e Golang. Atualmente trabalhando como Desenvolvedor Full-Stack, contribuí em desenvolvimento, infraestrutura e estratégia de negócios. Estou continuamente expandindo minhas habilidades em cibersegurança, DevOps e arquitetura backend.",
+      "location": "Brasil, CE"
+    },
+    "education": {
+      "title": "FORMAÇÃO",
+      "java10x": {
+        "title": "Java10x",
+        "dates": "NOVEMBRO 2024 - NOVEMBRO 2025",
+        "description": "Java10x é um curso abrangente que cobre fundamentos de Java até conceitos avançados incluindo Arrays, operadores ternários, conceitos de POO, Interfaces, Classes Abstratas, Enums, Generics, Exceções, Collections (Queue, Stack, HashMap), Gerenciamento de Memória e Notação BigO. A trilha Spring Boot cobre fundamentos do Spring Boot, princípios S.O.L.I.D, conceitos de Clean Architecture, containerização Docker, templates Thymeleaf, implementações de Segurança, autenticação JWT, cache Redis e padrões de arquitetura avançados. O programa enfatiza programação orientada a objetos prática, práticas modernas de desenvolvimento empresarial e implementação de lógica de negócios.",
+        "cert1": "Java do Zero ao Avançado",
+        "cert2": "Trilha Spring Boot"
+      },
+      "cybersecurity": {
+        "title": "Introdução à Cibersegurança",
+        "dates": "ABRIL 2025 - MAIO 2025",
+        "description": "Introdução à Cibersegurança é um curso fundamental que cobre fundamentos essenciais de segurança incluindo a Tríade CIA (Confidencialidade, Integridade, Disponibilidade) e o cenário moderno de ameaças. Tópicos principais incluem reconhecimento de vários tipos de malware, engenharia social e phishing. O curso detalha práticas essenciais de higiene digital, Autenticação Multi-Fator (MFA), criação de senhas fortes e hardening de dispositivos. Introduz componentes básicos de segurança de rede como firewalls e criptografia, descreve gerenciamento de riscos e fornece uma visão geral de resposta a incidentes de segurança e funções de carreira de profissionais de cibersegurança.",
+        "cert": "Introdução à Cibersegurança"
+      },
+      "rocketseat": {
+        "title": "Rocketseat",
+        "dates": "JUNHO 2022",
+        "description": "Conectar é um curso introdutório de programação que ensina os conceitos fundamentais da computação, incluindo hardware, software, internet, servidores e a distinção entre desenvolvimento frontend e backend.",
+        "cert": "Conectar"
+      },
+      "freecodecamp": {
+        "title": "FreeCodeCamp",
+        "dates": "AGOSTO 2021 - OUTUBRO 2022",
+        "description": "As lições nas certificações do freeCodeCamp cobrem vários tópicos como desenvolvimento web, HTML, CSS, design responsivo, segurança da informação, machine learning e linguagens de programação funcional como Python e JavaScript. O estilo de ensino do FreeCodeCamp combina texto e vídeos.",
+        "cert1": "Algoritmos JavaScript e Estruturas de Dados",
+        "cert2": "Computação Científica com Python"
+      },
+      "webFullStack": {
+        "title": "Web Full Stack",
+        "dates": "NOVEMBRO 2020 - ABRIL 2024",
+        "description": "No 'ProgramadorBR Web Full Stack' por Igor Oliveira, você aprenderá os fundamentos do desenvolvimento web full-stack, cobrindo tanto tecnologias front-end como HTML, CSS, JavaScript e ReactJS junto com conceitos back-end incluindo tecnologias server-side como Node.js com Express, gerenciamento de banco de dados com MongoDB, e como construir aplicações web completas do início ao fim, essencialmente abrangendo todo o processo de design, desenvolvimento e deploy de um site ou aplicação web.",
+        "cert1": "HTML, CSS e JavaScript",
+        "cert2": "Firebase, JQuery e Bootstrap",
+        "cert3": "ReactJS",
+        "cert4": "NodeJS e MongoDB"
+      },
+      "english": {
+        "title": "Língua Inglesa",
+        "dates": "JANEIRO 2016 - DEZEMBRO 2018",
+        "description": "Atingi fluência em inglês através de estudo e prática dedicados.",
+        "fluent": "Inglês Fluente"
+      }
+    },
+    "experience": {
+      "title": "EXPERIÊNCIA PROFISSIONAL",
+      "onePanel": {
+        "title": "One Panel",
+        "dates": "MAIO 2025 - PRESENTE",
+        "description": "Na One Panel, trabalho como Desenvolvedor Full-Stack contribuindo em múltiplas áreas do negócio. Desenvolvi novas funcionalidades para automação de VPS usando Go-Ansible, Ansible e React, permitindo que clientes gerenciem seus servidores virtuais privados diretamente através do nosso dashboard. Criei a nova landing page da empresa para melhorar a presença da marca e aquisição de clientes. Trabalhei em um projeto de sistema de gerenciamento Docker usando Golang, Gin e GORM com PostgreSQL e MySQL, melhorando significativamente as capacidades de gerenciamento de containers dos clientes. Liderei uma equipe de desenvolvedores, participei do processo de contratação e seleção de novos desenvolvedores, e forneci suporte contínuo à equipe de desenvolvimento. Trabalhei de perto com o líder da empresa em decisões estratégicas de negócios, atuando como seu braço direito. Adicionalmente, contribuí para o setor de vendas e marketing criando e gerenciando campanhas de Google Ads e Facebook Ads para impulsionar vendas. Forneci suporte técnico para clientes, identifiquei e corrigi bugs em nossos sistemas, e continuamente melhorei a experiência do usuário através de ideias e implementações estratégicas.",
+        "role": "Desenvolvedor Full-Stack",
+        "techStack": "Stack Tecnológica:"
+      },
+      "freelance": {
+        "title": "Desenvolvedor Freelance",
+        "dates": "NOVEMBRO 2023 - ABRIL 2025",
+        "description": "Trabalhei como Desenvolvedor de Software Freelance, construindo aplicações web e fornecendo soluções para vários clientes usando tecnologias modernas.",
+        "role": "Desenvolvedor de Software Freelance",
+        "techStack": "Stack Tecnológica:"
+      },
+      "llSoftware": {
+        "title": "LL Software",
+        "dates": "DEZEMBRO 2022 - OUTUBRO 2023",
+        "description": "Realizei manutenção no software principal da empresa, corrigindo bugs e adicionando novas funcionalidades, como criação de planos e definição de permissões de usuários de acordo com o plano contratado. As tecnologias utilizadas incluíram TypeScript, ReactJS, Tailwind CSS, ExpressJS, MongoDB, Socket.io e Docker. Desenvolvi um dashboard aprimorado para gerenciar clientes, afiliados e outras funcionalidades da plataforma. Também desenvolvi aplicações desktop com Electron JS para gerenciar bots integrados com a API do Telegram e automação de apostas, além de criar web scrapers e automações usando Puppeteer, Cheerio e Socket.io. Atualizei aplicações originalmente desenvolvidas em JavaScript, implementando TypeScript para melhorar a segurança e facilitar a manutenção do código. Ao mesmo tempo, criei vários PWAs (Progressive Web Apps) com VitePWA e ReactJS, integrados com uma API construída com ExpressJS e Postgres, que se conectava às casas de apostas dos afiliados. Transformei alguns desses PWAs em aplicações nativas com React Native. Por fim, migrei aplicações serverless, anteriormente hospedadas no Heroku e Vercel, para um VPS privado no Brasil, otimizando a velocidade de resposta e reduzindo significativamente os custos de hospedagem.",
+        "role": "Desenvolvedor de Software",
+        "techStack": "Stack Tecnológica:"
+      },
+      "freelanceTeacher": {
+        "title": "Professor de Inglês Freelance",
+        "dates": "AGOSTO 2020 - NOVEMBRO 2021",
+        "description": "Trabalhei como professor particular de inglês online durante a pandemia.",
+        "role": "Professor particular de inglês",
+        "freelancer": "Freelancer"
+      },
+      "mundoHb": {
+        "title": "Mundo HB - Professor de Inglês",
+        "dates": "JANEIRO 2019 - JULHO 2019",
+        "description": "Trabalhei no MUNDO HB, onde estudei anteriormente, para dar aulas de inglês em todos os níveis, do básico ao avançado. Nas turmas avançadas, conduzi as aulas inteiramente em inglês, demonstrando fluência e promovendo imersão total no idioma.",
+        "role": "Professor de Inglês"
+      }
+    }
+  },
+  "notFound": {
+    "title": "O que você está procurando??",
+    "goBack": "Voltar"
+  }
+}

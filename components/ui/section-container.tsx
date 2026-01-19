@@ -1,7 +1,7 @@
 export function SectionContainer({ children }: { children?: React.ReactNode }) {
   return (
-    <div className="lg:px-20 pt-10">
-      <div className="bg-[#000d] backdrop-blur-sm w-full h-full p-5">
+    <div className="pt-10 lg:px-20">
+      <div className="h-full w-full bg-[#000d] p-5 backdrop-blur-sm">
         {children}
       </div>
     </div>

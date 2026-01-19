@@ -1,40 +1,56 @@
+import {
+  Briefcase,
+  FileText,
+  Home,
+  LucideIcon,
+  Mail,
+  Settings,
+  User,
+} from "lucide-react";
+
 export interface NavButtons {
-  title: string;
+  titleKey: string;
   href: string;
+  icon: LucideIcon;
   className?: string;
   _blank: boolean;
 }
 
 export const navButtons: NavButtons[] = [
   {
-    title: "Home",
+    titleKey: "home",
     href: "/",
+    icon: Home,
     _blank: false,
   },
   {
-    title: "About",
+    titleKey: "about",
     href: "/about",
+    icon: User,
     _blank: false,
   },
   {
-    title: "Resume",
+    titleKey: "resume",
     href: "/resume",
+    icon: FileText,
     _blank: false,
   },
   {
-    title: "Portfolio",
+    titleKey: "portfolio",
     href: "/portfolio",
+    icon: Briefcase,
     _blank: false,
   },
-
   {
-    title: "Services",
+    titleKey: "services",
     href: "/services",
+    icon: Settings,
     _blank: false,
   },
   {
-    title: "Contact",
+    titleKey: "contact",
     href: "mailto:heitormbonfim@gmail.com?subject=I%20checked%20your%20website&body=Hello,%20Heitor",
+    icon: Mail,
     _blank: true,
   },
 ];
