@@ -23,7 +23,10 @@ export default function About() {
     { titleKey: "phone", value: "+5511919934876" },
     { titleKey: "location", valueKey: "location" },
     { titleKey: "education", valueKey: "education" },
-    { titleKey: "yearsOfExperience", value: calculateDate("2022-01-01").toString() },
+    {
+      titleKey: "yearsOfExperience",
+      value: calculateDate("2022-01-01").toString(),
+    },
     { titleKey: "email", value: "heitormbonfim@gmail.com" },
     { titleKey: "languages", valueKey: "languages" },
   ];
@@ -32,7 +35,10 @@ export default function About() {
     <PageContainer navbar>
       <main>
         <SectionContainer>
-          <SectionTitles title={t("sectionTitle")} subTitle={t("sectionSubtitle")} />
+          <SectionTitles
+            title={t("sectionTitle")}
+            subTitle={t("sectionSubtitle")}
+          />
 
           <div className="mb-10 flex flex-col lg:flex-row">
             <motion.div
@@ -101,7 +107,8 @@ export default function About() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{
                         duration: 0.2,
-                        delay: 0.6 + (isMobile ? 0.1 : Math.min(idx * 0.1, 0.4)),
+                        delay:
+                          0.6 + (isMobile ? 0.1 : Math.min(idx * 0.1, 0.4)),
                       }}
                       className="w-full max-w-xs"
                     >
@@ -123,7 +130,9 @@ export default function About() {
                 }}
                 className="text-justify"
               >
-                <strong className="text-lg text-green-500">{t("description2Title")}</strong>{" "}
+                <strong className="text-lg text-green-500">
+                  {t("description2Title")}
+                </strong>{" "}
                 {t("description2")}
               </motion.div>
             </div>
@@ -138,13 +147,17 @@ export default function About() {
               <div className="flex items-center gap-2">
                 <span className="block h-px w-full max-w-5 bg-green-500"></span>
                 ~80%
-                <span className="font-semibold">{t("skillLevels.advanced")}</span>
+                <span className="font-semibold">
+                  {t("skillLevels.advanced")}
+                </span>
               </div>
 
               <div className="flex items-center gap-2">
                 <span className="block h-px w-full max-w-5 bg-yellow-400"></span>
                 ~50%
-                <span className="font-semibold">{t("skillLevels.intermediate")}</span>
+                <span className="font-semibold">
+                  {t("skillLevels.intermediate")}
+                </span>
               </div>
 
               <div className="flex items-center gap-2">
@@ -163,7 +176,8 @@ export default function About() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{
                       duration: 0.2,
-                      delay: 1.2 + (isMobile ? 0.05 : Math.min(idx * 0.05, 0.5)),
+                      delay:
+                        1.2 + (isMobile ? 0.05 : Math.min(idx * 0.05, 0.5)),
                     }}
                     className="w-full md:max-w-fit"
                   >

@@ -44,88 +44,88 @@ export default function Home() {
       className="flex items-center"
     >
       <main className="flex w-full items-center p-3 pt-20 lg:pt-3">
-          <div className="w-full lg:pl-28">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.2,
-                delay: 0.2,
-              }}
-              className="mb-5 text-center text-4xl font-bold text-zinc-50 lg:text-start lg:text-5xl"
-            >
-              {t("name")}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.2,
-                delay: 0.4,
-              }}
-              className="mb-10 text-center text-lg font-semibold lg:max-w-xl lg:text-start lg:text-2xl lg:font-normal"
-            >
-              {t("description")}
-            </motion.p>
+        <div className="w-full lg:pl-28">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.2,
+              delay: 0.2,
+            }}
+            className="mb-5 text-center text-4xl font-bold text-zinc-50 lg:text-start lg:text-5xl"
+          >
+            {t("name")}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.2,
+              delay: 0.4,
+            }}
+            className="mb-10 text-center text-lg font-semibold lg:max-w-xl lg:text-start lg:text-2xl lg:font-normal"
+          >
+            {t("description")}
+          </motion.p>
 
-            <div className="mb-10 hidden items-center justify-start gap-6 lg:flex">
-              {navButtons.map((item, idx) => {
-                return (
-                  <motion.div
-                    key={item.href || item.titleKey}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.2,
-                      delay: (idx + 1) * 0.2,
-                    }}
-                  >
-                    <MenuButton href={item.href} _blank={item._blank}>
-                      {tNav(item.titleKey)}
-                    </MenuButton>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            <div className="flex w-full flex-wrap items-center justify-center gap-3 lg:justify-start">
-              {socials.map((item, idx) => {
-                return (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: 0.2,
-                      delay: (idx + 1) * 0.2,
-                    }}
-                    key={item.url}
-                  >
-                    <Social href={item.url}>
-                      <item.icon size={20} />
-                    </Social>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.2,
-                delay: 0.6,
-              }}
-              className="mt-6 text-center lg:hidden"
-            >
-              <Link
-                href="/about"
-                className="animate-pulse underline decoration-green-500 underline-offset-2"
-              >
-                {t("explore")}
-              </Link>
-            </motion.div>
+          <div className="mb-10 hidden items-center justify-start gap-6 lg:flex">
+            {navButtons.map((item, idx) => {
+              return (
+                <motion.div
+                  key={item.href || item.titleKey}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: (idx + 1) * 0.2,
+                  }}
+                >
+                  <MenuButton href={item.href} _blank={item._blank}>
+                    {tNav(item.titleKey)}
+                  </MenuButton>
+                </motion.div>
+              );
+            })}
           </div>
-        </main>
+
+          <div className="flex w-full flex-wrap items-center justify-center gap-3 lg:justify-start">
+            {socials.map((item, idx) => {
+              return (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: (idx + 1) * 0.2,
+                  }}
+                  key={item.url}
+                >
+                  <Social href={item.url}>
+                    <item.icon size={20} />
+                  </Social>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.2,
+              delay: 0.6,
+            }}
+            className="mt-6 text-center lg:hidden"
+          >
+            <Link
+              href="/about"
+              className="animate-pulse underline decoration-green-500 underline-offset-2"
+            >
+              {t("explore")}
+            </Link>
+          </motion.div>
+        </div>
+      </main>
     </PageContainer>
   );
 }

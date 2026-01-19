@@ -94,7 +94,10 @@ export default function Resume() {
     <PageContainer navbar>
       <SectionContainer>
         <div className="mb-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <SectionTitles title={t("sectionTitle")} subTitle={t("sectionSubtitle")} />
+          <SectionTitles
+            title={t("sectionTitle")}
+            subTitle={t("sectionSubtitle")}
+          />
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -115,7 +118,10 @@ export default function Resume() {
             {/* Summary */}
             <ColumnItems title={t("summary.title")}>
               <>
-                <ResumeItem title={t("summary.name")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("summary.name")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -135,7 +141,7 @@ export default function Resume() {
                         <a
                           href={`mailto:${resumeData.email}?subject=I%20checked%20your%20website&body=Hello,%20Heitor`}
                           target="_blank"
-                          className="decoration-green-500 underline underline-offset-4"
+                          className="underline decoration-green-500 underline-offset-4"
                         >
                           {resumeData.email}
                         </a>
@@ -150,7 +156,10 @@ export default function Resume() {
             <ColumnItems title={t("experience.title")}>
               <>
                 {/* One Panel */}
-                <ResumeItem title={t("experience.onePanel.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("experience.onePanel.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -175,12 +184,18 @@ export default function Resume() {
                     <ul className="list-inside list-disc">
                       <li>{t("experience.onePanel.role")}</li>
                       <li>
-                        <a href={resumeData.expLinks.onePanel} target="_blank" className="decoration-green-500 underline underline-offset-4">
+                        <a
+                          href={resumeData.expLinks.onePanel}
+                          target="_blank"
+                          className="underline decoration-green-500 underline-offset-4"
+                        >
                           One Panel
                         </a>
                       </li>
                     </ul>
-                    <h3 className="mt-5 text-lg font-semibold text-green-500">{t("experience.onePanel.techStack")}</h3>
+                    <h3 className="mt-5 text-lg font-semibold text-green-500">
+                      {t("experience.onePanel.techStack")}
+                    </h3>
                     <ul className="grid list-inside list-disc gap-x-3 md:grid-cols-2">
                       {resumeData.techStacks.onePanel.map((tech) => (
                         <li key={tech}>{tech}</li>
@@ -190,7 +205,10 @@ export default function Resume() {
                 </ResumeItem>
 
                 {/* Freelance */}
-                <ResumeItem title={t("experience.freelance.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("experience.freelance.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -215,7 +233,9 @@ export default function Resume() {
                     <ul className="list-inside list-disc">
                       <li>{t("experience.freelance.role")}</li>
                     </ul>
-                    <h3 className="mt-5 text-lg font-semibold text-green-500">{t("experience.freelance.techStack")}</h3>
+                    <h3 className="mt-5 text-lg font-semibold text-green-500">
+                      {t("experience.freelance.techStack")}
+                    </h3>
                     <ul className="grid list-inside list-disc gap-x-3 md:grid-cols-2">
                       {resumeData.techStacks.freelance.map((tech) => (
                         <li key={tech}>{tech}</li>
@@ -225,7 +245,10 @@ export default function Resume() {
                 </ResumeItem>
 
                 {/* LL Software */}
-                <ResumeItem title={t("experience.llSoftware.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("experience.llSoftware.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -250,12 +273,18 @@ export default function Resume() {
                     <ul className="list-inside list-disc">
                       <li>{t("experience.llSoftware.role")}</li>
                       <li>
-                        <a href={resumeData.expLinks.llSoftware} target="_blank" className="decoration-green-500 underline underline-offset-4">
+                        <a
+                          href={resumeData.expLinks.llSoftware}
+                          target="_blank"
+                          className="underline decoration-green-500 underline-offset-4"
+                        >
                           LL Software
                         </a>
                       </li>
                     </ul>
-                    <h3 className="mt-5 text-lg font-semibold text-green-500">{t("experience.llSoftware.techStack")}</h3>
+                    <h3 className="mt-5 text-lg font-semibold text-green-500">
+                      {t("experience.llSoftware.techStack")}
+                    </h3>
                     <ul className="grid list-inside list-disc gap-x-3 md:grid-cols-2">
                       {resumeData.techStacks.llSoftware.map((tech) => (
                         <li key={tech}>{tech}</li>
@@ -265,7 +294,10 @@ export default function Resume() {
                 </ResumeItem>
 
                 {/* Freelance Teacher */}
-                <ResumeItem title={t("experience.freelanceTeacher.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("experience.freelanceTeacher.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -295,7 +327,10 @@ export default function Resume() {
                 </ResumeItem>
 
                 {/* Mundo HB */}
-                <ResumeItem title={t("experience.mundoHb.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("experience.mundoHb.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -320,7 +355,11 @@ export default function Resume() {
                     <ul className="list-inside list-disc">
                       <li>{t("experience.mundoHb.role")}</li>
                       <li>
-                        <a href={resumeData.expLinks.mundoHb} target="_blank" className="decoration-green-500 underline underline-offset-4">
+                        <a
+                          href={resumeData.expLinks.mundoHb}
+                          target="_blank"
+                          className="underline decoration-green-500 underline-offset-4"
+                        >
                           Mundo HB
                         </a>
                       </li>
@@ -336,7 +375,10 @@ export default function Resume() {
             <ColumnItems title={t("education.title")}>
               <>
                 {/* Java10x */}
-                <ResumeItem title={t("education.java10x.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("education.java10x.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -358,19 +400,32 @@ export default function Resume() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2, delay: 0.6 }}
                   >
-                    <ul className="list-inside list-disc decoration-green-500 underline underline-offset-4">
+                    <ul className="list-inside list-disc underline decoration-green-500 underline-offset-4">
                       <li>
-                        <a href={resumeData.certLinks.java10x.cert1} target="_blank">{t("education.java10x.cert1")}</a>
+                        <a
+                          href={resumeData.certLinks.java10x.cert1}
+                          target="_blank"
+                        >
+                          {t("education.java10x.cert1")}
+                        </a>
                       </li>
                       <li>
-                        <a href={resumeData.certLinks.java10x.cert2} target="_blank">{t("education.java10x.cert2")}</a>
+                        <a
+                          href={resumeData.certLinks.java10x.cert2}
+                          target="_blank"
+                        >
+                          {t("education.java10x.cert2")}
+                        </a>
                       </li>
                     </ul>
                   </motion.div>
                 </ResumeItem>
 
                 {/* Cybersecurity */}
-                <ResumeItem title={t("education.cybersecurity.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("education.cybersecurity.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -392,16 +447,24 @@ export default function Resume() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2, delay: 0.6 }}
                   >
-                    <ul className="list-inside list-disc decoration-green-500 underline underline-offset-4">
+                    <ul className="list-inside list-disc underline decoration-green-500 underline-offset-4">
                       <li>
-                        <a href={resumeData.certLinks.cybersecurity.cert} target="_blank">{t("education.cybersecurity.cert")}</a>
+                        <a
+                          href={resumeData.certLinks.cybersecurity.cert}
+                          target="_blank"
+                        >
+                          {t("education.cybersecurity.cert")}
+                        </a>
                       </li>
                     </ul>
                   </motion.div>
                 </ResumeItem>
 
                 {/* Rocketseat */}
-                <ResumeItem title={t("education.rocketseat.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("education.rocketseat.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -423,16 +486,24 @@ export default function Resume() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2, delay: 0.6 }}
                   >
-                    <ul className="list-inside list-disc decoration-green-500 underline underline-offset-4">
+                    <ul className="list-inside list-disc underline decoration-green-500 underline-offset-4">
                       <li>
-                        <a href={resumeData.certLinks.rocketseat.cert} target="_blank">{t("education.rocketseat.cert")}</a>
+                        <a
+                          href={resumeData.certLinks.rocketseat.cert}
+                          target="_blank"
+                        >
+                          {t("education.rocketseat.cert")}
+                        </a>
                       </li>
                     </ul>
                   </motion.div>
                 </ResumeItem>
 
                 {/* FreeCodeCamp */}
-                <ResumeItem title={t("education.freecodecamp.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("education.freecodecamp.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -454,19 +525,32 @@ export default function Resume() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2, delay: 0.6 }}
                   >
-                    <ul className="list-inside list-disc decoration-green-500 underline underline-offset-4">
+                    <ul className="list-inside list-disc underline decoration-green-500 underline-offset-4">
                       <li>
-                        <a href={resumeData.certLinks.freecodecamp.cert1} target="_blank">{t("education.freecodecamp.cert1")}</a>
+                        <a
+                          href={resumeData.certLinks.freecodecamp.cert1}
+                          target="_blank"
+                        >
+                          {t("education.freecodecamp.cert1")}
+                        </a>
                       </li>
                       <li>
-                        <a href={resumeData.certLinks.freecodecamp.cert2} target="_blank">{t("education.freecodecamp.cert2")}</a>
+                        <a
+                          href={resumeData.certLinks.freecodecamp.cert2}
+                          target="_blank"
+                        >
+                          {t("education.freecodecamp.cert2")}
+                        </a>
                       </li>
                     </ul>
                   </motion.div>
                 </ResumeItem>
 
                 {/* Web Full Stack */}
-                <ResumeItem title={t("education.webFullStack.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("education.webFullStack.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -488,25 +572,48 @@ export default function Resume() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2, delay: 0.6 }}
                   >
-                    <ul className="list-inside list-disc decoration-green-500 underline underline-offset-4">
+                    <ul className="list-inside list-disc underline decoration-green-500 underline-offset-4">
                       <li>
-                        <a href={resumeData.certLinks.webFullStack.cert1} target="_blank">{t("education.webFullStack.cert1")}</a>
+                        <a
+                          href={resumeData.certLinks.webFullStack.cert1}
+                          target="_blank"
+                        >
+                          {t("education.webFullStack.cert1")}
+                        </a>
                       </li>
                       <li>
-                        <a href={resumeData.certLinks.webFullStack.cert2} target="_blank">{t("education.webFullStack.cert2")}</a>
+                        <a
+                          href={resumeData.certLinks.webFullStack.cert2}
+                          target="_blank"
+                        >
+                          {t("education.webFullStack.cert2")}
+                        </a>
                       </li>
                       <li>
-                        <a href={resumeData.certLinks.webFullStack.cert3} target="_blank">{t("education.webFullStack.cert3")}</a>
+                        <a
+                          href={resumeData.certLinks.webFullStack.cert3}
+                          target="_blank"
+                        >
+                          {t("education.webFullStack.cert3")}
+                        </a>
                       </li>
                       <li>
-                        <a href={resumeData.certLinks.webFullStack.cert4} target="_blank">{t("education.webFullStack.cert4")}</a>
+                        <a
+                          href={resumeData.certLinks.webFullStack.cert4}
+                          target="_blank"
+                        >
+                          {t("education.webFullStack.cert4")}
+                        </a>
                       </li>
                     </ul>
                   </motion.div>
                 </ResumeItem>
 
                 {/* English Language */}
-                <ResumeItem title={t("education.english.title")} className="w-full text-justify">
+                <ResumeItem
+                  title={t("education.english.title")}
+                  className="w-full text-justify"
+                >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -531,7 +638,11 @@ export default function Resume() {
                     <ul className="list-inside list-disc">
                       <li>{t("education.english.fluent")}</li>
                       <li>
-                        <a href={resumeData.certLinks.english.mundoHb} target="_blank" className="decoration-green-500 underline underline-offset-4">
+                        <a
+                          href={resumeData.certLinks.english.mundoHb}
+                          target="_blank"
+                          className="underline decoration-green-500 underline-offset-4"
+                        >
                           Mundo HB
                         </a>
                       </li>

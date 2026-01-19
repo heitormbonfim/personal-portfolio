@@ -9,7 +9,7 @@ export function Social({
 }) {
   return (
     <Link href={href} target="_blank" rel="noopener noreferrer">
-      <div className="w-10 h-10 rounded-full text-zinc-50 bg-zinc-700 hover:bg-green-500 flex justify-center items-center transition-all duration-300">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-700 text-zinc-50 transition-all duration-300 hover:bg-green-500">
         {children}
       </div>
     </Link>

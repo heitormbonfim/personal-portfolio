@@ -204,7 +204,9 @@ function parseBullets(description: string): string[] {
 export function ResumePDF({ translations, skillsTitle }: ResumePDFProps) {
   const t = translations;
   const skills = aboutData.skills;
-  const topSkills = skills.filter(s => s.level === "advanced" || s.level === "intermediate");
+  const topSkills = skills.filter(
+    (s) => s.level === "advanced" || s.level === "intermediate"
+  );
 
   return (
     <Document>
@@ -214,13 +216,22 @@ export function ResumePDF({ translations, skillsTitle }: ResumePDFProps) {
           <Text style={styles.name}>{t.summary.name}</Text>
           <View style={styles.contactRow}>
             <Text style={styles.contactItem}>{t.summary.location}</Text>
-            <Link style={[styles.contactItem, styles.link]} src={`mailto:${resumeData.email}`}>
+            <Link
+              style={[styles.contactItem, styles.link]}
+              src={`mailto:${resumeData.email}`}
+            >
               {resumeData.email}
             </Link>
-            <Link style={[styles.contactItem, styles.link]} src="https://www.linkedin.com/in/heitormbonfim">
+            <Link
+              style={[styles.contactItem, styles.link]}
+              src="https://www.linkedin.com/in/heitormbonfim"
+            >
               LinkedIn
             </Link>
-            <Link style={[styles.contactItem, styles.link]} src="https://github.com/heitormbonfim">
+            <Link
+              style={[styles.contactItem, styles.link]}
+              src="https://github.com/heitormbonfim"
+            >
               GitHub
             </Link>
           </View>
@@ -251,63 +262,98 @@ export function ResumePDF({ translations, skillsTitle }: ResumePDFProps) {
           {/* One Panel */}
           <View style={styles.experienceItem}>
             <View style={styles.itemHeader}>
-              <Text style={styles.itemTitle}>{t.experience.onePanel.title}</Text>
-              <Text style={styles.itemDates}>{t.experience.onePanel.dates}</Text>
+              <Text style={styles.itemTitle}>
+                {t.experience.onePanel.title}
+              </Text>
+              <Text style={styles.itemDates}>
+                {t.experience.onePanel.dates}
+              </Text>
             </View>
             <Text style={styles.itemRole}>{t.experience.onePanel.role}</Text>
-            {parseBullets(t.experience.onePanel.description).map((bullet, i) => (
-              <View key={i} style={styles.bulletContainer}>
-                <Text style={styles.bulletText}>• {bullet}</Text>
-              </View>
-            ))}
+            {parseBullets(t.experience.onePanel.description).map(
+              (bullet, i) => (
+                <View key={i} style={styles.bulletContainer}>
+                  <Text style={styles.bulletText}>• {bullet}</Text>
+                </View>
+              )
+            )}
             <Text style={styles.techStackLabel}>
-              Tech: <Text style={styles.techStack}>{resumeData.techStacks.onePanel.join(", ")}</Text>
+              Tech:{" "}
+              <Text style={styles.techStack}>
+                {resumeData.techStacks.onePanel.join(", ")}
+              </Text>
             </Text>
           </View>
 
           {/* Freelance */}
           <View style={styles.experienceItem}>
             <View style={styles.itemHeader}>
-              <Text style={styles.itemTitle}>{t.experience.freelance.title}</Text>
-              <Text style={styles.itemDates}>{t.experience.freelance.dates}</Text>
+              <Text style={styles.itemTitle}>
+                {t.experience.freelance.title}
+              </Text>
+              <Text style={styles.itemDates}>
+                {t.experience.freelance.dates}
+              </Text>
             </View>
             <Text style={styles.itemRole}>{t.experience.freelance.role}</Text>
-            {parseBullets(t.experience.freelance.description).map((bullet, i) => (
-              <View key={i} style={styles.bulletContainer}>
-                <Text style={styles.bulletText}>• {bullet}</Text>
-              </View>
-            ))}
+            {parseBullets(t.experience.freelance.description).map(
+              (bullet, i) => (
+                <View key={i} style={styles.bulletContainer}>
+                  <Text style={styles.bulletText}>• {bullet}</Text>
+                </View>
+              )
+            )}
             <Text style={styles.techStackLabel}>
-              Tech: <Text style={styles.techStack}>{resumeData.techStacks.freelance.slice(0, 10).join(", ")}</Text>
+              Tech:{" "}
+              <Text style={styles.techStack}>
+                {resumeData.techStacks.freelance.slice(0, 10).join(", ")}
+              </Text>
             </Text>
           </View>
 
           {/* LL Software */}
           <View style={styles.experienceItem}>
             <View style={styles.itemHeader}>
-              <Text style={styles.itemTitle}>{t.experience.llSoftware.title}</Text>
-              <Text style={styles.itemDates}>{t.experience.llSoftware.dates}</Text>
+              <Text style={styles.itemTitle}>
+                {t.experience.llSoftware.title}
+              </Text>
+              <Text style={styles.itemDates}>
+                {t.experience.llSoftware.dates}
+              </Text>
             </View>
             <Text style={styles.itemRole}>{t.experience.llSoftware.role}</Text>
-            {parseBullets(t.experience.llSoftware.description).map((bullet, i) => (
-              <View key={i} style={styles.bulletContainer}>
-                <Text style={styles.bulletText}>• {bullet}</Text>
-              </View>
-            ))}
+            {parseBullets(t.experience.llSoftware.description).map(
+              (bullet, i) => (
+                <View key={i} style={styles.bulletContainer}>
+                  <Text style={styles.bulletText}>• {bullet}</Text>
+                </View>
+              )
+            )}
             <Text style={styles.techStackLabel}>
-              Tech: <Text style={styles.techStack}>{resumeData.techStacks.llSoftware.slice(0, 10).join(", ")}</Text>
+              Tech:{" "}
+              <Text style={styles.techStack}>
+                {resumeData.techStacks.llSoftware.slice(0, 10).join(", ")}
+              </Text>
             </Text>
           </View>
 
           {/* Teaching Experience - Condensed */}
           <View style={styles.experienceItem}>
             <View style={styles.itemHeader}>
-              <Text style={styles.itemTitle}>{t.experience.freelanceTeacher.title}</Text>
-              <Text style={styles.itemDates}>{t.experience.freelanceTeacher.dates}</Text>
+              <Text style={styles.itemTitle}>
+                {t.experience.freelanceTeacher.title}
+              </Text>
+              <Text style={styles.itemDates}>
+                {t.experience.freelanceTeacher.dates}
+              </Text>
             </View>
-            <Text style={styles.itemRole}>{t.experience.freelanceTeacher.role}</Text>
+            <Text style={styles.itemRole}>
+              {t.experience.freelanceTeacher.role}
+            </Text>
             <View style={styles.bulletContainer}>
-              <Text style={styles.bulletText}>• {t.experience.freelanceTeacher.description}</Text>
+              <Text style={styles.bulletText}>
+                • {t.experience.freelanceTeacher.description}
+              </Text>
             </View>
           </View>
 
@@ -318,7 +364,9 @@ export function ResumePDF({ translations, skillsTitle }: ResumePDFProps) {
             </View>
             <Text style={styles.itemRole}>{t.experience.mundoHb.role}</Text>
             <View style={styles.bulletContainer}>
-              <Text style={styles.bulletText}>• {t.experience.mundoHb.description}</Text>
+              <Text style={styles.bulletText}>
+                • {t.experience.mundoHb.description}
+              </Text>
             </View>
           </View>
         </View>
@@ -330,47 +378,83 @@ export function ResumePDF({ translations, skillsTitle }: ResumePDFProps) {
             <View style={styles.column}>
               <View style={styles.educationItem}>
                 <View style={styles.itemHeader}>
-                  <Text style={styles.itemTitle}>{t.education.java10x.title}</Text>
-                  <Text style={styles.itemDates}>{t.education.java10x.dates}</Text>
+                  <Text style={styles.itemTitle}>
+                    {t.education.java10x.title}
+                  </Text>
+                  <Text style={styles.itemDates}>
+                    {t.education.java10x.dates}
+                  </Text>
                 </View>
-                <Text style={styles.educationDescription}>Java, Spring Boot, Clean Architecture, Docker</Text>
+                <Text style={styles.educationDescription}>
+                  Java, Spring Boot, Clean Architecture, Docker
+                </Text>
               </View>
               <View style={styles.educationItem}>
                 <View style={styles.itemHeader}>
-                  <Text style={styles.itemTitle}>{t.education.cybersecurity.title}</Text>
-                  <Text style={styles.itemDates}>{t.education.cybersecurity.dates}</Text>
+                  <Text style={styles.itemTitle}>
+                    {t.education.cybersecurity.title}
+                  </Text>
+                  <Text style={styles.itemDates}>
+                    {t.education.cybersecurity.dates}
+                  </Text>
                 </View>
-                <Text style={styles.educationDescription}>Cisco - CIA Triad, Network Security, Risk Management</Text>
+                <Text style={styles.educationDescription}>
+                  Cisco - CIA Triad, Network Security, Risk Management
+                </Text>
               </View>
               <View style={styles.educationItem}>
                 <View style={styles.itemHeader}>
-                  <Text style={styles.itemTitle}>{t.education.freecodecamp.title}</Text>
-                  <Text style={styles.itemDates}>{t.education.freecodecamp.dates}</Text>
+                  <Text style={styles.itemTitle}>
+                    {t.education.freecodecamp.title}
+                  </Text>
+                  <Text style={styles.itemDates}>
+                    {t.education.freecodecamp.dates}
+                  </Text>
                 </View>
-                <Text style={styles.educationDescription}>JavaScript, Python, Algorithms, Data Structures</Text>
+                <Text style={styles.educationDescription}>
+                  JavaScript, Python, Algorithms, Data Structures
+                </Text>
               </View>
             </View>
             <View style={styles.column}>
               <View style={styles.educationItem}>
                 <View style={styles.itemHeader}>
-                  <Text style={styles.itemTitle}>{t.education.webFullStack.title}</Text>
-                  <Text style={styles.itemDates}>{t.education.webFullStack.dates}</Text>
+                  <Text style={styles.itemTitle}>
+                    {t.education.webFullStack.title}
+                  </Text>
+                  <Text style={styles.itemDates}>
+                    {t.education.webFullStack.dates}
+                  </Text>
                 </View>
-                <Text style={styles.educationDescription}>HTML, CSS, React, Node.js, MongoDB, Express</Text>
+                <Text style={styles.educationDescription}>
+                  HTML, CSS, React, Node.js, MongoDB, Express
+                </Text>
               </View>
               <View style={styles.educationItem}>
                 <View style={styles.itemHeader}>
-                  <Text style={styles.itemTitle}>{t.education.rocketseat.title}</Text>
-                  <Text style={styles.itemDates}>{t.education.rocketseat.dates}</Text>
+                  <Text style={styles.itemTitle}>
+                    {t.education.rocketseat.title}
+                  </Text>
+                  <Text style={styles.itemDates}>
+                    {t.education.rocketseat.dates}
+                  </Text>
                 </View>
-                <Text style={styles.educationDescription}>Programming fundamentals, Frontend/Backend</Text>
+                <Text style={styles.educationDescription}>
+                  Programming fundamentals, Frontend/Backend
+                </Text>
               </View>
               <View style={styles.educationItem}>
                 <View style={styles.itemHeader}>
-                  <Text style={styles.itemTitle}>{t.education.english.title}</Text>
-                  <Text style={styles.itemDates}>{t.education.english.dates}</Text>
+                  <Text style={styles.itemTitle}>
+                    {t.education.english.title}
+                  </Text>
+                  <Text style={styles.itemDates}>
+                    {t.education.english.dates}
+                  </Text>
                 </View>
-                <Text style={styles.educationDescription}>Fluent - Professional proficiency</Text>
+                <Text style={styles.educationDescription}>
+                  Fluent - Professional proficiency
+                </Text>
               </View>
             </View>
           </View>

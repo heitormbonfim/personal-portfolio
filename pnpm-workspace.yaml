@@ -2,7 +2,7 @@ packages:
   - .
 
 onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - '@swc/core'
+  - "@parcel/watcher"
+  - "@swc/core"
   - sharp
   - unrs-resolver

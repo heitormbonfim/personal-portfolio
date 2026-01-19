@@ -30,10 +30,10 @@ export function ResumeItem({ children, title, className }: ResumeItemProps) {
           duration: 0.2,
           delay: 0.3,
         }}
-        className="absolute top-0 -left-[9px] h-[16px] w-[16px] rounded-full border-2 border-green-500 bg-green-500"
+        className="absolute top-0 -left-2.25 h-4 w-4 rounded-full border-2 border-green-500 bg-green-500"
       ></motion.div>
       <div className="px-6 pb-10">
-        <h2 className="relative -top-[2px] mb-2 text-lg leading-5 font-semibold text-green-500 uppercase">
+        <h2 className="relative -top-0.5 mb-2 text-lg leading-5 font-semibold text-green-500 uppercase">
           {title}
         </h2>
         <div>{children}</div>

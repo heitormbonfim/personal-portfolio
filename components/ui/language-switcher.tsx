@@ -1,8 +1,9 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
 import { type Locale } from "@/i18n/config";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
+import { Button } from "./button";
 
 export function LanguageSwitcher() {
   const locale = useLocale();
@@ -14,11 +15,12 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <button
+    <Button
+      size={"sm"}
       onClick={() => switchLocale(locale === "en" ? "pt-br" : "en")}
       className="rounded border border-green-500 px-3 py-1 text-sm font-medium transition-colors hover:bg-green-500 hover:text-zinc-900"
     >
-      {locale === "en" ? "PT-BR" : "EN"}
-    </button>
+      {locale === "en" ? "PT" : "EN"}
+    </Button>
   );
 }

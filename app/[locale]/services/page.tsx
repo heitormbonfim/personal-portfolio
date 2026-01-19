@@ -14,7 +14,10 @@ export default function Services() {
   return (
     <PageContainer navbar>
       <SectionContainer>
-        <SectionTitles title={t("sectionTitle")} subTitle={t("sectionSubtitle")} />
+        <SectionTitles
+          title={t("sectionTitle")}
+          subTitle={t("sectionSubtitle")}
+        />
 
         <div className="grid w-full gap-5 lg:grid-cols-3">
           {servicesData.map((service, idx) => {

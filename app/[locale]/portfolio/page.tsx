@@ -19,7 +19,10 @@ export default function Portfolio() {
   return (
     <PageContainer navbar>
       <SectionContainer>
-        <SectionTitles title={t("sectionTitle")} subTitle={t("sectionSubtitle")} />
+        <SectionTitles
+          title={t("sectionTitle")}
+          subTitle={t("sectionSubtitle")}
+        />
 
         <div className="mb-20 inline-grid w-full grid-cols-1 justify-items-center gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           {portfolioData.projects.map((project, idx) => {
@@ -56,7 +59,9 @@ export default function Portfolio() {
           <FaGithub />{" "}
           <span>
             {t("githubTitlePart1")}
-            <span className="font-bold text-green-500">{t("githubTitleHighlight")}</span>
+            <span className="font-bold text-green-500">
+              {t("githubTitleHighlight")}
+            </span>
             {t("githubTitlePart2")}
           </span>
         </motion.h2>
