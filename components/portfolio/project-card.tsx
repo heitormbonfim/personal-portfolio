@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -51,7 +52,7 @@ function Content({ content, title, img, url }: ProjectCardProps) {
             <span className="text-zinc-300">No Image</span>
           </div>
         )}
-        <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+        <figcaption className="absolute right-0 bottom-0 left-0 bg-linear-to-t from-black to-transparent p-4">
           {url ? (
             <Link href={url} target="_blank" rel="noopener noreferrer">
               <h3 className="cursor-pointer text-xl font-bold text-white duration-300 hover:text-green-500">
@@ -75,19 +76,23 @@ function Content({ content, title, img, url }: ProjectCardProps) {
           <p>{isExpanded ? content : truncatedContent}</p>
         </div>
         {!isExpanded && content.length > maxCharacters ? (
-          <button
+          <Button
+            variant="link"
+            size="sm"
             onClick={toggleExpand}
-            className="mt-2 block text-sm text-green-500 hover:underline"
+            className="mt-2 h-auto p-0 text-green-500"
           >
             Show more...
-          </button>
+          </Button>
         ) : isExpanded ? (
-          <button
+          <Button
+            variant="link"
+            size="sm"
             onClick={toggleExpand}
-            className="mt-2 block text-sm text-green-500 hover:underline"
+            className="mt-2 h-auto p-0 text-green-500"
           >
             Show less...
-          </button>
+          </Button>
         ) : null}
       </div>
     </div>

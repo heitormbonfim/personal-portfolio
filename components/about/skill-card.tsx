@@ -18,7 +18,7 @@ export function SkillCard({
     <div
       className={cn(
         "flex min-h-16 w-full cursor-default flex-wrap items-center gap-5 bg-[#222b] px-4 py-4 duration-300 hover:bg-[#333b]",
-        renderLevel(level),
+        renderLevel(level)
       )}
     >
       <Icon size={30} className={iconStyle} />
@@ -35,6 +35,6 @@ function renderLevel(level: string) {
   } else if (level == "advanced") {
     return "border-2 border-green-500";
   } else {
-    ("border border-zinc-100");
+    return "border border-zinc-100";
   }
 }

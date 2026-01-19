@@ -1,12 +1,24 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { MdOutlineMenuOpen } from "react-icons/md";
-import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { NavButtons, navButtons } from "@/utils/navbar-buttons";
-import { MenuButton } from "./menu-button";
+import { useTranslations } from "next-intl";
+import React, {
+  useEffect,
+  useMemo,
+  useState,
+  useSyncExternalStore,
+} from "react";
+import { MdOutlineMenuOpen } from "react-icons/md";
 import { LanguageSwitcher } from "./language-switcher";
+import { MenuButton } from "./menu-button";
+
+const subscribeToResize = (callback: () => void) => {
+  window.addEventListener("resize", callback);
+  return () => window.removeEventListener("resize", callback);
+};
+const getWindowWidth = () => window.innerWidth;
+const getServerWidth = () => undefined as number | undefined;
 
 interface Navbar extends NavbarTransparency {
   navButtons: NavButtons[];
@@ -27,31 +39,26 @@ export default function Navbar({
   mobileOnly,
 }: NavbarProps) {
   const [clientWindowHeight, setClientWindowHeight] = useState(0);
-  const [backgroundTransparency, setBackgroundTransparency] = useState(0);
 
-  const [isMobile, setIsMobile] = useState(false);
-  const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
+  const windowWidth = useSyncExternalStore(
+    subscribeToResize,
+    getWindowWidth,
+    getServerWidth
+  );
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setWindowWidth(window.innerWidth);
-      const handleResize = () => setWindowWidth(window.innerWidth);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (mobileOnly) {
-      return setIsMobile(true);
-    }
-
-    if (windowWidth && windowWidth < 1024) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
+  const isMobile = useMemo(() => {
+    if (mobileOnly) return true;
+    if (windowWidth && windowWidth < 1024) return true;
+    return false;
   }, [windowWidth, mobileOnly]);
+
+  const backgroundTransparency = useMemo(() => {
+    if (transparentWhenTop) {
+      const transparencyVar = clientWindowHeight / 600;
+      return transparencyVar < 1 ? transparencyVar : 1;
+    }
+    return 0;
+  }, [clientWindowHeight, transparentWhenTop]);
 
   useEffect(() => {
     if (transparentWhenTop) {
@@ -59,23 +66,10 @@ export default function Navbar({
         setClientWindowHeight(window.scrollY);
       };
 
-      if (typeof window !== "undefined") {
-        window.addEventListener("scroll", handleScroll, { passive: true });
-
-        return () => window.removeEventListener("scroll", handleScroll);
-      }
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [transparentWhenTop]);
-
-  useEffect(() => {
-    if (transparentWhenTop) {
-      const backgroundTransparencyVar = clientWindowHeight / 600;
-
-      if (backgroundTransparencyVar < 1) {
-        setBackgroundTransparency(backgroundTransparencyVar);
-      }
-    }
-  }, [clientWindowHeight, transparentWhenTop]);
 
   return (
     <>
@@ -123,7 +117,7 @@ function MobileNavbar({
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-30 w-full transition-all duration-200 ease-in lg:hidden ${
-        showMenu && "!bg-[#000d]"
+        showMenu && "bg-[#000d]!"
       }`}
       style={{
         background: transparentWhenTop
@@ -196,7 +190,7 @@ function Desktop({
           : "#000d",
       }}
     >
-      <div className="mx-auto hidden w-full max-w-[1320px] items-center justify-between px-2 py-4 lg:flex">
+      <div className="mx-auto hidden w-full max-w-330 items-center justify-between px-2 py-4 lg:flex">
         <NavbarLogo />
 
         <div className="mr-3 flex items-center justify-center gap-5">

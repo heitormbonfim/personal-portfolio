@@ -1,9 +1,14 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { FiDownload } from "react-icons/fi";
 import { ResumePDF } from "./resume-pdf";
+
+const emptySubscribe = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 interface ResumeTranslations {
   summary: {
@@ -71,37 +76,41 @@ export function DownloadResumeButton({
   buttonText,
   loadingText,
 }: DownloadResumeButtonProps) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    getClientSnapshot,
+    getServerSnapshot
+  );
 
   if (!mounted) {
     return (
-      <button
+      <Button
+        variant="outline"
         disabled
-        className="flex items-center gap-2 rounded-lg border border-green-500 bg-transparent px-4 py-2 text-sm font-medium text-green-500 opacity-50"
+        className="flex items-center gap-2 rounded-lg border-green-500 bg-transparent text-green-500"
       >
         <FiDownload size={16} />
         {buttonText}
-      </button>
+      </Button>
     );
   }
 
   return (
     <PDFDownloadLink
-      document={<ResumePDF translations={translations} skillsTitle={skillsTitle} />}
+      document={
+        <ResumePDF translations={translations} skillsTitle={skillsTitle} />
+      }
       fileName={`heitor-bonfim-resume-${locale}.pdf`}
     >
       {({ loading }) => (
-        <button
+        <Button
+          variant="outline"
           disabled={loading}
-          className="flex items-center gap-2 rounded-lg border border-green-500 bg-transparent px-4 py-2 text-sm font-medium text-green-500 transition-all hover:bg-green-500 hover:text-zinc-900 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex items-center gap-2 rounded-lg border-green-500 bg-transparent text-green-500 transition-all hover:bg-green-500 hover:text-zinc-900"
         >
           <FiDownload size={16} />
           {loading ? loadingText : buttonText}
-        </button>
+        </Button>
       )}
     </PDFDownloadLink>
   );
