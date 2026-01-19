@@ -9,9 +9,9 @@ import React, {
   useState,
   useSyncExternalStore,
 } from "react";
-import { MdOutlineMenuOpen } from "react-icons/md";
 import { LanguageSwitcher } from "./language-switcher";
 import { MenuButton } from "./menu-button";
+import { MobileFAB } from "./mobile-fab";
 
 const subscribeToResize = (callback: () => void) => {
   window.addEventListener("resize", callback);
@@ -105,72 +105,23 @@ function MobileNavbar({
   backgroundTransparency,
   navButtons,
 }: Navbar) {
-  const [showMenu, setShowMenu] = useState(false);
-  const t = useTranslations("navigation");
-
-  function handleToggleMenu(event: React.MouseEvent<HTMLElement | SVGElement>) {
-    event.stopPropagation();
-
-    setShowMenu((prev) => !prev);
-  }
-
   return (
-    <nav
-      className={`fixed inset-x-0 top-0 z-30 w-full transition-all duration-200 ease-in lg:hidden ${
-        showMenu && "bg-[#000d]!"
-      }`}
-      style={{
-        background: transparentWhenTop
-          ? `rgba(0, 0, 0, ${backgroundTransparency})`
-          : "#000d",
-      }}
-    >
-      <div
-        className={`relative mx-auto flex w-full items-center justify-between px-2 py-4 ${
-          showMenu && "backdrop-blur-sm"
-        }`}
+    <>
+      <nav
+        className="fixed inset-x-0 top-0 z-30 w-full transition-all duration-200 ease-in lg:hidden"
+        style={{
+          background: transparentWhenTop
+            ? `rgba(0, 0, 0, ${backgroundTransparency})`
+            : "#000d",
+        }}
       >
-        <NavbarLogo />
-
-        <div className="flex items-center gap-3">
+        <div className="relative mx-auto flex w-full items-center justify-between px-2 py-4">
+          <NavbarLogo />
           <LanguageSwitcher />
-          <MdOutlineMenuOpen
-            size={35}
-            className={`mx-3 text-zinc-100 transition-all duration-200 ease-in ${
-              showMenu && "rotate-180"
-            }`}
-            onClick={(event) => handleToggleMenu(event)}
-          />
         </div>
-      </div>
-
-      <div
-        className={`fixed z-30 h-full w-full backdrop-blur-sm transition-transform duration-200 ease-in ${
-          !showMenu && "translate-x-full"
-        } flex justify-end`}
-        onClick={(event) => handleToggleMenu(event)}
-      >
-        <div
-          className="flex h-full w-[60%] flex-col justify-start gap-2 bg-[#000d] p-5"
-          onClick={(event) => event.stopPropagation()}
-        >
-          {navButtons.map((button, idx) => {
-            return (
-              <React.Fragment key={button.titleKey + idx}>
-                <MenuButton
-                  className="w-full border-b-0 text-center text-2xl font-bold"
-                  href={button.href}
-                  _blank={button._blank}
-                >
-                  {t(button.titleKey)}
-                </MenuButton>
-                <hr />
-              </React.Fragment>
-            );
-          })}
-        </div>
-      </div>
-    </nav>
+      </nav>
+      <MobileFAB navButtons={navButtons} />
+    </>
   );
 }
 
@@ -189,6 +140,7 @@ function Desktop({
           ? `rgba(0, 0, 0, ${backgroundTransparency})`
           : "#000d",
       }}
+      aria-label="Main navigation"
     >
       <div className="mx-auto hidden w-full max-w-330 items-center justify-between px-2 py-4 lg:flex">
         <NavbarLogo />
