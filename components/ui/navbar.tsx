@@ -2,9 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import { MdOutlineMenuOpen } from "react-icons/md";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { NavButtons, navButtons } from "@/utils/navbar-buttons";
 import { MenuButton } from "./menu-button";
+import { LanguageSwitcher } from "./language-switcher";
 
 interface Navbar extends NavbarTransparency {
   navButtons: NavButtons[];
@@ -110,6 +112,7 @@ function MobileNavbar({
   navButtons,
 }: Navbar) {
   const [showMenu, setShowMenu] = useState(false);
+  const t = useTranslations("navigation");
 
   function handleToggleMenu(event: React.MouseEvent<HTMLElement | SVGElement>) {
     event.stopPropagation();
@@ -135,13 +138,16 @@ function MobileNavbar({
       >
         <NavbarLogo />
 
-        <MdOutlineMenuOpen
-          size={35}
-          className={`mx-3 text-zinc-100 transition-all duration-200 ease-in ${
-            showMenu && "rotate-180"
-          }`}
-          onClick={(event) => handleToggleMenu(event)}
-        />
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+          <MdOutlineMenuOpen
+            size={35}
+            className={`mx-3 text-zinc-100 transition-all duration-200 ease-in ${
+              showMenu && "rotate-180"
+            }`}
+            onClick={(event) => handleToggleMenu(event)}
+          />
+        </div>
       </div>
 
       <div
@@ -156,13 +162,13 @@ function MobileNavbar({
         >
           {navButtons.map((button, idx) => {
             return (
-              <React.Fragment key={button.title + idx}>
+              <React.Fragment key={button.titleKey + idx}>
                 <MenuButton
                   className="w-full border-b-0 text-center text-2xl font-bold"
                   href={button.href}
                   _blank={button._blank}
                 >
-                  {button.title}
+                  {t(button.titleKey)}
                 </MenuButton>
                 <hr />
               </React.Fragment>
@@ -179,6 +185,8 @@ function Desktop({
   backgroundTransparency,
   navButtons,
 }: Navbar) {
+  const t = useTranslations("navigation");
+
   return (
     <nav
       className={`fixed top-0 z-30 w-full ${!transparentWhenTop && "backdrop-blur-sm"}`}
@@ -194,13 +202,14 @@ function Desktop({
         <div className="mr-3 flex items-center justify-center gap-5">
           {navButtons.map((button, idx) => {
             return (
-              <React.Fragment key={button.title + idx}>
+              <React.Fragment key={button.titleKey + idx}>
                 <MenuButton href={button.href} _blank={button._blank}>
-                  {button.title}
+                  {t(button.titleKey)}
                 </MenuButton>
               </React.Fragment>
             );
           })}
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>

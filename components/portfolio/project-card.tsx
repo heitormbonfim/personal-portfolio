@@ -71,14 +71,8 @@ function Content({ content, title, img, url }: ProjectCardProps) {
         </figcaption>
       </figure>
       <div className="p-4 text-zinc-300">
-        <div
-          className={`max-h-fit overflow-hidden transition-all duration-300`} // Removed line-clamp and fixed max-h
-        >
-          <div
-            dangerouslySetInnerHTML={{
-              __html: isExpanded ? content : truncatedContent,
-            }}
-          />
+        <div className="max-h-fit overflow-hidden transition-all duration-300">
+          <p>{isExpanded ? content : truncatedContent}</p>
         </div>
         {!isExpanded && content.length > maxCharacters ? (
           <button

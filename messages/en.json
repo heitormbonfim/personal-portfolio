@@ -1,0 +1,263 @@
+{
+  "metadata": {
+    "title": "Portfolio | Heitor M Bonfim",
+    "description": "Full-stack developer portfolio"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "resume": "Resume",
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "home": {
+    "name": "Heitor M Bonfim",
+    "description": "I'm a passionate software developer, a hobbyist ethical hacker and writer",
+    "explore": "Explore"
+  },
+  "about": {
+    "sectionTitle": "ABOUT",
+    "sectionSubtitle": "LEARN MORE ABOUT ME",
+    "title": "Software Developer & Ethical Hacker",
+    "description": "I live and breathe software development, where every line of code is a brushstroke of innovation. When not coding, I'm an ethical hacker, safeguarding digital realms. And in moments of calm, I'm a writer, spinning tales that inspire and captivate. Each pursuit fuels my passion for creativity and exploration.",
+    "description2Title": "About Me",
+    "description2": "A former English teacher who transitioned to software development in 2020. I work with technologies like TypeScript, Node.js, React, and Go, building web applications and exploring cybersecurity. I'm passionate about learning new technologies and improving my craft through hands-on projects. Guided by Stoic principles, I focus on continuous growth, writing clean code, and solving real problems. I enjoy collaborating with others and contributing to projects that make a difference.",
+    "skillsTitle": "SKILLS",
+    "infoLabels": {
+      "fullName": "Full Name",
+      "age": "Age",
+      "phone": "Phone",
+      "location": "Location",
+      "education": "Education",
+      "yearsOfExperience": "Years of Experience",
+      "email": "Email",
+      "languages": "Languages"
+    },
+    "infoValues": {
+      "fullName": "Heitor Macedo Bonfim",
+      "location": "Brazil, CE",
+      "education": "FreeCodeCamp, ProgBr, Java10x, Cisco, Rocketseat",
+      "languages": "Portuguese, English"
+    },
+    "skillLevels": {
+      "advanced": "Advanced",
+      "intermediate": "Intermediate",
+      "basic": "Basic"
+    }
+  },
+  "services": {
+    "sectionTitle": "SERVICES",
+    "sectionSubtitle": "MY SERVICES",
+    "items": {
+      "restfulApi": {
+        "title": "Restful API Development",
+        "description": "Crafting efficient RESTful APIs using ExpressJS and Python."
+      },
+      "landingPages": {
+        "title": "Landing Pages",
+        "description": "Creating captivating landing pages leveraging NextJS, ReactJS, and Wordpress."
+      },
+      "automations": {
+        "title": "Automations",
+        "description": "Streamlining repetitive tasks through automation with NodeJS and Python."
+      },
+      "mobileApps": {
+        "title": "Mobile Applications",
+        "description": "Building cross-platform mobile applications for Android and iOS with React Native or Ionic."
+      },
+      "desktopApps": {
+        "title": "Desktop Applications",
+        "description": "Building cross-platform desktop applications for Windows and Linux using ElectronJS."
+      },
+      "fullStack": {
+        "title": "Full Stack Applications",
+        "description": "Developing tailor-made full stack applications with ReactJS, MongoDB, and ExpressJS."
+      },
+      "dataAnalysis": {
+        "title": "Data Analysis",
+        "description": "Data analysis service leverages Python's powerful ecosystem of libraries to deliver comprehensive, efficient, and insightful data analysis solutions."
+      },
+      "webScraping": {
+        "title": "Web Scraping",
+        "description": "Web scraping service utilizes the robust libraries of Python and JavaScript to efficiently and accurately extract valuable data from websites."
+      },
+      "pentest": {
+        "title": "Pentest",
+        "description": "Conducting penetration testing to identify vulnerabilities in systems and performing code reviews."
+      },
+      "translations": {
+        "title": "Translations",
+        "description": "Providing real-time translation services between English and Portuguese, including document translation and website localization."
+      }
+    }
+  },
+  "portfolio": {
+    "sectionTitle": "PORTFOLIO",
+    "sectionSubtitle": "MY WORKS",
+    "githubTitlePart1": "GitHub ",
+    "githubTitleHighlight": "public",
+    "githubTitlePart2": " repositories",
+    "projects": {
+      "customerManagement": {
+        "title": "Customer Management System",
+        "content": "A full stack application made with ReactJS + TypeScript, daisyui, express, mongodb and more. Ideal to integrate with other systems where customers management are necessary, and an API to control which user will have access according to their plans, etc."
+      },
+      "autoDouble": {
+        "title": "Auto Double",
+        "content": "A full stack web app application integrated with a casino to automatically play with logged user 24/7 using their strategies patterns."
+      },
+      "hackerDoGreen": {
+        "title": "Hacker Do Green",
+        "content": "A full stack web app application integrated with a casino to give the best tips according to the user strategy."
+      },
+      "hackerTanos": {
+        "title": "Hacker Tanos",
+        "content": "A full stack application integrated with a casino to give the best tips according to the user strategy."
+      },
+      "productTemplate": {
+        "title": "Product Page Template",
+        "content": "A ReactJS + TypeScript, Tailwind, Daisyui template for my projects."
+      },
+      "accountingLanding": {
+        "title": "NextJS Accounting Landing page",
+        "content": "A template landing page for accounting business using NextJS, TypeScript, Shadcn, Tailwindcss, and more."
+      },
+      "affiliatePanel": {
+        "title": "Affiliate Management Panel",
+        "content": "A Full Stack [MERN] application to manage affiliate URLs and its statistics."
+      },
+      "agroibi": {
+        "title": "Agroibi Marketplace",
+        "content": "A marketplace MVP project to find agricultural products and suppliers."
+      },
+      "xprimeLife": {
+        "title": "Xprime Life",
+        "content": "A simple dropshipping store for women's beauty affiliate products."
+      },
+      "broadFarma": {
+        "title": "Broad Farma",
+        "content": "A landing page for a Drug Store containing opening hours, contacts and its products."
+      },
+      "hackerTodoList": {
+        "title": "Hacker To Do List",
+        "content": "A Todo list made with React JS."
+      },
+      "marioGame": {
+        "title": "Simple Mario Jump Game",
+        "content": "A simple mario jump game in HTML, CSS and JavaScript with a simple express server."
+      },
+      "paintingGame": {
+        "title": "Painting Game",
+        "content": "A simple painting game in HTML, CSS and JavaScript using Canvas."
+      },
+      "snakeGame": {
+        "title": "Snake Game",
+        "content": "A simple snake game made with HTML, CSS and JavaScript."
+      },
+      "memoryGame": {
+        "title": "Memory Game",
+        "content": "A simple memory game made with HTML, CSS and JavaScript."
+      },
+      "ticTacToe": {
+        "title": "Tic Tac Toe Game",
+        "content": "A simple Tic Tac Toe game made with HTML, CSS and JavaScript."
+      }
+    }
+  },
+  "resume": {
+    "sectionTitle": "RESUME",
+    "sectionSubtitle": "CHECK MY RESUME",
+    "summary": {
+      "title": "SUMMARY",
+      "name": "Heitor Macedo Bonfim",
+      "description": "I transitioned from teaching English in 2019 to software development in 2022, specializing in full-stack development with TypeScript, React, Node.js, and Golang. Currently working as a Full-Stack Developer, I contributed across development, infrastructure, and business strategy. I'm continuously expanding my skills in cybersecurity, DevOps, and backend architecture.",
+      "location": "Brazil, CE"
+    },
+    "education": {
+      "title": "EDUCATION",
+      "java10x": {
+        "title": "Java10x",
+        "dates": "NOVEMBER 2024 - NOVEMBER 2025",
+        "description": "Java10x is a comprehensive course covering Java fundamentals through advanced concepts including Arrays, Ternary operators, OOP concepts, Interfaces, Abstract Classes, Enums, Generics, Exceptions, Collections (Queue, Stack, HashMap), Memory Management, and BigO Notation. The Spring Boot track covers Spring Boot fundamentals, S.O.L.I.D principles, Clean Architecture concepts, Docker containerization, Thymeleaf templating, Security implementations, JWT authentication, Redis caching, and advanced architecture patterns. The program emphasizes practical object-oriented programming, modern enterprise development practices, and business logic implementation.",
+        "cert1": "Java from Zero to Advanced",
+        "cert2": "Spring Boot Track"
+      },
+      "cybersecurity": {
+        "title": "Introduction to Cybersecurity",
+        "dates": "APRIL 2025 - MAY 2025",
+        "description": "Introduction to Cybersecurity is a foundational course covering core security fundamentals including the CIA Triad (Confidentiality, Integrity, Availability) and the modern threat landscape. Key topics include recognizing various malware types, social engineering, and phishing. The course details essential digital hygiene practices, Multi-Factor Authentication (MFA), strong password creation, and device hardening. It introduces basic network security components like firewalls and encryption, outlines risk management, and provides an overview of security incident response and the career roles of cybersecurity professionals.",
+        "cert": "Introduction to Cybersecurity"
+      },
+      "rocketseat": {
+        "title": "Rocketseat",
+        "dates": "JUNE 2022",
+        "description": "Conectar is an introductory programming course that teaches the fundamental concepts of computing, including hardware, software, the internet, servers, and the distinction between frontend and backend development.",
+        "cert": "Conectar"
+      },
+      "freecodecamp": {
+        "title": "FreeCodeCamp",
+        "dates": "AUGUST 2021 - OCTOBER 2022",
+        "description": "The lessons in the freeCodeCamp certifications cover various topics such as web development, HTML, CSS, responsive web design, information security, machine learning, and functional programming languages like Python and JavaScript. FreeCodeCamp teaching style combines both text and videos.",
+        "cert1": "JavaScript Algorithms and Data Structures",
+        "cert2": "Scientific Computing with Python"
+      },
+      "webFullStack": {
+        "title": "Web Full Stack",
+        "dates": "NOVEMBER 2020 - APRIL 2024",
+        "description": "In 'ProgramadorBR Web Full Stack' by Igor Oliveira, you will learn the fundamentals of full-stack web development, covering both front-end technologies like HTML, CSS, JavaScript, and ReactJS alongside back-end concepts including server-side techs such as Node.js with Express, database management with MongoDB, and how to build complete web applications from start to finish, essentially encompassing the entire process of designing, developing, and deploying a website or web application.",
+        "cert1": "HTML, CSS and JavaScript",
+        "cert2": "Firebase, JQuery and Bootstrap",
+        "cert3": "ReactJS",
+        "cert4": "NodeJS and MongoDB"
+      },
+      "english": {
+        "title": "English Language",
+        "dates": "JANUARY 2016 - DECEMBER 2018",
+        "description": "I attained fluency in English through dedicated study and practice.",
+        "fluent": "Fluent English"
+      }
+    },
+    "experience": {
+      "title": "PROFESSIONAL EXPERIENCE",
+      "onePanel": {
+        "title": "One Panel",
+        "dates": "MAY 2025 - PRESENT",
+        "description": "At One Panel, I work as a Full-Stack Developer contributing across multiple areas of the business. I developed new features for VPS automation using Go-Ansible, Ansible, and React, enabling customers to manage their virtual private servers directly through our dashboard. I created the company's new landing page to improve brand presence and customer acquisition. I worked on a Docker management system project using Golang, Gin, and GORM with PostgreSQL and MySQL, significantly improving customer container management capabilities. I led a team of developers, participated in the hiring and selection process for new developers, and provided ongoing support to the development team. I worked closely with the company leader on strategic business decisions, acting as his right-hand. Additionally, I contributed to the sales and marketing sector by creating and managing Google Ads and Facebook Ads campaigns to boost sales. I provided technical support for customers, identified and fixed bugs across our systems, and continuously improved user experience through strategic ideas and implementations.",
+        "role": "Full-Stack Developer",
+        "techStack": "Tech Stack:"
+      },
+      "freelance": {
+        "title": "Freelance Developer",
+        "dates": "NOVEMBER 2023 - APRIL 2025",
+        "description": "I worked as a Freelance Software Developer, building web applications and providing solutions for various clients using modern technologies.",
+        "role": "Freelance Software Developer",
+        "techStack": "Tech Stack:"
+      },
+      "llSoftware": {
+        "title": "LL Software",
+        "dates": "DECEMBER 2022 - OCTOBER 2023",
+        "description": "I performed maintenance on the company's main software, fixing bugs and adding new features, such as creating plans and defining user permissions according to the plan contracted. The technologies used included TypeScript, ReactJS, Tailwind CSS, ExpressJS, MongoDB, Socket.io and Docker. I developed an improved dashboard to manage customers, affiliates and other platform features. I also developed desktop applications with Electron JS to manage bots integrated with the Telegram API and bet automation, in addition to creating web scrapers and automations using Puppeteer, Cheerio and Socket.io. I updated applications originally developed in JavaScript, implementing TypeScript to improve security and facilitate code maintenance. At the same time, I created several PWAs (Progressive Web Apps) with VitePWA and ReactJS, integrated with an API built with ExpressJS and Postgres, which connected to the affiliates' betting houses. I transformed some of these PWAs into native applications with React Native. Finally, I migrated serverless applications, previously hosted on Heroku and Vercel, to a private VPS in Brazil, optimizing response speed and significantly reducing hosting costs.",
+        "role": "Software Developer",
+        "techStack": "Tech Stack:"
+      },
+      "freelanceTeacher": {
+        "title": "Freelance English Teacher",
+        "dates": "AUGUST 2020 - NOVEMBER 2021",
+        "description": "I freelanced as a private English teacher online during the pandemic.",
+        "role": "Private English teacher",
+        "freelancer": "Freelancer"
+      },
+      "mundoHb": {
+        "title": "Mundo HB - English Teacher",
+        "dates": "JANUARY 2019 - JULY 2019",
+        "description": "I worked at MUNDO HB, where I previously studied, to teach English classes at all levels, from basic to advanced. In the advanced classes, I conducted the classes entirely in English, demonstrating fluency and promoting total immersion in the language.",
+        "role": "English Teacher"
+      }
+    }
+  },
+  "notFound": {
+    "title": "What you lookin' for??",
+    "goBack": "Go back"
+  }
+}

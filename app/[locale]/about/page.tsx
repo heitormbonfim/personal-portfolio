@@ -3,28 +3,36 @@
 import { GlobalContext } from "@/app/contexts/global-provider";
 import { InfoArrow } from "@/components/about/info-arrows";
 import { SkillCard } from "@/components/about/skill-card";
-import Loading from "@/components/loading";
 import { Divider } from "@/components/ui/divider";
 import { PageContainer } from "@/components/ui/page-container";
 import { SectionContainer } from "@/components/ui/section-container";
 import { SectionTitles } from "@/components/ui/section-titles";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useContext } from "react";
-import { content } from "./content";
+import { aboutData, calculateDate } from "./data";
 
 export default function About() {
-  const { loading, isMobile } = useContext(GlobalContext);
+  const { isMobile } = useContext(GlobalContext);
+  const t = useTranslations("about");
 
-  if (loading) {
-    return <Loading />;
-  }
+  const arrowInfos = [
+    { titleKey: "fullName", valueKey: "fullName" },
+    { titleKey: "age", value: calculateDate("2000-01-27").toString() },
+    { titleKey: "phone", value: "+5511919934876" },
+    { titleKey: "location", valueKey: "location" },
+    { titleKey: "education", valueKey: "education" },
+    { titleKey: "yearsOfExperience", value: calculateDate("2022-01-01").toString() },
+    { titleKey: "email", value: "heitormbonfim@gmail.com" },
+    { titleKey: "languages", valueKey: "languages" },
+  ];
 
   return (
     <PageContainer navbar>
       <main>
         <SectionContainer>
-          <SectionTitles title="ABOUT" subTitle="LEARN MORE ABOUT ME" />
+          <SectionTitles title={t("sectionTitle")} subTitle={t("sectionSubtitle")} />
 
           <div className="mb-10 flex flex-col lg:flex-row">
             <motion.div
@@ -38,7 +46,7 @@ export default function About() {
             >
               <Image
                 loading="lazy"
-                src={content.img}
+                src={aboutData.img}
                 alt="Profile Picture"
                 width={500}
                 height={500}
@@ -58,7 +66,7 @@ export default function About() {
                 }}
                 className="mb-2 text-xl font-semibold text-green-500 lg:text-3xl"
               >
-                {content.title}
+                {t("title")}
               </motion.h1>
 
               <motion.p
@@ -70,7 +78,7 @@ export default function About() {
                 }}
                 className="mb-4 text-justify italic"
               >
-                {content.description}
+                {t("description")}
               </motion.p>
 
               <motion.div
@@ -82,10 +90,13 @@ export default function About() {
                 }}
                 className="my-10 flex flex-wrap items-center justify-center gap-y-4"
               >
-                {content.arrowInfos.map((item, idx) => {
+                {arrowInfos.map((item, idx) => {
+                  const content = item.valueKey
+                    ? t(`infoValues.${item.valueKey}`)
+                    : item.value!;
                   return (
                     <motion.div
-                      key={`${item.title}-${idx}`}
+                      key={`${item.titleKey}-${idx}`}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{
@@ -94,13 +105,16 @@ export default function About() {
                       }}
                       className="w-full max-w-xs"
                     >
-                      <InfoArrow title={item.title} content={item.content} />
+                      <InfoArrow
+                        title={t(`infoLabels.${item.titleKey}`)}
+                        content={content}
+                      />
                     </motion.div>
                   );
                 })}
               </motion.div>
 
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -108,38 +122,40 @@ export default function About() {
                   delay: 0.4,
                 }}
                 className="text-justify"
-                dangerouslySetInnerHTML={{ __html: content.description2 }}
-              />
+              >
+                <strong className="text-lg text-green-500">{t("description2Title")}</strong>{" "}
+                {t("description2")}
+              </motion.div>
             </div>
           </div>
 
           <div></div>
 
           <div>
-            <SectionTitles title="SKILLS" />
+            <SectionTitles title={t("skillsTitle")} />
 
             <div className="mb-5">
               <div className="flex items-center gap-2">
-                <span className="block h-[1px] w-full max-w-5 bg-green-500"></span>
+                <span className="block h-px w-full max-w-5 bg-green-500"></span>
                 ~80%
-                <span className="font-semibold">Advanced</span>
+                <span className="font-semibold">{t("skillLevels.advanced")}</span>
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="block h-[1px] w-full max-w-5 bg-yellow-400"></span>
+                <span className="block h-px w-full max-w-5 bg-yellow-400"></span>
                 ~50%
-                <span className="font-semibold">Intermediate</span>
+                <span className="font-semibold">{t("skillLevels.intermediate")}</span>
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="block h-[1px] w-full max-w-5 bg-red-400"></span>
+                <span className="block h-px w-full max-w-5 bg-red-400"></span>
                 ~20%
-                <span className="font-semibold">Basic</span>
+                <span className="font-semibold">{t("skillLevels.basic")}</span>
               </div>
             </div>
 
             <div className="mb-10 flex flex-wrap items-center gap-5">
-              {content.skills.map((item, idx) => {
+              {aboutData.skills.map((item, idx) => {
                 return (
                   <motion.div
                     key={`${item.name}-${idx}`}

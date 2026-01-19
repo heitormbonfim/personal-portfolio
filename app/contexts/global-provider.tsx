@@ -3,8 +3,6 @@
 import { createContext, useEffect, useState } from "react";
 
 interface GlobalContextProps {
-  loading: boolean;
-  setLoading: (load: boolean) => void;
   isMobile: boolean;
 }
 
@@ -15,7 +13,6 @@ export default function GlobalProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [loading, setLoading] = useState(true);
   const [windowWidth, setWindowWidth] = useState<number | undefined>(
     typeof window !== "undefined" ? window.innerWidth : undefined
   );
@@ -42,13 +39,7 @@ export default function GlobalProvider({
   }, []);
 
   return (
-    <GlobalContext.Provider
-      value={{
-        loading,
-        setLoading,
-        isMobile,
-      }}
-    >
+    <GlobalContext.Provider value={{ isMobile }}>
       {children}
     </GlobalContext.Provider>
   );
