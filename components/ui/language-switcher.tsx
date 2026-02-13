@@ -16,11 +16,12 @@ export function LanguageSwitcher() {
 
   return (
     <Button
-      size={"sm"}
+      variant="ghost"
+      size="sm"
       onClick={() => switchLocale(locale === "en" ? "pt-br" : "en")}
-      className="rounded border border-green-500 px-3 py-1 text-sm font-medium transition-colors hover:bg-green-500 hover:text-zinc-900"
+      className="px-3 py-1 text-sm font-medium transition-colors hover:text-green-500"
     >
-      {locale === "en" ? "PT" : "EN"}
+      {locale === "en" ? "🇬🇧 EN" : "🇧🇷 PT"}
     </Button>
   );
 }

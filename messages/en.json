@@ -95,75 +95,8 @@
   "portfolio": {
     "sectionTitle": "PORTFOLIO",
     "sectionSubtitle": "MY WORKS",
-    "githubTitlePart1": "GitHub ",
-    "githubTitleHighlight": "public",
-    "githubTitlePart2": " repositories",
-    "projects": {
-      "customerManagement": {
-        "title": "Customer Management System",
-        "content": "A full stack application made with ReactJS + TypeScript, daisyui, express, mongodb and more. Ideal to integrate with other systems where customers management are necessary, and an API to control which user will have access according to their plans, etc."
-      },
-      "autoDouble": {
-        "title": "Auto Double",
-        "content": "A full stack web app application integrated with a casino to automatically play with logged user 24/7 using their strategies patterns."
-      },
-      "hackerDoGreen": {
-        "title": "Hacker Do Green",
-        "content": "A full stack web app application integrated with a casino to give the best tips according to the user strategy."
-      },
-      "hackerTanos": {
-        "title": "Hacker Tanos",
-        "content": "A full stack application integrated with a casino to give the best tips according to the user strategy."
-      },
-      "productTemplate": {
-        "title": "Product Page Template",
-        "content": "A ReactJS + TypeScript, Tailwind, Daisyui template for my projects."
-      },
-      "accountingLanding": {
-        "title": "NextJS Accounting Landing page",
-        "content": "A template landing page for accounting business using NextJS, TypeScript, Shadcn, Tailwindcss, and more."
-      },
-      "affiliatePanel": {
-        "title": "Affiliate Management Panel",
-        "content": "A Full Stack [MERN] application to manage affiliate URLs and its statistics."
-      },
-      "agroibi": {
-        "title": "Agroibi Marketplace",
-        "content": "A marketplace MVP project to find agricultural products and suppliers."
-      },
-      "xprimeLife": {
-        "title": "Xprime Life",
-        "content": "A simple dropshipping store for women's beauty affiliate products."
-      },
-      "broadFarma": {
-        "title": "Broad Farma",
-        "content": "A landing page for a Drug Store containing opening hours, contacts and its products."
-      },
-      "hackerTodoList": {
-        "title": "Hacker To Do List",
-        "content": "A Todo list made with React JS."
-      },
-      "marioGame": {
-        "title": "Simple Mario Jump Game",
-        "content": "A simple mario jump game in HTML, CSS and JavaScript with a simple express server."
-      },
-      "paintingGame": {
-        "title": "Painting Game",
-        "content": "A simple painting game in HTML, CSS and JavaScript using Canvas."
-      },
-      "snakeGame": {
-        "title": "Snake Game",
-        "content": "A simple snake game made with HTML, CSS and JavaScript."
-      },
-      "memoryGame": {
-        "title": "Memory Game",
-        "content": "A simple memory game made with HTML, CSS and JavaScript."
-      },
-      "ticTacToe": {
-        "title": "Tic Tac Toe Game",
-        "content": "A simple Tic Tac Toe game made with HTML, CSS and JavaScript."
-      }
-    }
+    "constructionBanner": "This page is under construction — improvements and a more organized presentation are on the way!",
+    "dataDisclaimer": "Data based on public repositories fetched from the GitHub API (up to 100 repos, excluding forks). Commit counts shown for the top 5 starred repos only."
   },
   "resume": {
     "sectionTitle": "RESUME",
