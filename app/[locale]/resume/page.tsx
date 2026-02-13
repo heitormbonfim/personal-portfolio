@@ -93,7 +93,7 @@ export default function Resume() {
   return (
     <PageContainer navbar>
       <SectionContainer>
-        <div className="mb-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <div className="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
           <SectionTitles
             title={t("sectionTitle")}
             subTitle={t("sectionSubtitle")}

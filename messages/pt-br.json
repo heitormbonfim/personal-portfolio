@@ -95,75 +95,8 @@
   "portfolio": {
     "sectionTitle": "PORTFÓLIO",
     "sectionSubtitle": "MEUS TRABALHOS",
-    "githubTitlePart1": "Repositórios ",
-    "githubTitleHighlight": "públicos",
-    "githubTitlePart2": " do GitHub",
-    "projects": {
-      "customerManagement": {
-        "title": "Sistema de Gestão de Clientes",
-        "content": "Uma aplicação full stack feita com ReactJS + TypeScript, daisyui, express, mongodb e mais. Ideal para integrar com outros sistemas onde a gestão de clientes é necessária, e uma API para controlar qual usuário terá acesso de acordo com seus planos, etc."
-      },
-      "autoDouble": {
-        "title": "Auto Double",
-        "content": "Uma aplicação web app full stack integrada com um cassino para jogar automaticamente com o usuário logado 24/7 usando seus padrões de estratégias."
-      },
-      "hackerDoGreen": {
-        "title": "Hacker Do Green",
-        "content": "Uma aplicação web app full stack integrada com um cassino para dar as melhores dicas de acordo com a estratégia do usuário."
-      },
-      "hackerTanos": {
-        "title": "Hacker Tanos",
-        "content": "Uma aplicação full stack integrada com um cassino para dar as melhores dicas de acordo com a estratégia do usuário."
-      },
-      "productTemplate": {
-        "title": "Template de Página de Produto",
-        "content": "Um template ReactJS + TypeScript, Tailwind, Daisyui para meus projetos."
-      },
-      "accountingLanding": {
-        "title": "Landing Page de Contabilidade NextJS",
-        "content": "Uma landing page template para negócios de contabilidade usando NextJS, TypeScript, Shadcn, Tailwindcss e mais."
-      },
-      "affiliatePanel": {
-        "title": "Painel de Gestão de Afiliados",
-        "content": "Uma aplicação Full Stack [MERN] para gerenciar URLs de afiliados e suas estatísticas."
-      },
-      "agroibi": {
-        "title": "Marketplace Agroibi",
-        "content": "Um projeto MVP de marketplace para encontrar produtos agrícolas e fornecedores."
-      },
-      "xprimeLife": {
-        "title": "Xprime Life",
-        "content": "Uma loja simples de dropshipping para produtos afiliados de beleza feminina."
-      },
-      "broadFarma": {
-        "title": "Broad Farma",
-        "content": "Uma landing page para uma Farmácia contendo horário de funcionamento, contatos e seus produtos."
-      },
-      "hackerTodoList": {
-        "title": "Hacker To Do List",
-        "content": "Uma lista de tarefas feita com React JS."
-      },
-      "marioGame": {
-        "title": "Jogo Simples de Pulo do Mario",
-        "content": "Um jogo simples de pulo do mario em HTML, CSS e JavaScript com um servidor express simples."
-      },
-      "paintingGame": {
-        "title": "Jogo de Pintura",
-        "content": "Um jogo simples de pintura em HTML, CSS e JavaScript usando Canvas."
-      },
-      "snakeGame": {
-        "title": "Jogo da Cobrinha",
-        "content": "Um jogo simples da cobrinha feito com HTML, CSS e JavaScript."
-      },
-      "memoryGame": {
-        "title": "Jogo da Memória",
-        "content": "Um jogo simples de memória feito com HTML, CSS e JavaScript."
-      },
-      "ticTacToe": {
-        "title": "Jogo da Velha",
-        "content": "Um jogo simples da velha feito com HTML, CSS e JavaScript."
-      }
-    }
+    "constructionBanner": "Esta página está em construção — melhorias e uma apresentação mais organizada estão a caminho!",
+    "dataDisclaimer": "Dados baseados em repositórios públicos obtidos da API do GitHub (até 100 repos, excluindo forks). Contagem de commits exibida apenas para os 5 repositórios mais estrelados."
   },
   "resume": {
     "sectionTitle": "CURRÍCULO",
