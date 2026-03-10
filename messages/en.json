@@ -157,7 +157,7 @@
       "title": "PROFESSIONAL EXPERIENCE",
       "onePanel": {
         "title": "One Panel",
-        "dates": "MAY 2025 - FEB 2026",
+        "dates": "MAY 2025 - FEBRUARY 2026",
         "description": "At One Panel, I work as a Full-Stack Developer contributing across multiple areas of the business. I developed new features for VPS automation using Go-Ansible, Ansible, and React, enabling customers to manage their virtual private servers directly through our dashboard. I created the company's new landing page to improve brand presence and customer acquisition. I worked on a Docker management system project using Golang, Gin, and GORM with PostgreSQL and MySQL, significantly improving customer container management capabilities. I led a team of developers, participated in the hiring and selection process for new developers, and provided ongoing support to the development team. I worked closely with the company leader on strategic business decisions, acting as his right-hand. Additionally, I contributed to the sales and marketing sector by creating and managing Google Ads and Facebook Ads campaigns to boost sales. I provided technical support for customers, identified and fixed bugs across our systems, and continuously improved user experience through strategic ideas and implementations.",
         "role": "Full-Stack Developer",
         "techStack": "Tech Stack:"
